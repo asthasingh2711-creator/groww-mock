@@ -1,0 +1,71 @@
+.hero {
+  padding: 54px 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.left {
+  padding-left: 22px;
+}
+
+.title {
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: #374151;
+}
+
+.copy {
+  margin-top: 16px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 360px;
+  font-weight: 600;
+}
+
+.right {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.mintBlob {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: radial-gradient(circle at 88% 58%, rgba(0, 208, 156, 0.13), rgba(255, 255, 255, 0) 46%),
+    radial-gradient(circle at 74% 44%, rgba(0, 208, 156, 0.12), rgba(255, 255, 255, 0) 44%),
+    radial-gradient(circle at 72% 32%, rgba(0, 208, 156, 0.12), rgba(255, 255, 255, 0) 44%),
+    radial-gradient(circle at 70% 20%, rgba(0, 208, 156, 0.12), rgba(255, 255, 255, 0) 44%),
+    linear-gradient(180deg, #ffffff, #ffffff);
+}
+
+.people {
+  position: absolute;
+  right: -12px;
+  top: 36px;
+  width: 520px;
+  height: 340px;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .left {
+    padding-left: 0;
+  }
+  .right {
+    height: 360px;
+  }
+  .people {
+    right: -30px;
+    width: 520px;
+  }
+}
+

@@ -1,0 +1,18 @@
+.page {
+  min-height: 100svh;
+  background: var(--gw-bg);
+}
+
+.loading {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--gw-muted);
+  font-weight: 600;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px 64px 10px;
+}
+

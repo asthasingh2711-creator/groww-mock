@@ -1,0 +1,142 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gw-border);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoMark {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #7c3aed, #00d09c);
+  flex-shrink: 0;
+}
+
+.brandText {
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  color: var(--gw-text);
+}
+
+.nav {
+  display: none;
+  gap: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gw-muted);
+}
+
+.nav a:hover {
+  color: var(--gw-text);
+}
+
+@media (min-width: 900px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 0 14px;
+  border: 1px solid var(--gw-border);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.8125rem;
+  color: var(--gw-muted);
+}
+
+@media (min-width: 768px) {
+  .search {
+    display: flex;
+  }
+}
+
+.mag {
+  opacity: 0.7;
+}
+
+.searchPh {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kbd {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--gw-border);
+  background: #f9fafb;
+  color: var(--gw-muted);
+  font-family: inherit;
+}
+
+.loginBtn {
+  height: 36px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--gw-green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.loginBtn:hover {
+  background: var(--gw-green2);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--gw-orange);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 16px rgba(249, 115, 22, 0.25);
+}

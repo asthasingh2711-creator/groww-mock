@@ -1,0 +1,40 @@
+.wrap {
+  background: #fff;
+  border-bottom: 1px solid var(--gw-border);
+  overflow: hidden;
+}
+
+.track {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gw-muted);
+}
+
+.item {
+  white-space: nowrap;
+}
+
+.name {
+  color: var(--gw-text);
+}
+
+.val {
+  color: var(--gw-text);
+  margin-left: 4px;
+}
+
+.up {
+  color: #10b981;
+  margin-left: 4px;
+}
+
+.down {
+  color: #ef4444;
+  margin-left: 4px;
+}

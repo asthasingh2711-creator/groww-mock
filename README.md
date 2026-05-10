@@ -1,3 +1,44 @@
+## Groww About Us (Clone)
+
+This is a small Next.js clone of Groww’s **About Us** page UI, plus a bottom-right chatbot popup.
+
+### Setup
+
+```bash
+cd web
+npm install
+```
+
+Set `GROQ_API_KEY` in **either** place (same key you use for Streamlit):
+
+- **Repo root** `../.env` next to `app.py` (loaded automatically), or
+- **`web/.env.local`**
+
+```bash
+GROQ_API_KEY=your_key_here
+```
+
+Restart `npm run dev` after changing env files.
+
+### Run
+
+```bash
+npm run dev
+```
+
+Open:
+- `http://localhost:3000` — **Groww-style homepage** + login modal (Login/Sign up, Get started)
+- `http://localhost:3000/about-us` — About Us + chatbot
+
+Login is **UI-only**: use a password with 8+ chars including upper, lower, number, and `!@#$%^&*` special char; submit swaps the header to the orange avatar.
+
+### Notes
+- **RAG:** `src/data/mf_kb.json` holds short official-style snippets + **verified** `sbimf.com` / `amfiindia.com` / `sebi.gov.in` URLs. `src/lib/retrieve.ts` scores chunks from the user question and **prioritises SBI MF links** over AMFI/SEBI.
+- **Chat API:** `src/app/api/chat/route.ts` sends retrieved context to Groq, then `src/lib/citations.ts` **forces** an allowed `Source:` URL and appends `Last updated from sources:` (strips bad domains like `sec.gov`).
+- **Assignment artefacts (repo root):** `outputs/source_list.csv`, `outputs/sample_qa.md`.
+- Add more KB rows (and matching CSV lines) for deeper SBI scheme coverage; avoid inventing document URLs—confirm they return HTTP 200.
+- Credentials / auth are not implemented; the About page avatar is static.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
