@@ -1,0 +1,290 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  width: min(820px, 100%);
+  max-height: calc(100vh - 32px);
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.3);
+  animation: rise 0.22s ease-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  line-height: 1;
+  color: #475569;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.close:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.left {
+  position: relative;
+  background: linear-gradient(160deg, #00d09c 0%, #00b787 60%, #00a079 100%);
+  padding: 38px 32px;
+  color: #ffffff;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px 24px),
+    repeating-radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0 1px, transparent 2px 32px),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 18px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.tagline {
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.tickerLine {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  margin-top: 6px;
+}
+
+.ticker {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  animation: tickerFade 0.5s ease-out;
+}
+
+.right {
+  padding: 36px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  text-align: center;
+}
+
+.demoNote {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.form {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #14b389;
+}
+
+.inputWrap {
+  position: relative;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.18);
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #0f172a;
+  padding: 6px 26px 6px 0;
+}
+
+.input:focus {
+  border-color: transparent;
+}
+
+.inputWrap:focus-within {
+  border-bottom-color: #00d09c;
+}
+
+.pencil,
+.eye {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: rgba(17, 24, 39, 0.4);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.eye:hover {
+  color: rgba(17, 24, 39, 0.7);
+}
+
+.forgot {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #047857;
+  text-align: right;
+  margin-top: -8px;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.hint {
+  background: #f8fafc;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.submit {
+  margin-top: 6px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  background: var(--gw-green);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 208, 156, 0.28);
+}
+
+.submit:hover {
+  background: var(--gw-green2);
+}
+
+.submit:focus-visible {
+  outline: 3px solid rgba(0, 208, 156, 0.45);
+  outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tickerFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    min-height: 180px;
+    padding: 26px 22px;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+  }
+
+  .ticker {
+    font-size: 1.15rem;
+  }
+
+  .right {
+    padding: 24px 22px 22px;
+  }
+}

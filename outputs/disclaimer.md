@@ -52,3 +52,16 @@ Last updated from sources: <today's date>
 ## Standing legal note (suggested for README / About)
 
 > This is a non-commercial educational prototype. It does not solicit investments, does not collect or store any PII (PAN, Aadhaar, account numbers, OTPs, emails, phone numbers), and does not compute or compare scheme performance. Mutual fund investments are subject to market risks; read all scheme-related documents carefully. Always confirm scheme-specific figures from the latest KIM/SID/factsheet on the AMC's official website.
+
+## Visible inside the Login modal (cosmetic only)
+
+The "Login / Sign up" button on the home page opens a Groww-style login dialog purely for visual fidelity. The modal is cosmetic — its inputs are uncontrolled, `Submit` ignores all field values, and no data is read into state, persisted, or sent anywhere. The modal carries this banner above the form:
+
+> Demo only — nothing you type is saved or sent. Submit to continue.
+
+Compliance summary for the login modal:
+
+- No React state is bound to the email / password inputs.
+- The form handler calls `event.preventDefault()` and routes the user to `/about-us` without inspecting the form values.
+- No `fetch`, `localStorage`, `sessionStorage`, cookies, or analytics calls fire on submit.
+- `autoComplete="off"` is set on the form and both inputs to discourage password managers from persisting anything for the user.

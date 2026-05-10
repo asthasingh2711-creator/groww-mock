@@ -2,34 +2,35 @@
 
 import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
-import { GuestConsentModal } from "./GuestConsentModal";
 import { HomeHeader } from "./HomeHeader";
 import { HomeHero } from "./HomeHero";
+import { LoginModal } from "./LoginModal";
 import { MarketTicker } from "./MarketTicker";
 import styles from "./HomeShell.module.css";
 
 /**
  * Demo prototype: there is no real auth or PII collection.
  *
- * "Login / Sign up" in the header opens a GuestConsentModal that makes the
- * demo nature explicit before routing. It used to silently navigate to
- * /about-us, which read like an "auto-login" — clicking a Login button and
- * being instantly inside the app is misleading even if no PII is collected.
+ * "Login / Sign up" in the header opens a Groww-style LoginModal so the
+ * journey feels like the real product. The modal is visual only — its
+ * inputs are uncontrolled and Submit ignores the form values; nothing is
+ * read into state, persisted, or sent anywhere. See LoginModal.tsx for
+ * the full compliance note.
  *
- * The hero's "Launch assistant" CTA is more direct (and doesn't claim to
- * authenticate), so it bypasses the modal and routes straight to the
- * assistant. Logout on /about-us routes back here, completing the loop.
+ * The hero's "Launch assistant" CTA bypasses the modal and routes
+ * straight to /about-us — its label doesn't pretend to authenticate.
+ * Logout on /about-us closes the loop back to /.
  */
 export function HomeShell() {
   const router = useRouter();
-  const [consentOpen, setConsentOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
 
   const goToChat = useCallback(() => router.push("/about-us"), [router]);
 
-  const onLoginClick = useCallback(() => setConsentOpen(true), []);
-  const onCancel = useCallback(() => setConsentOpen(false), []);
-  const onContinue = useCallback(() => {
-    setConsentOpen(false);
+  const onLoginClick = useCallback(() => setLoginOpen(true), []);
+  const onCancel = useCallback(() => setLoginOpen(false), []);
+  const onSubmit = useCallback(() => {
+    setLoginOpen(false);
     goToChat();
   }, [goToChat]);
 
@@ -38,9 +39,9 @@ export function HomeShell() {
       <HomeHeader onLoginClick={onLoginClick} />
       <MarketTicker />
       <HomeHero onGetStarted={goToChat} />
-      <GuestConsentModal
-        open={consentOpen}
-        onContinue={onContinue}
+      <LoginModal
+        open={loginOpen}
+        onSubmit={onSubmit}
         onCancel={onCancel}
       />
     </div>
