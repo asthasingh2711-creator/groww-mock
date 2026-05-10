@@ -5,7 +5,14 @@
     "doc_type": "scheme_page",
     "scheme": "SBI Large Cap Fund (formerly SBI Bluechip Fund)",
     "tags": ["sbi bluechip", "sbi large cap", "large cap", "equity", "benchmark", "bse 100", "scheme detail"],
-    "text": "SBI Large Cap Fund (formerly known as SBI Bluechip Fund) is an open-ended equity scheme predominantly investing in large cap stocks, with 80-100% allocation to large-cap equities and the remainder across other equities, REIT/InvIT units, debt and money-market instruments per the SID. The scheme's stated benchmark is the BSE 100 TRI."
+    "text": "SBI Large Cap Fund (formerly known as SBI Bluechip Fund) is an open-ended equity scheme predominantly investing in large cap stocks, with 80-100% allocation to large-cap equities and the remainder across other equities, REIT/InvIT units, debt and money-market instruments per the SID. The scheme's stated benchmark is the BSE 100 TRI.",
+    "facts": {
+      "scheme_code": "SBIM/O/E/LCF/05/12/0027",
+      "category": "Large Cap Fund (open-ended equity scheme)",
+      "benchmark": "BSE 100 TRI",
+      "asset_allocation": "80-100% large-cap equities; up to 20% other equities; up to 10% REIT/InvIT units; up to 20% debt and money-market instruments",
+      "as_of": "Per scheme detail page on sbimf.com (accessed May 2026)"
+    }
   },
   {
     "id": "scheme-bluechip-sid",
@@ -29,7 +36,14 @@
     "doc_type": "scheme_page",
     "scheme": "SBI Flexicap Fund",
     "tags": ["sbi flexicap", "flexi cap", "equity", "benchmark", "bse 500", "scheme detail"],
-    "text": "SBI Flexicap Fund is an open-ended dynamic equity scheme that invests across large cap, mid cap and small cap stocks; its benchmark is the BSE 500 Index TRI. Refer to the scheme page on sbimf.com and its latest SID for asset-allocation bands, expense ratio, exit load and minimum investment."
+    "text": "SBI Flexicap Fund is an open-ended dynamic equity scheme that invests across large cap, mid cap and small cap stocks; its benchmark is the BSE 500 Index TRI. Refer to the scheme page on sbimf.com and its latest SID for asset-allocation bands, expense ratio, exit load and minimum investment.",
+    "facts": {
+      "scheme_code": "SBIM/O/E/FCF/05/07/0026",
+      "category": "Flexi Cap Fund (open-ended dynamic equity scheme)",
+      "benchmark": "BSE 500 Index TRI",
+      "asset_allocation": "Diversified across large cap, mid cap and small cap equities, plus debt and money-market instruments per the SID",
+      "as_of": "Per scheme detail page on sbimf.com (accessed May 2026)"
+    }
   },
   {
     "id": "scheme-flexicap-sid",
@@ -45,7 +59,20 @@
     "doc_type": "scheme_page",
     "scheme": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund)",
     "tags": ["elss", "tax saver", "80c", "lock-in", "sbi long term equity", "sbi elss tax saver", "minimum sip", "exit load"],
-    "text": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund) is an open-ended Equity Linked Savings Scheme with a statutory 3-year lock-in; investments up to Rs 1,50,000 per financial year qualify for deduction under Section 80C of the Income-tax Act, 1961, subject to applicable law. The scheme's benchmark is the BSE 500 TRI; per the latest scheme materials, minimum investment / SIP starts at Rs 500 and exit load is NIL given the statutory lock-in."
+    "text": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund) is an open-ended Equity Linked Savings Scheme with a statutory 3-year lock-in; investments up to Rs 1,50,000 per financial year qualify for deduction under Section 80C of the Income-tax Act, 1961, subject to applicable law. The scheme's benchmark is the BSE 500 TRI; per the latest scheme materials, minimum investment / SIP starts at Rs 500 and exit load is NIL given the statutory lock-in.",
+    "facts": {
+      "category": "Equity Linked Savings Scheme (ELSS, open-ended)",
+      "benchmark": "BSE 500 Index TRI",
+      "lock_in_years": 3,
+      "min_sip_inr": 500,
+      "min_lumpsum_inr": 500,
+      "exit_load": "NIL",
+      "section_80c_eligible": true,
+      "section_80c_max_inr": 150000,
+      "inception_date": "31 March 1993",
+      "notes": "Lock-in is statutory for ELSS; tax deduction is per current Section 80C limits and applicable law.",
+      "as_of": "Per scheme detail page on sbimf.com (accessed May 2026)"
+    }
   },
   {
     "id": "scheme-elss-factsheet",
@@ -117,7 +144,14 @@
     "doc_type": "regulatory",
     "scheme": "General",
     "tags": ["categorization", "large cap", "mid cap", "small cap", "elss", "flexi cap", "sebi"],
-    "text": "Per SEBI categorisation, large-cap stocks are the top 100 listed companies by full market capitalisation, mid-cap stocks rank 101-250, and small-cap stocks rank 251 and beyond; AMFI updates the master list every six months. ELSS schemes invest predominantly in equities and have a statutory lock-in under Section 80C."
+    "text": "Per SEBI categorisation, large-cap stocks are the top 100 listed companies by full market capitalisation, mid-cap stocks rank 101-250, and small-cap stocks rank 251 and beyond; AMFI updates the master list every six months. ELSS schemes invest predominantly in equities and have a statutory lock-in under Section 80C.",
+    "facts": {
+      "large_cap_definition": "Top 100 listed companies by full market capitalisation",
+      "mid_cap_definition": "101st to 250th company by full market capitalisation",
+      "small_cap_definition": "251st company onwards by full market capitalisation",
+      "notes": "Source circular: SEBI/HO/IMD/DF3/CIR/P/2017/114 (6 Oct 2017); AMFI publishes the master list every six months.",
+      "as_of": "Per AMFI knowledge-center page (accessed May 2026)"
+    }
   },
   {
     "id": "amfi-riskometer",

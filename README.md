@@ -63,7 +63,12 @@ User → ChatWidget → POST /api/chat
                         │     greeting / off_topic → fixed reply (with educational link)
                         │     mutual_fund → ↓
                         ├─ retrieveChunks()  ← token-overlap scoring over mf_kb.json
-                        ├─ Groq llama-3.3-70b-versatile (system + user prompt, T=0.2)
+                        ├─ extractFactAnswer() ← deterministic lookup on chunk.facts;
+                        │      hits canonical asks (lock-in, min SIP, exit load,
+                        │      benchmark, category, scheme code, 80C, SEBI cap defs)
+                        │      and short-circuits the LLM entirely
+                        ├─ Groq llama-3.3-70b-versatile (system + user prompt, T=0.2;
+                        │      receives `Facts:` line per chunk in CONTEXT)
                         └─ ensureCitationFooter()
                               ├─ extract Source URL from LLM
                               ├─ validate against allowlist; fallback to retrieved URL
@@ -71,18 +76,45 @@ User → ChatWidget → POST /api/chat
                               └─ append Source + "Last updated from sources" line
 ```
 
-Key files:
+### Structured facts in the KB
+
+Each scheme chunk in `mf_kb.json` carries an optional `facts` object with verified scalars (see `src/lib/mfTypes.ts → SchemeFacts`):
+
+```jsonc
+"facts": {
+  "category": "Equity Linked Savings Scheme (ELSS, open-ended)",
+  "benchmark": "BSE 500 Index TRI",
+  "lock_in_years": 3,
+  "min_sip_inr": 500,
+  "min_lumpsum_inr": 500,
+  "exit_load": "NIL",
+  "section_80c_eligible": true,
+  "section_80c_max_inr": 150000,
+  "as_of": "Per scheme detail page on sbimf.com (accessed May 2026)"
+}
+```
+
+Facts are surfaced in two places:
+
+1. **Deterministic fast-path** — `extractFactAnswer` (in `src/lib/factExtractor.ts`) maps canonical user asks to fields and returns a 1-sentence answer + URL, no LLM call. This eliminates hallucination risk for the questions the brief explicitly names.
+2. **LLM context** — `formatContextForLlm` appends `Facts: key=value; key=value; …` after each chunk's prose. The system prompt instructs the LLM to PREFER these structured fields over re-deriving values from text.
+
+Anything not covered by a `Facts:` field (e.g. expense ratio, NAV, returns) flows to the LLM, which is instructed to refuse with a link to the scheme's official factsheet/SID/KIM rather than fabricate.
+
+### Key files
 
 | File | Purpose |
 | --- | --- |
-| `src/data/mf_kb.json` | 22 official-source RAG chunks (scheme + topic) |
-| `src/lib/retrieve.ts` | Keyword-overlap retrieval with `sbimf.com` priority |
-| `src/lib/prompts.ts` | System + user prompt with strict no-advice / no-fabrication rules |
+| `src/data/mf_kb.json` | 22 official-source RAG chunks (scheme + topic) with structured `facts` on scheme chunks |
+| `src/lib/mfTypes.ts` | `KbChunk` + `SchemeFacts` type definitions |
+| `src/lib/retrieve.ts` | Keyword-overlap retrieval with `sbimf.com` priority; renders `Facts:` line in LLM context |
+| `src/lib/factExtractor.ts` | Deterministic intent → fact lookup → 1-sentence answer + URL |
+| `src/lib/prompts.ts` | System + user prompt with strict no-advice / no-fabrication rules; instructs LLM to use `Facts:` line |
 | `src/lib/queryClassification.ts` | 3-way classifier + fixed `GREETING_REPLY` / `OFF_TOPIC_REPLY` / `PII_REFUSAL_REPLY` |
 | `src/lib/pii.ts` | PAN / Aadhaar / email / phone / long-numeric detection |
 | `src/lib/citations.ts` | Allowlist, ≤3-sentence clamp, citation footer enforcement |
 | `src/app/api/chat/route.ts` | Server route wiring all of the above |
-| `src/components/ChatWidget.tsx` | Bottom-right chat popup with welcome + 3 example Qs + disclaimer |
+| `src/components/ChatWidget.tsx` | Bottom-right chat popup with welcome + 3 example Qs + disclaimer; linkifies citations |
 
 ---
 

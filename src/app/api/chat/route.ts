@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 import mfKb from "@/data/mf_kb.json";
 import { ensureCitationFooter } from "@/lib/citations";
+import { extractFactAnswer } from "@/lib/factExtractor";
 import type { KbChunk } from "@/lib/mfTypes";
 import { detectPii } from "@/lib/pii";
 import { buildSbiSystemPrompt, buildUserPrompt } from "@/lib/prompts";
@@ -134,6 +135,23 @@ export async function POST(req: Request) {
       return NextResponse.json({ reply: OFF_TOPIC_REPLY });
     }
 
+    const retrieved = retrieveChunks(userText, KB_CHUNKS, 5);
+    const today = todayLabel();
+
+    /**
+     * Deterministic fast-path: for canonical asks (lock-in, min SIP, exit
+     * load, benchmark, category, scheme code, 80C, SEBI cap definitions),
+     * we answer straight from the structured `facts` field on the
+     * top-ranked retrieved chunk. This bypasses the LLM entirely so the
+     * answer is verified-and-cited instead of generated.
+     */
+    const direct = extractFactAnswer(userText, retrieved);
+    if (direct) {
+      return NextResponse.json({
+        reply: ensureCitationFooter(direct.reply, direct.url, today),
+      });
+    }
+
     const apiKey = process.env.GROQ_API_KEY?.trim();
     if (!apiKey) {
       return NextResponse.json(
@@ -145,13 +163,11 @@ export async function POST(req: Request) {
       );
     }
 
-    const retrieved = retrieveChunks(userText, KB_CHUNKS, 5);
     const preferredUrl =
       retrieved[0]?.url ?? "https://www.sbimf.com/";
     const contextBlock = formatContextForLlm(retrieved);
     const system = buildSbiSystemPrompt();
     const userPayload = buildUserPrompt(userText, contextBlock);
-    const today = todayLabel();
 
     const resp = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",

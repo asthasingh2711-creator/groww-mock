@@ -1,16 +1,18 @@
 # Sample Q&A — SBI Mutual Fund FAQ assistant (RAG, official sources only)
 
-> **Facts-only. No investment advice.** Scheme-specific numbers (expense ratio, exit load, NAV, returns) must always be read from the **latest official KIM/SID/factsheet** for that scheme on `sbimf.com`. The answers below illustrate the assistant's tone, sourcing rules and refusal behaviour.
+> **Facts-only. No investment advice.** Mutual fund investments are subject to market risks; read all scheme-related documents carefully.
 
-**Scope:** AMC = SBI Mutual Fund. Schemes = SBI Bluechip / SBI Large Cap Fund (large-cap), SBI Flexicap Fund (flexi-cap), SBI ELSS Tax Saver Fund / SBI Long Term Equity Fund (ELSS).
+**Scope:** AMC = SBI Mutual Fund. Schemes = SBI Bluechip / SBI Large Cap Fund (large-cap), SBI Flexicap Fund (flexi-cap), SBI Long Term Equity Fund / SBI ELSS Tax Saver Fund (ELSS).
 
 **Allowed citation domains:** `sbimf.com`, `amfiindia.com`, `sebi.gov.in` (and subdomains).
 
+**Pipeline:** Each user message goes through `PII detection → advice/performance guardrail → greeting/off-topic classifier → retrieval → deterministic fact extractor → (fallback) Groq llama-3.3-70b → citation footer enforcer`. Q1–Q4 and Q7 below are answered by the **deterministic extractor** (looking up the structured `facts` field on the top-ranked retrieved chunk — no LLM call). Q5–Q6 fall through to the LLM. Q8–Q10 are fixed refusals.
+
 ---
 
-## Q1: What is the lock-in period for SBI ELSS Tax Saver Fund?
+## Q1: What is the lock-in period for SBI ELSS Tax Saver Fund? *(deterministic)*
 
-**A:** SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund) is an Equity Linked Savings Scheme with a statutory 3-year lock-in, after which units become freely redeemable. Investments up to Rs 1,50,000 per financial year qualify under Section 80C subject to applicable tax law. Confirm the current lock-in and tax treatment in the scheme's latest SID.
+**A:** SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund) has a statutory 3-year lock-in. Tax treatment under Section 80C follows current law and individual circumstances.
 
 **Source:** https://www.sbimf.com/sbimf-scheme-details/sbi-long-term-equity-fund-(previously-known-as-sbi-magnum-taxgain-scheme)-3
 
@@ -18,9 +20,9 @@
 
 ---
 
-## Q2: What is the benchmark for SBI Flexicap Fund?
+## Q2: What is the benchmark for SBI Flexicap Fund? *(deterministic)*
 
-**A:** SBI Flexicap Fund is an open-ended dynamic equity scheme that invests across large, mid and small caps and is benchmarked against the BSE 500 Index TRI. For asset-allocation bands and the latest portfolio, see the scheme's SID and factsheet.
+**A:** The benchmark for SBI Flexicap Fund is BSE 500 Index TRI.
 
 **Source:** https://www.sbimf.com/sbimf-scheme-details/sbi-flexicap-fund-39
 
@@ -28,9 +30,9 @@
 
 ---
 
-## Q3: What is the benchmark and category for SBI Bluechip Fund?
+## Q3: What is the benchmark for SBI Bluechip Fund? *(deterministic)*
 
-**A:** SBI Bluechip Fund is now SBI Large Cap Fund — an open-ended large-cap equity scheme with 80–100% allocation to large-cap stocks, benchmarked against the BSE 100 TRI. For the latest expense ratio and exit load, refer to the scheme's KIM/SID on sbimf.com.
+**A:** The benchmark for SBI Large Cap Fund (formerly SBI Bluechip Fund) is BSE 100 TRI.
 
 **Source:** https://www.sbimf.com/sbimf-scheme-details/sbi-large-cap-fund-(formerly-known-as-sbi-bluechip-fund)-43
 
@@ -38,9 +40,9 @@
 
 ---
 
-## Q4: What is the minimum SIP for SBI ELSS Tax Saver Fund?
+## Q4: What is the minimum SIP for SBI ELSS Tax Saver Fund? *(deterministic)*
 
-**A:** Per the scheme's published materials, the minimum SIP / lump-sum for SBI ELSS Tax Saver Fund starts at Rs 500 and in multiples of Rs 500 thereafter, and exit load is NIL given the statutory 3-year lock-in. Always confirm minimums against the current KIM/SID before investing.
+**A:** Per the published scheme materials, the minimum SIP for SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund) is Rs 500 (in multiples of Rs 500 thereafter). Confirm against the latest KIM/SID before investing.
 
 **Source:** https://www.sbimf.com/sbimf-scheme-details/sbi-long-term-equity-fund-(previously-known-as-sbi-magnum-taxgain-scheme)-3
 
@@ -48,7 +50,7 @@
 
 ---
 
-## Q5: How do I download a capital gains statement for my SBI Mutual Fund holdings?
+## Q5: How do I download a capital gains statement for my SBI Mutual Fund holdings? *(LLM, RAG)*
 
 **A:** SBI Mutual Fund offers Smart Statement and account / capital-gains statement downloads through its investor portal; Smart Statement can be requested by entering the registered PAN and email, or you can log in to the online transaction portal to download statements directly. See the official Smart Statement page on sbimf.com for the latest steps.
 
@@ -58,7 +60,7 @@
 
 ---
 
-## Q6: What does the riskometer indicate for a mutual fund scheme?
+## Q6: What does the riskometer indicate for a mutual fund scheme? *(LLM, RAG)*
 
 **A:** The Riskometer is a SEBI-mandated standardised risk disclosure for mutual fund schemes, updated on an ongoing basis as per SEBI's Master Circular on Mutual Funds. Each AMC publishes monthly riskometer disclosures; for any specific scheme refer to its latest factsheet on the AMC's website.
 
@@ -68,9 +70,9 @@
 
 ---
 
-## Q7: How does SEBI define large-cap, mid-cap and small-cap stocks?
+## Q7: How does SEBI define large-cap, mid-cap and small-cap stocks? *(deterministic)*
 
-**A:** Per SEBI categorisation, large-cap stocks are the top 100 listed companies by full market capitalisation, mid-cap stocks rank 101–250, and small-cap stocks rank 251 and beyond; AMFI publishes the master list every six months. Equity schemes must align their investment universe to these definitions.
+**A:** Per SEBI categorisation: Large-cap = Top 100 listed companies by full market capitalisation; mid-cap = 101st to 250th company by full market capitalisation; small-cap = 251st company onwards by full market capitalisation.
 
 **Source:** https://www.amfiindia.com/investor-corner/knowledge-center/SEBI-categorization-of-mutual-fund-schemes.html
 
@@ -78,9 +80,19 @@
 
 ---
 
-## Q8 (refusal — opinion): Should I buy SBI Flexicap Fund?
+## Q8: What is the expense ratio for SBI Bluechip Fund? *(LLM refusal — no verified figure in KB)*
 
-**A:** I can only provide factual information, not investment advice. For neutral mutual-fund education, see AMFI's investor knowledge center; for scheme facts, use the official scheme documents on the AMC website.
+**A:** I cannot state the current expense ratio from the context provided — TER changes monthly. Please open the latest factsheet for SBI Large Cap Fund on sbimf.com for the current figure, calculated as per AMFI/SEBI methodology.
+
+**Source:** https://www.sbimf.com/
+
+**Last updated from sources:** 10 May 2026
+
+---
+
+## Q9 (refusal — opinion): Should I buy SBI Flexicap Fund?
+
+**A:** I can only provide factual information, not investment advice. For neutral mutual-fund education, see AMFI's investor knowledge center.
 
 **Source:** https://www.amfiindia.com/investor-corner/knowledge-center/what-are-mutual-funds-new.html
 
@@ -88,19 +100,19 @@
 
 ---
 
-## Q9 (refusal — performance claim): What were last year's returns for SBI Bluechip Fund?
+## Q10 (refusal — performance claim): What were last year's returns for SBI Bluechip Fund?
 
 **A:** I don't quote performance numbers without the scheme's latest official factsheet. Open the current factsheet on SBI MF's website for performance disclosures, calculated as per AMFI/SEBI methodology.
 
-**Source:** https://www.sbimf.com/sbimf-scheme-details/sbi-large-cap-fund-(formerly-known-as-sbi-bluechip-fund)-43
+**Source:** https://www.sbimf.com/
 
 **Last updated from sources:** 10 May 2026
 
 ---
 
-## Q10 (refusal — PII): My PAN is ABCDE1234F. Can you check my folio?
+## Q11 (refusal — PII): My PAN is ABCDE1234F. Can you check my folio?
 
-**A:** I can't process personal identifiers like PAN, Aadhaar, account numbers, OTPs, emails, or phone numbers — this assistant only answers factual questions about mutual fund schemes from public sources. For folio or KYC matters, use SBI Mutual Fund's secure investor portal.
+**A:** I can't process personal identifiers like PAN, Aadhaar, account numbers, OTPs, emails, or phone numbers — this assistant only answers factual questions about mutual fund schemes from public sources. For folio or KYC matters, use the AMC's secure investor portal.
 
 **Source:** https://www.sbimf.com/
 
