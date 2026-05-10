@@ -19,9 +19,18 @@ export type MutualFundQueryCategory = "greeting" | "mutual_fund" | "off_topic";
 export const GREETING_REPLY =
   "Hi! Ask me factual mutual-fund questions like ELSS lock-in, expense ratios, SIP minimums, exit loads, benchmarks, or riskometer details.";
 
-/** Exact assistant reply when the topic is outside the MF facts scope. */
+/**
+ * Exact assistant reply when the topic is outside the MF facts scope.
+ * Includes a single allowlisted educational link so the response still satisfies
+ * the "one source link per answer" contract; the API layer skips the citation
+ * footer for fixed replies (this string is rendered as-is).
+ */
 export const OFF_TOPIC_REPLY =
-  "I'm a mutual fund facts assistant and do not have information on that topic. For factual information on mutual funds, I can provide details on topics such as fund types, investment objectives, or fees.";
+  "I'm a mutual fund facts assistant and can only help with factual mutual fund questions (categories, fees, lock-in, riskometer, benchmark, statements). For neutral mutual-fund education, see AMFI's investor knowledge center.\n\nSource: https://www.amfiindia.com/investor-corner/knowledge-center/what-are-mutual-funds-new.html";
+
+/** Exact assistant reply when PII is detected in the user message. */
+export const PII_REFUSAL_REPLY =
+  "I can't process personal identifiers like PAN, Aadhaar, account numbers, OTPs, emails, or phone numbers — this assistant only answers factual questions about mutual fund schemes from public sources. For folio or KYC matters, use the AMC's secure investor portal.\n\nSource: https://www.sbimf.com/";
 
 /**
  * Keywords / phrases that indicate the user is asking about mutual-fund facts or regulation.

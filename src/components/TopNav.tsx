@@ -1,16 +1,14 @@
 import Link from "next/link";
 import styles from "./TopNav.module.css";
 
-type Props = {
-  userEmail: string;
-};
-
-function avatarLetter(email: string) {
-  const c = email.trim().charAt(0);
-  return (c || "A").toUpperCase();
-}
-
-export function TopNav({ userEmail }: Props) {
+/**
+ * Top nav for the /about-us demo page.
+ *
+ * Renders a static "Demo" badge in place of the previous email-derived avatar
+ * so the page can stay public/anonymous (no PII collection, per assignment
+ * rules). Visual style is preserved.
+ */
+export function TopNav() {
   return (
     <header className={styles.wrap}>
       <div className={styles.inner}>
@@ -48,14 +46,13 @@ export function TopNav({ userEmail }: Props) {
           </button>
           <div
             className={styles.avatar}
-            aria-label="Profile"
-            title={userEmail}
+            aria-label="Demo mode"
+            title="Demo mode — no login required"
           >
-            {avatarLetter(userEmail)}
+            MF
           </div>
         </div>
       </div>
     </header>
   );
 }
-

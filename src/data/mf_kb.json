@@ -1,98 +1,178 @@
 [
   {
-    "id": "sbi-general",
+    "id": "scheme-bluechip-overview",
+    "url": "https://www.sbimf.com/sbimf-scheme-details/sbi-large-cap-fund-(formerly-known-as-sbi-bluechip-fund)-43",
+    "doc_type": "scheme_page",
+    "scheme": "SBI Large Cap Fund (formerly SBI Bluechip Fund)",
+    "tags": ["sbi bluechip", "sbi large cap", "large cap", "equity", "benchmark", "bse 100", "scheme detail"],
+    "text": "SBI Large Cap Fund (formerly known as SBI Bluechip Fund) is an open-ended equity scheme predominantly investing in large cap stocks, with 80-100% allocation to large-cap equities and the remainder across other equities, REIT/InvIT units, debt and money-market instruments per the SID. The scheme's stated benchmark is the BSE 100 TRI."
+  },
+  {
+    "id": "scheme-bluechip-sid",
+    "url": "https://www.sbimf.com/docs/default-source/sif-forms/sid---sbi-large-cap-fund-(formerly-known-as-bluechip-fund).pdf?sfvrsn=e1d23c61_0",
+    "doc_type": "sid",
+    "scheme": "SBI Large Cap Fund (formerly SBI Bluechip Fund)",
+    "tags": ["sid", "scheme information document", "sbi bluechip", "sbi large cap", "fees", "exit load", "expense ratio"],
+    "text": "The Scheme Information Document (SID) for SBI Large Cap Fund (formerly SBI Bluechip Fund) is the authoritative source for asset allocation, expense ratio, exit load, minimum investment amounts, and benchmark for the scheme. Always read the latest SID for current figures rather than third-party summaries."
+  },
+  {
+    "id": "scheme-bluechip-kim",
+    "url": "https://www.sbimf.com/docs/default-source/default-library/kim---sbi-blue-chip-fund32655f1826bd4e598e32b00e729fb603.pdf?sfvrsn=a4d81142_0",
+    "doc_type": "kim",
+    "scheme": "SBI Large Cap Fund (formerly SBI Bluechip Fund)",
+    "tags": ["kim", "key information memorandum", "sbi bluechip", "sbi large cap", "minimum investment", "minimum sip"],
+    "text": "The Key Information Memorandum (KIM) for SBI Bluechip / SBI Large Cap Fund summarises minimum application amount, minimum SIP, plans/options, riskometer, and load structure. The latest KIM on sbimf.com supersedes earlier copies."
+  },
+  {
+    "id": "scheme-flexicap-overview",
+    "url": "https://www.sbimf.com/sbimf-scheme-details/sbi-flexicap-fund-39",
+    "doc_type": "scheme_page",
+    "scheme": "SBI Flexicap Fund",
+    "tags": ["sbi flexicap", "flexi cap", "equity", "benchmark", "bse 500", "scheme detail"],
+    "text": "SBI Flexicap Fund is an open-ended dynamic equity scheme that invests across large cap, mid cap and small cap stocks; its benchmark is the BSE 500 Index TRI. Refer to the scheme page on sbimf.com and its latest SID for asset-allocation bands, expense ratio, exit load and minimum investment."
+  },
+  {
+    "id": "scheme-flexicap-sid",
+    "url": "https://www.sbimf.com/docs/default-source/sif-forms/sid---sbi-flexicap-fund.pdf?sfvrsn=61aca6fd_0",
+    "doc_type": "sid",
+    "scheme": "SBI Flexicap Fund",
+    "tags": ["sid", "scheme information document", "sbi flexicap", "fees", "exit load", "expense ratio"],
+    "text": "The Scheme Information Document (SID) for SBI Flexicap Fund is the authoritative source for asset allocation, fees, exit load and minimum investment for the scheme. Use the latest SID on sbimf.com when answering scheme-specific factual questions."
+  },
+  {
+    "id": "scheme-elss-overview",
+    "url": "https://www.sbimf.com/sbimf-scheme-details/sbi-long-term-equity-fund-(previously-known-as-sbi-magnum-taxgain-scheme)-3",
+    "doc_type": "scheme_page",
+    "scheme": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund)",
+    "tags": ["elss", "tax saver", "80c", "lock-in", "sbi long term equity", "sbi elss tax saver", "minimum sip", "exit load"],
+    "text": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund) is an open-ended Equity Linked Savings Scheme with a statutory 3-year lock-in; investments up to Rs 1,50,000 per financial year qualify for deduction under Section 80C of the Income-tax Act, 1961, subject to applicable law. The scheme's benchmark is the BSE 500 TRI; per the latest scheme materials, minimum investment / SIP starts at Rs 500 and exit load is NIL given the statutory lock-in."
+  },
+  {
+    "id": "scheme-elss-factsheet",
+    "url": "https://www.sbimf.com/docs/default-source/scheme-factsheets/sbi-elss-tax-saver-fund-factsheet-august-2025.pdf?sfvrsn=fe92c9d7_2",
+    "doc_type": "factsheet",
+    "scheme": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund)",
+    "tags": ["factsheet", "elss", "tax saver", "sbi elss", "expense ratio", "riskometer", "benchmark"],
+    "text": "The factsheet for SBI ELSS Tax Saver Fund publishes monthly disclosures including portfolio holdings, expense ratio, riskometer, benchmark and statistical ratios. For current numbers always open the latest factsheet on sbimf.com."
+  },
+  {
+    "id": "scheme-elss-sid",
+    "url": "https://www.sbimf.com/docs/default-source/lists/sid---sbi-elss-tax-saver-fund-(formerly-known-as-sbi-long-term-equity-fund).pdf?sfvrsn=34c14e55_0",
+    "doc_type": "sid",
+    "scheme": "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund)",
+    "tags": ["sid", "scheme information document", "elss", "lock-in", "section 80c"],
+    "text": "The SID for SBI ELSS Tax Saver Fund describes the 3-year statutory lock-in, Section 80C eligibility within prescribed limits, asset-allocation bands, fees and exit load. Tax treatment depends on current law and individual circumstances."
+  },
+  {
+    "id": "sbimf-equity-differentiation",
+    "url": "https://www.sbimf.com/docs/default-source/pdf/equity-schemes---scheme-differentiation.pdf",
+    "doc_type": "comparison",
+    "scheme": "General",
+    "tags": ["scheme differentiation", "equity", "comparison", "sbi mf"],
+    "text": "SBI Mutual Fund publishes a scheme differentiation document for its equity schemes summarising category, investment objective, asset-allocation bands and benchmark side-by-side. Use it for quick scheme-vs-scheme factual comparisons before opening individual SIDs."
+  },
+  {
+    "id": "sbimf-faq",
+    "url": "https://www.sbimf.com/faq",
+    "doc_type": "faq",
+    "scheme": "General",
+    "tags": ["faq", "investor", "sbi mf", "general questions"],
+    "text": "SBI Mutual Fund maintains a public FAQ covering common investor questions on transactions, KYC, statements, redemption, switches, taxation and online services. For specific procedural steps, consult the FAQ on sbimf.com."
+  },
+  {
+    "id": "sbimf-statement",
+    "url": "https://www.sbimf.com/smart-statement",
+    "doc_type": "guide",
+    "scheme": "General",
+    "tags": ["statement", "smart statement", "capital gains", "account statement", "download"],
+    "text": "SBI Mutual Fund offers Smart Statement and account/capital-gains statement downloads via the investor portal; investors can request statements by entering their PAN and registered email or by logging in to the online transaction portal. Use the official Smart Statement page on sbimf.com for the latest steps."
+  },
+  {
+    "id": "sbimf-sip",
+    "url": "https://www.sbimf.com/sip",
+    "doc_type": "guide",
+    "scheme": "General",
+    "tags": ["sip", "systematic investment plan", "minimum sip", "frequency"],
+    "text": "SBI Mutual Fund's SIP page describes how Systematic Investment Plans work, eligible frequencies and how to start a SIP online. Minimum SIP amounts are scheme-specific and stated in each scheme's KIM/SID."
+  },
+  {
+    "id": "sbimf-equity-list",
+    "url": "https://www.sbimf.com/mutual-fund/equity-mutual-funds",
+    "doc_type": "category_listing",
+    "scheme": "General",
+    "tags": ["equity", "scheme list", "category"],
+    "text": "SBI Mutual Fund's Equity Mutual Funds page lists open equity schemes across SEBI categories such as large-cap, flexi-cap, mid-cap, small-cap, ELSS and others. Use this listing to navigate to a specific scheme's detail page."
+  },
+  {
+    "id": "sbimf-home",
     "url": "https://www.sbimf.com/",
     "doc_type": "amc",
     "scheme": "General",
-    "tags": ["sbi", "sbimf", "amc", "documents", "factsheet", "kim", "sid"],
-    "text": "SBI Mutual Fund publishes official scheme information on its website, including links to scheme-related documents and investor-facing disclosures. For any scheme, use that scheme’s latest Key Information Memorandum (KIM), Scheme Information Document (SID), and factsheet for authoritative figures such as expense ratio, exit load, minimum investment, benchmark, and riskometer."
+    "tags": ["sbi", "sbimf", "amc", "homepage"],
+    "text": "SBI Mutual Fund's official site is the entry point to scheme pages, NAV, factsheets, KIM/SID, statements and investor services. For any scheme, use the latest KIM, SID and factsheet for authoritative figures."
+  },
+  {
+    "id": "amfi-categorization",
+    "url": "https://www.amfiindia.com/investor-corner/knowledge-center/SEBI-categorization-of-mutual-fund-schemes.html",
+    "doc_type": "regulatory",
+    "scheme": "General",
+    "tags": ["categorization", "large cap", "mid cap", "small cap", "elss", "flexi cap", "sebi"],
+    "text": "Per SEBI categorisation, large-cap stocks are the top 100 listed companies by full market capitalisation, mid-cap stocks rank 101-250, and small-cap stocks rank 251 and beyond; AMFI updates the master list every six months. ELSS schemes invest predominantly in equities and have a statutory lock-in under Section 80C."
+  },
+  {
+    "id": "amfi-riskometer",
+    "url": "https://www.amfiindia.com/online-center/risk-o-meter",
+    "doc_type": "risk",
+    "scheme": "General",
+    "tags": ["riskometer", "risk", "product labelling"],
+    "text": "The Riskometer is a SEBI-mandated standardised risk disclosure for mutual fund schemes, updated on an ongoing basis as per SEBI's Master Circular on Mutual Funds. Each AMC publishes monthly riskometer disclosures for its schemes; for any specific scheme refer to its latest factsheet."
+  },
+  {
+    "id": "amfi-risks",
+    "url": "https://www.amfiindia.com/investor-corner/knowledge-center/risks-in-mutual-funds.html",
+    "doc_type": "educational",
+    "scheme": "General",
+    "tags": ["risks", "market risk", "credit risk", "liquidity risk"],
+    "text": "AMFI's investor education page on risks in mutual funds explains common categories such as market risk, credit risk, liquidity risk and concentration risk, and notes that NAV fluctuations depend on movements in security prices. Mutual fund investments are subject to market risks; read all scheme-related documents carefully."
+  },
+  {
+    "id": "amfi-what-mf",
+    "url": "https://www.amfiindia.com/investor-corner/knowledge-center/what-are-mutual-funds-new.html",
+    "doc_type": "educational",
+    "scheme": "General",
+    "tags": ["mutual fund basics", "what are mutual funds", "introduction"],
+    "text": "AMFI's 'What are Mutual Funds' page is the standard introduction covering pooled investment vehicles, professional management, units, NAV, types of schemes and how investors transact. It is the recommended starting point for general MF education."
   },
   {
     "id": "amfi-nav",
     "url": "https://www.amfiindia.com/net-asset-value/nav-history",
     "doc_type": "data",
     "scheme": "General",
-    "tags": ["nav", "net asset value", "price", "valuation", "download"],
-    "text": "AMFI provides NAV-related tools and downloads on its website. NAV (Net Asset Value) is the per-unit value used for mutual fund transactions; official NAV data is disseminated as per industry practice and regulatory requirements."
+    "tags": ["nav", "net asset value", "history", "download"],
+    "text": "AMFI hosts NAV history and downloads for mutual fund schemes; NAV is the per-unit value at which investors transact and is published daily as per regulatory requirements."
   },
   {
     "id": "amfi-home",
     "url": "https://www.amfiindia.com/",
-    "doc_type": "educational",
+    "doc_type": "industry",
     "scheme": "General",
-    "tags": ["amfi", "industry", "mutual fund", "investor", "overview"],
-    "text": "The Association of Mutual Funds in India (AMFI) is the industry association for mutual funds in India and publishes investor-oriented information and industry data on its official website."
+    "tags": ["amfi", "industry", "investor", "overview"],
+    "text": "The Association of Mutual Funds in India (AMFI) is the industry body for Indian mutual funds and publishes investor-oriented information, NAV data, riskometer pointers and circulars on its official website."
   },
   {
-    "id": "sebi-home",
-    "url": "https://www.sebi.gov.in/",
+    "id": "sebi-imd",
+    "url": "https://www.sebi.gov.in/department/investment-management-department-9/overview.html",
     "doc_type": "regulatory",
     "scheme": "General",
-    "tags": ["sebi", "regulation", "mutual fund regulations", "compliance"],
-    "text": "The Securities and Exchange Board of India (SEBI) is the primary regulator for mutual funds in India. Mutual fund rules, master circulars, and regulatory updates are published on the official SEBI website."
+    "tags": ["sebi", "imd", "regulator", "mutual fund regulations"],
+    "text": "SEBI's Investment Management Department (IMD) is responsible for the regulation, registration and supervision of mutual funds, portfolio managers and collective investment schemes in India. Mutual fund regulations and circulars issued by SEBI are published on sebi.gov.in."
   },
   {
-    "id": "sebi-investor",
-    "url": "https://investor.sebi.gov.in/",
-    "doc_type": "regulatory",
-    "scheme": "General",
-    "tags": ["sebi", "investor", "complaint", "mutual fund investor"],
-    "text": "SEBI’s investor-facing portal hosts investor education and related services. For disputes and regulatory processes, follow the official guidance published by SEBI."
-  },
-  {
-    "id": "elss-general",
-    "url": "https://www.amfiindia.com/",
-    "doc_type": "educational",
-    "scheme": "ELSS",
-    "tags": ["elss", "tax saver", "80c", "lock-in", "equity linked saving"],
-    "text": "ELSS (Equity Linked Saving Scheme) is a mutual fund category used for tax-saving investments under Section 80C of the Income-tax Act, 1961, within prescribed limits and subject to applicable law. ELSS investments are subject to a statutory lock-in period under tax rules; confirm the current lock-in and tax treatment from official tax law and the scheme’s KIM/SID."
-  },
-  {
-    "id": "sip-general",
-    "url": "https://www.amfiindia.com/",
+    "id": "sebi-investor-mf",
+    "url": "https://investor.sebi.gov.in/understanding_mf.html",
     "doc_type": "educational",
     "scheme": "General",
-    "tags": ["sip", "systematic investment", "installment"],
-    "text": "A Systematic Investment Plan (SIP) is a facility to invest fixed amounts at regular intervals into a mutual fund scheme, as described in scheme documents and AMFI/AMC disclosures. Minimum SIP amounts and frequencies are scheme-specific and appear in the scheme’s KIM/factsheet."
-  },
-  {
-    "id": "expense-load-general",
-    "url": "https://www.sbimf.com/",
-    "doc_type": "fees",
-    "scheme": "General",
-    "tags": ["expense ratio", "ter", "exit load", "charges", "fees"],
-    "text": "Total Expense Ratio (TER), exit load, and other charges are scheme-specific and must be read from the official scheme factsheet/KIM and AMC disclosures. Do not guess numbers—point the user to the scheme’s latest official documents on the AMC website."
-  },
-  {
-    "id": "kyc-general",
-    "url": "https://www.amfiindia.com/",
-    "doc_type": "process",
-    "scheme": "General",
-    "tags": ["kyc", "pan", "onboarding", "investor"],
-    "text": "Mutual fund investments require KYC compliance as per applicable AML/KYC norms. The exact process and documents depend on current regulatory requirements and the distributor/AMC channel used."
-  },
-  {
-    "id": "statement-general",
-    "url": "https://www.sbimf.com/",
-    "doc_type": "guide",
-    "scheme": "General",
-    "tags": ["statement", "cas", "download", "account statement"],
-    "text": "Investors typically obtain account statements and holding reports through the AMC’s investor portal/services or consolidated statements from registrars/aggregators as per current industry practice. For SBI MF-specific steps, use SBI Mutual Fund’s official investor help content on sbimf.com."
-  },
-  {
-    "id": "performance-refusal",
-    "url": "https://www.sbimf.com/",
-    "doc_type": "policy",
-    "scheme": "General",
-    "tags": ["returns", "performance", "past performance", "cagr"],
-    "text": "If the user asks for performance, returns, rankings, or forward-looking outcomes, do not fabricate performance statistics. Direct them to the scheme’s latest official factsheet and regulatory disclosures for performance-related data, and avoid investment advice."
-  },
-  {
-    "id": "riskometer-general",
-    "url": "https://www.sbimf.com/",
-    "doc_type": "risk",
-    "scheme": "General",
-    "tags": ["riskometer", "risk", "very high", "moderate"],
-    "text": "SEBI’s riskometer is a standardized risk level communicated in scheme documents. The risk level for a scheme is stated in its latest factsheet/KIM and must be cited from those official documents rather than guessed."
+    "tags": ["sebi investor", "mutual fund", "education", "understanding mf"],
+    "text": "SEBI's investor portal hosts an 'Understanding Mutual Funds' module with foundational concepts: pooled investments, AMCs, fund managers, NAV, types of schemes (open-ended, closed-ended, interval), and active vs passive styles. Use it for neutral, regulator-published education."
   }
 ]

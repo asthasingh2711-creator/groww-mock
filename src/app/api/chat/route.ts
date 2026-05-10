@@ -5,11 +5,13 @@ import { NextResponse } from "next/server";
 import mfKb from "@/data/mf_kb.json";
 import { ensureCitationFooter } from "@/lib/citations";
 import type { KbChunk } from "@/lib/mfTypes";
+import { detectPii } from "@/lib/pii";
 import { buildSbiSystemPrompt, buildUserPrompt } from "@/lib/prompts";
 import {
   GREETING_REPLY,
   isMutualFundRelatedQuestion,
   OFF_TOPIC_REPLY,
+  PII_REFUSAL_REPLY,
 } from "@/lib/queryClassification";
 import { formatContextForLlm, retrieveChunks } from "@/lib/retrieve";
 
@@ -44,6 +46,10 @@ function guardrailResponse(userText: string): string | null {
     "allocate to",
     "where should i put my money",
     "portfolio allocation",
+    "is it a good time",
+    "is now a good time",
+    "worth buying",
+    "worth investing",
   ];
   if (adviceKeywords.some((k) => t.includes(k))) {
     const today = new Date().toLocaleDateString("en-IN", {
@@ -52,8 +58,35 @@ function guardrailResponse(userText: string): string | null {
       year: "numeric",
     });
     return (
-      "I can only provide factual information, not investment advice.\n\n" +
-      "Source: https://www.amfiindia.com/\n\n" +
+      "I can only provide factual information, not investment advice. " +
+      "For neutral mutual-fund education, see AMFI's investor knowledge center.\n\n" +
+      "Source: https://www.amfiindia.com/investor-corner/knowledge-center/what-are-mutual-funds-new.html\n\n" +
+      `Last updated from sources: ${today}`
+    );
+  }
+  // Performance / returns / rankings asks — refuse and point to factsheet.
+  const perfKeywords = [
+    "last year's return",
+    "last year return",
+    "1 year return",
+    "3 year return",
+    "5 year return",
+    "cagr",
+    "past performance",
+    "rank",
+    "top performing",
+    "best performing",
+  ];
+  if (perfKeywords.some((k) => t.includes(k))) {
+    const today = new Date().toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    return (
+      "I don't quote performance numbers without the scheme's latest official factsheet. " +
+      "Open the current factsheet on SBI MF's website for performance disclosures, calculated as per AMFI/SEBI methodology.\n\n" +
+      "Source: https://www.sbimf.com/\n\n" +
       `Last updated from sources: ${today}`
     );
   }
@@ -75,6 +108,15 @@ export async function POST(req: Request) {
     const userText = (message || "").toString().trim();
     if (!userText) {
       return NextResponse.json({ error: "Missing message" }, { status: 400 });
+    }
+
+    /**
+     * PII guardrail runs first. The spec forbids accepting/storing PAN, Aadhaar,
+     * account numbers, OTPs, emails or phone numbers — so we never forward
+     * messages containing these to the LLM, regardless of intent.
+     */
+    if (detectPii(userText)) {
+      return NextResponse.json({ reply: PII_REFUSAL_REPLY });
     }
 
     const guarded = guardrailResponse(userText);

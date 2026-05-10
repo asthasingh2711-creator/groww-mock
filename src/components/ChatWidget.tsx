@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { Fragment, useMemo, useRef, useState } from "react";
 import styles from "./ChatWidget.module.css";
 
 type ChatRole = "user" | "assistant";
@@ -9,6 +9,42 @@ type ChatMessage = {
   role: ChatRole;
   content: string;
 };
+
+/**
+ * Render a string with any http(s) URLs turned into anchor tags. Used so the
+ * mandatory "Source: <url>" line in every assistant reply is clickable.
+ *
+ * The regex stops at whitespace; trailing sentence punctuation is moved out of
+ * the link so a final "." doesn't end up inside the href. We deliberately
+ * KEEP `)` inside the URL because some official sources embed parens in the
+ * path (e.g. SBI scheme detail URLs).
+ */
+const URL_RE = /(https?:\/\/\S+)/g;
+
+function renderWithLinks(text: string): React.ReactNode[] {
+  const parts = text.split(URL_RE);
+  return parts.map((part, i) => {
+    if (i % 2 === 1) {
+      const m = part.match(/^(.*?)([.,;:!?]+)$/);
+      const url = m ? m[1] : part;
+      const trailing = m ? m[2] : "";
+      return (
+        <Fragment key={i}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.cite}
+          >
+            {url}
+          </a>
+          {trailing}
+        </Fragment>
+      );
+    }
+    return <Fragment key={i}>{part}</Fragment>;
+  });
+}
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -99,7 +135,7 @@ export function ChatWidget() {
                 key={i}
                 className={m.role === "user" ? styles.msgUser : styles.msgBot}
               >
-                {m.content}
+                {m.role === "assistant" ? renderWithLinks(m.content) : m.content}
               </div>
             ))}
           </div>
