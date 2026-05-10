@@ -5,7 +5,7 @@ import styles from "./LoginModal.module.css";
 
 type Props = {
   open: boolean;
-  onSubmit: () => void;
+  onSubmit: (initials: string) => void;
   onCancel: () => void;
 };
 
@@ -19,14 +19,18 @@ type Props = {
  *  *looks* like the real Groww login a user might expect on a clone, but:
  *
  *    1. Inputs are uncontrolled (`defaultValue`), so React never reads
- *       what the user types into component state.
- *    2. `onSubmit` ignores `FormData` entirely and only calls the
- *       parent's `onSubmit()` callback to route the user to /about-us.
- *    3. No fetch, no localStorage / sessionStorage, no cookies, no
- *       analytics — nothing leaves the browser tab.
- *    4. `autoComplete="off"` so password managers don't quietly persist
+ *       what the user types into ongoing component state.
+ *    2. On Submit we read the email field momentarily only to extract
+ *       two derived initials for the avatar on /about-us. The full
+ *       email is dropped on the same line — never stored in state, in
+ *       sessionStorage / localStorage / cookies, and never sent to a
+ *       server. Two characters alone can't identify a person and are
+ *       not PII; this matches how the user requested the feature.
+ *    3. The password field is never read.
+ *    4. No fetch, no analytics — nothing leaves the browser tab.
+ *    5. `autoComplete="off"` so password managers don't quietly persist
  *       anything for the user either.
- *    5. A persistent banner above the form ("Demo only — nothing you
+ *    6. A persistent banner above the form ("Demo only — nothing you
  *       type is saved or sent.") makes the cosmetic nature explicit.
  *
  *  The fields are pre-filled with obviously placeholder values so a user
@@ -34,6 +38,18 @@ type Props = {
  */
 
 const CAROUSEL = ["Stocks", "Mutual Funds", "F&O", "Commodities", "IPOs"];
+
+/**
+ * Returns the first up-to-two A–Z letters from the local part of an email,
+ * uppercased. Used for the demo avatar only. Returns "" if no usable
+ * letters are present, in which case the avatar falls back to "MF".
+ */
+function deriveInitials(rawEmail: string): string {
+  const local = rawEmail.trim().toLowerCase().split("@")[0] ?? "";
+  const letters = local.replace(/[^a-z]/g, "");
+  if (!letters) return "";
+  return letters.slice(0, 2).toUpperCase();
+}
 
 export function LoginModal({ open, onSubmit, onCancel }: Props) {
   const submitRef = useRef<HTMLButtonElement | null>(null);
@@ -62,7 +78,10 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    onSubmit();
+    const formData = new FormData(event.currentTarget);
+    const rawEmail = (formData.get("email") as string | null) ?? "";
+    const initials = deriveInitials(rawEmail);
+    onSubmit(initials);
   };
 
   return (
@@ -117,6 +136,7 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
               <div className={styles.inputWrap}>
                 <input
                   type="email"
+                  name="email"
                   className={styles.input}
                   defaultValue="abc@gmail.com"
                   autoComplete="off"

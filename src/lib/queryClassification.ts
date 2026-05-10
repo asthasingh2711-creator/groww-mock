@@ -4,20 +4,38 @@
  * We classify every user message before calling the LLM. This keeps scope tight:
  * - Fintech assistants must not answer general knowledge, politics, medical, etc.
  * - Off-topic replies reduce hallucination risk and keep the product in a safe lane.
- * - Greetings get a short, consistent onboarding line instead of burning tokens on the model.
+ * - Greetings / courtesies get short, consistent replies instead of burning tokens on the model.
  *
  * Order of checks (important):
  * 1) mutual_fund — if any in-scope keyword appears, treat as in-domain even if the user
  *    also said "hi" (e.g. "Hi, what is ELSS?").
  * 2) greeting — short, conventional hellos only.
- * 3) off_topic — everything else (including empty-after-trim, handled by caller).
+ * 3) courtesy — short thank-you / bye / acknowledgement messages.
+ * 4) off_topic — everything else (including empty-after-trim, handled by caller).
  */
 
-export type MutualFundQueryCategory = "greeting" | "mutual_fund" | "off_topic";
+export type MutualFundQueryCategory =
+  | "greeting"
+  | "courtesy"
+  | "mutual_fund"
+  | "off_topic";
 
 /** Exact assistant reply for greetings (no citation footer appended by API). */
 export const GREETING_REPLY =
   "Hi! Ask me factual mutual-fund questions like ELSS lock-in, expense ratios, SIP minimums, exit loads, benchmarks, or riskometer details.";
+
+/** Short polite replies for non-question courtesies. No citation footer needed. */
+export function courtesyReplyFor(text: string): string {
+  const t = text.trim().toLowerCase();
+  if (/^(bye|goodbye|see\s+you|see\s+ya|take\s+care)\s*[!.?,]*$/i.test(t)) {
+    return "Goodbye! Happy to help again anytime.";
+  }
+  if (/^(okay|ok|cool|got\s+it|great|perfect|nice)\s*[!.?,]*$/i.test(t)) {
+    return "Great. Ask me anytime if you need a mutual-fund fact checked.";
+  }
+  return "You're welcome! Happy to help with factual mutual-fund questions.";
+}
+
 
 /**
  * Exact assistant reply when the topic is outside the MF facts scope.
@@ -88,12 +106,22 @@ const GREETING_ONLY_PATTERNS: RegExp[] = [
   /^good\s+evening\s*[!.?,]*$/i,
 ];
 
+const COURTESY_ONLY_PATTERNS: RegExp[] = [
+  /^(thanks|thank\s+you|thankyou|thx|ty|appreciate\s+it)\s*[!.?,]*$/i,
+  /^(okay|ok|cool|got\s+it|great|perfect|nice)\s*[!.?,]*$/i,
+  /^(bye|goodbye|see\s+you|see\s+ya|take\s+care)\s*[!.?,]*$/i,
+];
+
 function hasMutualFundSignal(lower: string): boolean {
   return MUTUAL_FUND_SIGNALS.some((re) => re.test(lower));
 }
 
 function isGreetingOnly(trimmed: string): boolean {
   return GREETING_ONLY_PATTERNS.some((re) => re.test(trimmed));
+}
+
+function isCourtesyOnly(trimmed: string): boolean {
+  return COURTESY_ONLY_PATTERNS.some((re) => re.test(trimmed));
 }
 
 /**
@@ -112,5 +140,6 @@ export function isMutualFundRelatedQuestion(
 
   if (hasMutualFundSignal(lower)) return "mutual_fund";
   if (isGreetingOnly(trimmed)) return "greeting";
+  if (isCourtesyOnly(trimmed)) return "courtesy";
   return "off_topic";
 }

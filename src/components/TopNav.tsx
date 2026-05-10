@@ -1,19 +1,69 @@
+"use client";
+
 import Link from "next/link";
+import { useSyncExternalStore } from "react";
 import styles from "./TopNav.module.css";
+
+/**
+ * Lightweight subscriber to `sessionStorage.demoInitials`.
+ *
+ * `useSyncExternalStore` is the idiomatic way to read a client-only value
+ * during render without tripping the "setState in effect" lint or
+ * producing a hydration mismatch — `getServerSnapshot` returns `null` so
+ * the server-rendered avatar text matches the first client paint, and
+ * React swaps in the real initials right after hydration.
+ *
+ * We don't need a real subscription channel because the only mutator
+ * (Logout) immediately navigates away and unmounts this component, so
+ * there's nothing to react to in-place. The subscribe fn returns a noop.
+ */
+const noop = () => () => {};
+
+function readInitials(): string | null {
+  try {
+    return sessionStorage.getItem("demoInitials");
+  } catch {
+    return null;
+  }
+}
+
+function useDemoInitials(): string | null {
+  return useSyncExternalStore(noop, readInitials, () => null);
+}
 
 /**
  * Top nav for the /about-us demo page.
  *
- * Renders a static "MF" demo badge in place of the previous email-derived
- * avatar so the page can stay public and anonymous (no PII collection per
- * the assignment).
+ * The avatar normally shows "MF" (mutual-fund demo badge). When the user
+ * has come through the cosmetic LoginModal, two derived initials live in
+ * sessionStorage (see HomeShell.tsx for the compliance note). We read
+ * them once on mount; the full email is never stored or transmitted.
  *
  * The "Logout" link is intentionally cosmetic — there is no real session.
- * It just routes back to `/`, which unmounts the ChatWidget and so resets
- * any in-memory chat state. Naming it "Logout" matches the rest of the
- * Groww-clone UX and gives users a familiar way out.
+ * It routes back to `/` (which unmounts the ChatWidget and so resets any
+ * in-memory chat state) AND clears the cached initials so the next
+ * visitor sees the default "MF" badge.
  */
 export function TopNav() {
+  const rawInitials = useDemoInitials();
+  const initials = rawInitials
+    ? rawInitials.slice(0, 2).toUpperCase()
+    : null;
+
+  const onLogoutClick = () => {
+    try {
+      sessionStorage.removeItem("demoInitials");
+    } catch {
+      // Best-effort cleanup; routing still happens via <Link>.
+    }
+  };
+
+  const avatarLabel = initials && initials.length > 0 ? initials : "MF";
+  const avatarTitle =
+    initials && initials.length > 0
+      ? `Signed in as ${initials} (demo only)`
+      : "Demo mode — no login required";
+
   return (
     <header className={styles.wrap}>
       <div className={styles.inner}>
@@ -51,15 +101,16 @@ export function TopNav() {
           </button>
           <div
             className={styles.avatar}
-            aria-label="Demo mode"
-            title="Demo mode — no login required"
+            aria-label={avatarTitle}
+            title={avatarTitle}
           >
-            MF
+            {avatarLabel}
           </div>
           <Link
             href="/"
             className={styles.logout}
-            title="Exit the demo and return to home"
+            onClick={onLogoutClick}
+            title="Exit the demo and clear cached initials"
           >
             Logout
           </Link>

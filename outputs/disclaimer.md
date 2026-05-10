@@ -62,6 +62,8 @@ The "Login / Sign up" button on the home page opens a Groww-style login dialog p
 Compliance summary for the login modal:
 
 - No React state is bound to the email / password inputs.
-- The form handler calls `event.preventDefault()` and routes the user to `/about-us` without inspecting the form values.
-- No `fetch`, `localStorage`, `sessionStorage`, cookies, or analytics calls fire on submit.
+- The form handler calls `event.preventDefault()` and routes the user to `/about-us` without sending or persisting the form values anywhere.
+- On Submit we read the email field once via `FormData` only to derive up to two uppercase A–Z initials for the demo avatar on `/about-us`. The raw email is dropped on the same line and is never stored in component state, `sessionStorage`, `localStorage`, cookies, or sent to a backend. The password field is never read.
+- Two derived initials alone cannot identify a person and are not treated as PII; they live in `sessionStorage` so the avatar survives a tab reload but are cleared on Logout and on tab close.
+- No `fetch`, `localStorage`, cookies, or analytics calls fire on submit.
 - `autoComplete="off"` is set on the form and both inputs to discourage password managers from persisting anything for the user.

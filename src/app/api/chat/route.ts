@@ -9,6 +9,7 @@ import type { KbChunk } from "@/lib/mfTypes";
 import { detectPii } from "@/lib/pii";
 import { buildSbiSystemPrompt, buildUserPrompt } from "@/lib/prompts";
 import {
+  courtesyReplyFor,
   GREETING_REPLY,
   isMutualFundRelatedQuestion,
   OFF_TOPIC_REPLY,
@@ -130,6 +131,9 @@ export async function POST(req: Request) {
     const category = isMutualFundRelatedQuestion(userText);
     if (category === "greeting") {
       return NextResponse.json({ reply: GREETING_REPLY });
+    }
+    if (category === "courtesy") {
+      return NextResponse.json({ reply: courtesyReplyFor(userText) });
     }
     if (category === "off_topic") {
       return NextResponse.json({ reply: OFF_TOPIC_REPLY });
