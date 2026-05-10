@@ -6,8 +6,11 @@ type Props = {
 };
 
 /**
- * Homepage header is always logged-out UX: Login/Sign up (no avatar).
- * Profile appears on /about-us after login.
+ * Homepage header. The "Login / Sign up" button is intentionally nav-only —
+ * it routes to /about-us where the public MF assistant lives. We do NOT
+ * collect any PII (email, phone, name, OTP) because the assignment forbids
+ * it; this button exists purely so the Login → assistant → Logout journey
+ * stays symmetric with the Logout link on /about-us.
  */
 export function HomeHeader({ onLoginClick }: Props) {
   return (
@@ -37,8 +40,9 @@ export function HomeHeader({ onLoginClick }: Props) {
             type="button"
             className={styles.loginBtn}
             onClick={onLoginClick}
+            title="Demo login — no email, no OTP, no PII collected"
           >
-            Login/Sign up
+            Login / Sign up
           </button>
         </div>
       </div>

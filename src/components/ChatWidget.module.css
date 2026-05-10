@@ -272,3 +272,42 @@
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+@media (max-width: 640px) {
+  .fab {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .popup {
+    right: 10px;
+    left: 10px;
+    bottom: 78px;
+    width: auto;
+    max-height: min(620px, calc(100svh - 96px));
+    border-radius: 16px;
+  }
+
+  .header {
+    padding: 12px 14px;
+  }
+
+  .body {
+    padding: 12px;
+  }
+
+  .footer {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .input {
+    min-width: 0;
+  }
+
+  .send {
+    padding: 0 13px;
+  }
+}

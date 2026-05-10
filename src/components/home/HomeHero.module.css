@@ -9,12 +9,31 @@
   align-items: center;
 }
 
+.kicker {
+  color: var(--gw-green2);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .title {
+  margin-top: 10px;
   font-size: clamp(2.25rem, 6vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: #1f2937;
   line-height: 1.1;
+  max-width: 760px;
+}
+
+.subtitle {
+  margin-top: 14px;
+  max-width: 650px;
+  color: var(--gw-muted);
+  font-size: clamp(0.98rem, 2vw, 1.1rem);
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .cta {

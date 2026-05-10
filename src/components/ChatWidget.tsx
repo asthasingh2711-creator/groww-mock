@@ -1,6 +1,12 @@
 "use client";
 
-import { Fragment, useCallback, useMemo, useRef, useState } from "react";
+import {
+  Fragment,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import styles from "./ChatWidget.module.css";
 
 type ChatRole = "user" | "assistant";
@@ -8,6 +14,11 @@ type ChatRole = "user" | "assistant";
 type ChatMessage = {
   role: ChatRole;
   content: string;
+};
+
+type Props = {
+  initialOpen?: boolean;
+  initialDraftQuestion?: string;
 };
 
 const WELCOME_TEXT =
@@ -58,12 +69,17 @@ function renderWithLinks(text: string): React.ReactNode[] {
   });
 }
 
-export function ChatWidget() {
-  const [open, setOpen] = useState(false);
+export function ChatWidget({
+  initialOpen = false,
+  initialDraftQuestion = "",
+}: Props) {
+  const [open, setOpen] = useState(initialOpen);
   const [busy, setBusy] = useState(false);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(initialDraftQuestion);
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
   const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const sessionRef = useRef(0);
 
   const canSend = useMemo(() => input.trim().length > 0 && !busy, [input, busy]);
 
@@ -75,7 +91,9 @@ export function ChatWidget() {
    * surprising and unwelcome.
    */
   const closeAndReset = useCallback(() => {
+    sessionRef.current += 1;
     setOpen(false);
+    setBusy(false);
     setMessages(initialMessages());
     setInput("");
   }, []);
@@ -83,6 +101,8 @@ export function ChatWidget() {
   const onFabClick = useCallback(() => {
     setOpen((wasOpen) => {
       if (wasOpen) {
+        sessionRef.current += 1;
+        setBusy(false);
         setMessages(initialMessages());
         setInput("");
       }
@@ -96,6 +116,7 @@ export function ChatWidget() {
 
     setInput("");
     setBusy(true);
+    const sessionId = sessionRef.current;
 
     const next = [...messages, { role: "user", content: text } satisfies ChatMessage];
     setMessages(next);
@@ -107,6 +128,7 @@ export function ChatWidget() {
         body: JSON.stringify({ message: text }),
       });
       const data = (await resp.json()) as { reply?: string; error?: string };
+      if (sessionRef.current !== sessionId) return;
       setMessages([
         ...next,
         {
@@ -115,6 +137,7 @@ export function ChatWidget() {
         },
       ]);
     } catch {
+      if (sessionRef.current !== sessionId) return;
       setMessages([
         ...next,
         {
@@ -123,6 +146,7 @@ export function ChatWidget() {
         },
       ]);
     } finally {
+      if (sessionRef.current !== sessionId) return;
       setBusy(false);
       requestAnimationFrame(() => {
         scrollerRef.current?.scrollTo({ top: scrollerRef.current.scrollHeight });
@@ -168,6 +192,7 @@ export function ChatWidget() {
 
           <div className={styles.footer}>
             <input
+              ref={inputRef}
               className={styles.input}
               value={input}
               onChange={(e) => setInput(e.target.value)}

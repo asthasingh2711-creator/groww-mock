@@ -280,9 +280,14 @@ function WealthCampusIllustration() {
 export function HomeHero({ onGetStarted }: Props) {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>Groww your wealth</h1>
+      <p className={styles.kicker}>Facts-only mutual fund FAQ assistant</p>
+      <h1 className={styles.title}>Ask official-source MF questions</h1>
+      <p className={styles.subtitle}>
+        Compare scheme facts from SBI Mutual Fund, AMFI, and SEBI pages with
+        citations. No advice, no returns claims, no PII.
+      </p>
       <button type="button" className={styles.cta} onClick={onGetStarted}>
-        Get started
+        Launch assistant
       </button>
       <div className={styles.artWrap} aria-hidden>
         <WealthCampusIllustration />

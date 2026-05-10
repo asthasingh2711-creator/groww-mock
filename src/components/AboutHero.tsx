@@ -1,25 +1,56 @@
 import styles from "./AboutHero.module.css";
 
-export function AboutHero() {
+type Props = {
+  onOpenChat: (draftQuestion?: string) => void;
+};
+
+const examples = [
+  "What is the ELSS lock-in period?",
+  "What is the benchmark and exit load of SBI Flexicap Fund?",
+  "How do I download a capital gains statement?",
+];
+
+export function AboutHero({ onOpenChat }: Props) {
   return (
     <section className={styles.hero}>
       <div className={styles.left}>
+        <p className={styles.kicker}>Mutual Fund FAQ Assistant</p>
         <h1 className={styles.title}>
-          Easy.
+          Facts.
           <br />
-          Fast.
+          Sources.
           <br />
-          Transparent.
+          Trust.
         </h1>
         <p className={styles.copy}>
-          Investing in India was none of the above.
-          <br />
-          But we&apos;re changing that.
-          <br />
-          Super easy to use, lightning fast, and
-          <br />
-          crystal clear.
+          Ask factual questions about selected SBI Mutual Fund schemes and get
+          concise answers grounded in official SBI MF, AMFI, and SEBI pages.
+          The assistant refuses advice, PII, and performance comparisons.
         </p>
+
+        <div className={styles.actions}>
+          <button
+            type="button"
+            className={styles.primary}
+            onClick={() => onOpenChat()}
+          >
+            Open chat
+          </button>
+          <span className={styles.note}>Facts-only. No investment advice.</span>
+        </div>
+
+        <div className={styles.examples} aria-label="Example questions">
+          {examples.map((question) => (
+            <button
+              key={question}
+              type="button"
+              className={styles.example}
+              onClick={() => onOpenChat(question)}
+            >
+              {question}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className={styles.right} aria-hidden="true">

@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import { AboutHero } from "@/components/AboutHero";
 import { ChatWidget } from "@/components/ChatWidget";
 import { StatsRow } from "@/components/StatsRow";
@@ -12,14 +13,30 @@ import styles from "./styles.module.css";
  * removed the previous email-based login gate entirely.
  */
 export function AboutUsShell() {
+  const [chatRequest, setChatRequest] = useState({
+    count: 0,
+    draftQuestion: "",
+  });
+
+  const openChat = useCallback((draftQuestion = "") => {
+    setChatRequest((current) => ({
+      count: current.count + 1,
+      draftQuestion,
+    }));
+  }, []);
+
   return (
     <div className={styles.page}>
       <TopNav />
       <main className={styles.main}>
-        <AboutHero />
+        <AboutHero onOpenChat={openChat} />
         <StatsRow />
       </main>
-      <ChatWidget />
+      <ChatWidget
+        key={chatRequest.count}
+        initialOpen={chatRequest.count > 0}
+        initialDraftQuestion={chatRequest.draftQuestion}
+      />
     </div>
   );
 }

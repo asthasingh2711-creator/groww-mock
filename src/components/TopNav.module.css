@@ -156,3 +156,35 @@
   outline-offset: 2px;
 }
 
+@media (max-width: 820px) {
+  .inner {
+    padding: 10px 14px;
+  }
+
+  .tabs,
+  .search,
+  .iconBtn {
+    display: none;
+  }
+
+  .left {
+    gap: 10px;
+  }
+
+  .right {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar {
+    display: none;
+  }
+
+  .logout {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+}
+
