@@ -1,35 +1,70 @@
 /**
- * Deterministic fact extractor.
+ * Deterministic fact extractor with multi-intent combination + scheme
+ * disambiguation.
  *
- * For canonical asks ("ELSS lock-in?", "benchmark of SBI Flexicap?", "min SIP?",
- * "exit load?", "category?"), we don't need an LLM — we look up the structured
- * `facts` field on the highest-scoring retrieved chunk and format a 1-sentence
- * answer with the chunk's URL. This:
- *   - eliminates hallucination risk for the questions the brief explicitly
- *     names ("Expense ratio of ?", "ELSS lock-in?", "Min SIP?", "Exit load?",
- *     "Riskometer/benchmark?", "How to download capital-gains statement?"),
- *   - is faster and cheaper than calling Groq, and
- *   - gives the assistant something visibly correct to demo on LinkedIn.
+ * For canonical asks ("ELSS lock-in?", "benchmark of SBI Flexicap?", "min
+ * SIP?", "exit load?", "category?"), we don't need an LLM — we look up the
+ * structured `facts` on the highest-scoring retrieved chunk and format a
+ * concise answer with the chunk's URL. This eliminates hallucination risk
+ * for the questions the brief explicitly names.
  *
- * Anything that doesn't match a canonical intent — or where the top-ranked
- * chunk for the user's scheme has no value for the asked field — falls
- * through to the RAG + LLM path. That fallback is honest: with the structured
- * fields surfaced in CONTEXT, the LLM either restates the verified value or
- * politely refuses and links to the official factsheet/SID/KIM.
+ * What "complex" looks like and how we handle it:
  *
- * Important: order of `chunks` matters. The caller must pass chunks ranked by
- * retrieval score (best first); we walk from the top and pick the first chunk
- * that has the asked fact, so retrieval already handled scheme disambiguation.
+ *  1) "Benchmark and category of SBI Flexicap" — multiple intents in one
+ *     question. We collect ALL matching intents, take the first sentence
+ *     of each resolution, and combine them (≤3 sentences). All component
+ *     resolutions must cite the same URL or we defer to the LLM.
+ *
+ *  2) "Min SIP of Bluechip" when the Bluechip facts have no min_sip_inr.
+ *     If the user names a specific scheme by keyword, we only consider
+ *     that scheme's chunks; if the asked field isn't there, we return
+ *     null (the LLM then refuses honestly and links to the KIM/SID).
+ *
+ *  3) "Difference between Bluechip and Flexicap benchmark" — multiple
+ *     schemes mentioned. We don't combine cross-scheme answers (citation
+ *     can only point at one URL); we defer to the LLM, which has each
+ *     scheme's `Facts:` line in the CONTEXT.
+ *
+ *  4) Anything that doesn't map to a canonical intent — defer to LLM.
  */
 
 import type { KbChunk, SchemeFacts } from "./mfTypes";
+
+/**
+ * Query → scheme name mapping. If a query matches multiple, we treat the
+ * question as cross-scheme and defer to the LLM (the citation contract is
+ * one-URL-per-answer, which doesn't generalise to two schemes).
+ */
+const SCHEME_KEYWORDS: Array<{ scheme: string; pattern: RegExp }> = [
+  {
+    scheme: "SBI Large Cap Fund (formerly SBI Bluechip Fund)",
+    pattern:
+      /\b(blue[\s-]*chip|bluechip|sbi\s+large[\s-]*cap|large[\s-]*cap\s+fund)\b/i,
+  },
+  {
+    scheme: "SBI Flexicap Fund",
+    pattern: /\b(flexi[\s-]*cap|flexicap)\b/i,
+  },
+  {
+    scheme: "SBI ELSS Tax Saver Fund (formerly SBI Long Term Equity Fund)",
+    pattern:
+      /\b(elss(?!\s+(?:in\s+)?(?:general|category))|long[-\s]*term[-\s]*equity|tax[-\s]*saver|magnum[-\s]*tax)\b/i,
+  },
+];
+
+function detectMentionedSchemes(query: string): string[] {
+  const matched = SCHEME_KEYWORDS.filter((s) => s.pattern.test(query)).map(
+    (s) => s.scheme,
+  );
+  return Array.from(new Set(matched));
+}
 
 type FactIntent = {
   /** Stable id for logging/debugging. */
   id: string;
   /** Patterns that match a user's natural-language ask for this fact. */
   patterns: RegExp[];
-  /** Resolves the intent against ranked chunks. Returns null to defer. */
+  /** Resolves the intent against ranked, scheme-filtered chunks. */
   resolve: (
     chunks: KbChunk[],
   ) => { reply: string; url: string } | null;
@@ -176,7 +211,7 @@ const INTENTS: FactIntent[] = [
     patterns: [
       /\bsection\s*80\s*c\b/i,
       /\b80\s*c\b/i,
-      /tax\s*(?:saving|saver|deduction)/i,
+      /tax\s*(?:saving|saver|deduction|benefit)/i,
     ],
     resolve: (chunks) => {
       const hit = pickFirstWith(chunks, (f) =>
@@ -198,8 +233,8 @@ const INTENTS: FactIntent[] = [
   {
     id: "sebi_cap_definition",
     patterns: [
-      /(?:sebi|definition).*(?:large\s*cap|mid\s*cap|small\s*cap)/i,
-      /(?:large\s*cap|mid\s*cap|small\s*cap).*(?:sebi|definition)/i,
+      /(?:sebi|definition).*(?:large[\s-]*cap|mid[\s-]*cap|small[\s-]*cap)/i,
+      /(?:large[\s-]*cap|mid[\s-]*cap|small[\s-]*cap).*(?:sebi|definition)/i,
       /how\s*does\s*sebi\s*define/i,
     ],
     resolve: (chunks) => {
@@ -217,23 +252,73 @@ const INTENTS: FactIntent[] = [
   },
 ];
 
+function firstSentence(s: string): string {
+  const m = s.match(/^.*?[.!?](?:\s|$)/);
+  return (m ? m[0] : s).trim();
+}
+
 /**
- * If the user's query maps to a canonical intent AND the retrieved chunks
- * contain a matching structured fact, returns a deterministic answer body
- * + the URL to cite. The caller is expected to wrap this with the standard
- * `ensureCitationFooter()` so output formatting matches the LLM path.
+ * If the user's query maps to one or more canonical intents AND the
+ * retrieved chunks contain matching structured facts, returns a
+ * deterministic answer body + the URL to cite. The caller is expected to
+ * wrap this with `ensureCitationFooter()` so output formatting matches the
+ * LLM path.
  *
- * Returns null when no intent matches or no fact is available — the caller
- * should then fall back to the LLM.
+ * Returns null when no intent matches, no fact is available, or the
+ * question crosses multiple schemes (in which case we let the LLM use the
+ * `Facts:` lines from CONTEXT to compose a careful answer).
  */
 export function extractFactAnswer(
   query: string,
   rankedChunks: KbChunk[],
 ): { reply: string; url: string; intent: string } | null {
-  for (const intent of INTENTS) {
-    if (!intent.patterns.some((re) => re.test(query))) continue;
-    const hit = intent.resolve(rankedChunks);
-    if (hit) return { ...hit, intent: intent.id };
+  // Scheme disambiguation: if the query names a specific scheme, restrict
+  // to that scheme's chunks. If it names two or more, defer to the LLM.
+  const mentioned = detectMentionedSchemes(query);
+  if (mentioned.length > 1) return null;
+  const candidateChunks =
+    mentioned.length === 1
+      ? rankedChunks.filter((c) => c.scheme === mentioned[0])
+      : rankedChunks;
+
+  // Collect every matching intent, in declaration order.
+  const matching = INTENTS.filter((intent) =>
+    intent.patterns.some((re) => re.test(query)),
+  );
+  if (matching.length === 0) return null;
+
+  const resolutions = matching
+    .map((intent) => ({ intent, hit: intent.resolve(candidateChunks) }))
+    .filter(
+      (r): r is { intent: FactIntent; hit: { reply: string; url: string } } =>
+        r.hit !== null,
+    );
+  if (resolutions.length === 0) return null;
+
+  if (resolutions.length === 1) {
+    return {
+      ...resolutions[0].hit,
+      intent: resolutions[0].intent.id,
+    };
   }
-  return null;
+
+  // Multi-intent: only safe to combine when every component cites the same
+  // URL (i.e. they're all about the same scheme). Otherwise defer to LLM
+  // since one citation can't cover claims about multiple URLs.
+  const firstUrl = resolutions[0].hit.url;
+  const sameSource = resolutions.every((r) => r.hit.url === firstUrl);
+  if (!sameSource) return null;
+
+  // Take the first sentence of each resolution and join. clampToSentences
+  // in ensureCitationFooter trims to ≤3 sentences as a final guard.
+  const combined = resolutions
+    .map((r) => firstSentence(r.hit.reply))
+    .slice(0, 3)
+    .join(" ");
+
+  return {
+    reply: combined,
+    url: firstUrl,
+    intent: resolutions.map((r) => r.intent.id).join("+"),
+  };
 }

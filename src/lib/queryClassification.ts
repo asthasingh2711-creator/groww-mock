@@ -34,23 +34,49 @@ export const PII_REFUSAL_REPLY =
 
 /**
  * Keywords / phrases that indicate the user is asking about mutual-fund facts or regulation.
- * Kept aligned with product vocabulary (ELSS, SIP, NAV, AMFI, SEBI, etc.).
+ * Kept aligned with product vocabulary (ELSS, SIP, NAV, AMFI, SEBI, scheme names,
+ * doc types, regulatory terms, statement / KYC words, plus the SBI scheme aliases
+ * we have in the corpus). When in doubt, prefer false positives here — the
+ * downstream RAG + fact extractor is much better than `OFF_TOPIC_REPLY` for any
+ * reasonable MF-adjacent query.
  */
 const MUTUAL_FUND_SIGNALS: RegExp[] = [
   /\bmutual\s+funds?\b/i,
   /\belss\b/i,
-  /\bsip\b/i,
-  /\bnav\b/i,
+  /\bsips?\b/i,
+  /\bnavs?\b/i,
   /\bexpense\s+ratio\b/i,
+  /\bter\b/i,
   /\bexit\s+load\b/i,
   /\bbenchmark\b/i,
   /\briskometer\b/i,
+  /\b(?:k\.?y\.?c\.?|know\s+your\s+customer)\b/i,
   /\bamfi\b/i,
   /\bsebi\b/i,
-  /\bfund\b/i,
-  /\binvesting\b/i,
-  /\btax\s+saver\b/i,
-  /\bcapital\s+gains\b/i,
+  /\bfunds?\b/i,
+  /\binvest(?:ing|ment)?\b/i,
+  /\btax\s*(?:saver|saving)\b/i,
+  /\bcapital\s+gains?\b/i,
+  /\block[\s-]*in\b/i,
+  /\bredemption\b/i,
+  /\bswitch\s+(?:in|out)?\b/i,
+  /\bfact\s*sheet\b/i,
+  /\bkim\b/i,
+  /\bsid\b/i,
+  /\bfolio\b/i,
+  /\b80\s*c\b/i,
+  /\bsection\s*80/i,
+  /\b(?:large|mid|small|flexi|multi|micro)[\s-]*caps?\b/i,
+  /\bblue\s*chip\b|\bbluechip\b/i,
+  /\bflexi\s*cap\b|\bflexicap\b/i,
+  /\bsbi\s*mf\b/i,
+  /\blong[\s-]*term\s+equity\b/i,
+  /\bmagnum\b/i,
+  /\bsmart\s+statement\b/i,
+  /\bcategorisation\b|\bcategorization\b/i,
+  /\bequity\s+(?:mutual\s+)?fund\b/i,
+  /\bdebt\s+(?:mutual\s+)?fund\b/i,
+  /\bhybrid\s+fund\b/i,
 ];
 
 /**

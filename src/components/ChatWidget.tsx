@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useMemo, useRef, useState } from "react";
 import styles from "./ChatWidget.module.css";
 
 type ChatRole = "user" | "assistant";
@@ -9,6 +9,18 @@ type ChatMessage = {
   role: ChatRole;
   content: string;
 };
+
+const WELCOME_TEXT =
+  "Hey there! I am here to answer facts about mutual fund schemes.\n\n" +
+  "You can ask me questions like:\n" +
+  "• What is the ELSS lock-in period?\n" +
+  "• What is the exit load for SBI Bluechip Fund?\n" +
+  "• How do I download a capital gains statement?\n\n" +
+  "⚠️ Facts-only. No investment advice.";
+
+const initialMessages = (): ChatMessage[] => [
+  { role: "assistant", content: WELCOME_TEXT },
+];
 
 /**
  * Render a string with any http(s) URLs turned into anchor tags. Used so the
@@ -50,20 +62,33 @@ export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [input, setInput] = useState("");
-  const welcomeText =
-    "Hey there! I am here to answer facts about mutual fund schemes.\n\n" +
-    "You can ask me questions like:\n" +
-    "• What is the ELSS lock-in period?\n" +
-    "• What is the exit load for SBI Bluechip Fund?\n" +
-    "• How do I download a capital gains statement?\n\n" +
-    "⚠️ Facts-only. No investment advice.";
-
-  const [messages, setMessages] = useState<ChatMessage[]>(() => [
-    { role: "assistant", content: welcomeText },
-  ]);
+  const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 
   const canSend = useMemo(() => input.trim().length > 0 && !busy, [input, busy]);
+
+  /**
+   * Closing the chat (via the explicit Close button or by toggling the FAB
+   * while the popup is open) wipes the conversation back to the welcome
+   * message. The brief is "no PII, no session" — keeping a transcript
+   * around in memory after the user has visibly dismissed the chat is
+   * surprising and unwelcome.
+   */
+  const closeAndReset = useCallback(() => {
+    setOpen(false);
+    setMessages(initialMessages());
+    setInput("");
+  }, []);
+
+  const onFabClick = useCallback(() => {
+    setOpen((wasOpen) => {
+      if (wasOpen) {
+        setMessages(initialMessages());
+        setInput("");
+      }
+      return !wasOpen;
+    });
+  }, []);
 
   async function send() {
     const text = input.trim();
@@ -110,8 +135,8 @@ export function ChatWidget() {
       <button
         className={styles.fab}
         type="button"
-        aria-label="Open chatbot"
-        onClick={() => setOpen((v) => !v)}
+        aria-label={open ? "Close chatbot" : "Open chatbot"}
+        onClick={onFabClick}
       >
         <span aria-hidden>💬</span>
       </button>
@@ -123,7 +148,8 @@ export function ChatWidget() {
             <button
               className={styles.close}
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={closeAndReset}
+              title="Close and clear chat"
             >
               Close
             </button>

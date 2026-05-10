@@ -4,9 +4,14 @@ import styles from "./TopNav.module.css";
 /**
  * Top nav for the /about-us demo page.
  *
- * Renders a static "Demo" badge in place of the previous email-derived avatar
- * so the page can stay public/anonymous (no PII collection, per assignment
- * rules). Visual style is preserved.
+ * Renders a static "MF" demo badge in place of the previous email-derived
+ * avatar so the page can stay public and anonymous (no PII collection per
+ * the assignment).
+ *
+ * The "Logout" link is intentionally cosmetic — there is no real session.
+ * It just routes back to `/`, which unmounts the ChatWidget and so resets
+ * any in-memory chat state. Naming it "Logout" matches the rest of the
+ * Groww-clone UX and gives users a familiar way out.
  */
 export function TopNav() {
   return (
@@ -51,6 +56,13 @@ export function TopNav() {
           >
             MF
           </div>
+          <Link
+            href="/"
+            className={styles.logout}
+            title="Exit the demo and return to home"
+          >
+            Logout
+          </Link>
         </div>
       </div>
     </header>
