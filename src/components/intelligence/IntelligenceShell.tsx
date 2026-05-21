@@ -166,7 +166,9 @@ export function IntelligenceShell() {
 
           <div className={styles.content}>
             {view === "reviews" && <ViewReviews d={d} scale={scale} />}
-            {view === "analytics" && <ViewAnalytics d={d} scale={scale} />}
+            {view === "analytics" && (
+              <ViewAnalytics platform={platform} scale={scale} />
+            )}
             {view === "themes" && <ViewThemes d={d} scale={scale} />}
             {view === "weekly-pulse" && <ViewWeeklyPulse d={d} />}
             {view === "delivery" && (

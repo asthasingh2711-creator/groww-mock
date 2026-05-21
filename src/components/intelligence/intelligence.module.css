@@ -920,6 +920,74 @@
   box-shadow: var(--gw-shadow);
 }
 
+.volumeChart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  height: 160px;
+  margin-top: 8px;
+  padding: 0 4px;
+}
+
+.volumeBarCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 6px;
+}
+
+.volumeBarValue {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gw-muted);
+  min-height: 14px;
+}
+
+.volumeBarTrack {
+  flex: 1;
+  width: 100%;
+  max-width: 48px;
+  display: flex;
+  align-items: flex-end;
+  background: #e5e7eb;
+  border-radius: 8px 8px 4px 4px;
+  overflow: hidden;
+}
+
+.volumeBarFill {
+  width: 100%;
+  background: var(--gw-green);
+  border-radius: 8px 8px 4px 4px;
+  transition: height 0.25s ease;
+}
+
+.volumeBarLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gw-muted);
+  letter-spacing: 0.02em;
+}
+
+.barCount {
+  width: 40px;
+  text-align: right;
+  color: var(--gw-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lightShell .volumeBarTrack {
+  background: #e5e7eb;
+}
+
+.lightShell .volumeBarFill {
+  background: var(--gw-green);
+}
+
 .emailComposer {
   background: #fff;
   border: 1px solid var(--gw-border);

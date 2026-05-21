@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { PulseSnapshot } from "@/lib/pulseSnapshot";
 import { draftFromSnapshot } from "@/lib/pulseExport";
+import { getReviewAnalytics, type ReviewPlatform } from "@/lib/reviewAnalytics";
 import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
@@ -164,47 +165,63 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
   );
 }
 
-export function ViewAnalytics({ d, scale }: { d: PulseSnapshot; scale: number }) {
-  const vol = d.weeklyVolume.map((v) => scaleCount(v, scale));
+export function ViewAnalytics({
+  platform,
+  scale,
+}: {
+  platform: ReviewPlatform | string;
+  scale: number;
+}) {
+  const stats = getReviewAnalytics(platform);
+  const vol = stats.weeklyVolume.map((v) => scaleCount(v, scale));
+  const ratings = stats.ratingDistribution.map((c) => scaleCount(c, scale));
+  const reviewTotal = scaleCount(stats.reviewCount, scale);
+  const storeLabel =
+    platform === "ios"
+      ? "App Store"
+      : platform === "android"
+        ? "Play Store"
+        : "App Store + Play Store";
 
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        AI-powered charts · Generated from {scaleCount(d.reviewCount, scale).toLocaleString()}{" "}
-        public reviews
+        Live from public review CSVs · {storeLabel} · {reviewTotal.toLocaleString()}{" "}
+        reviews · avg {stats.avgRating}★
       </p>
       <div className={styles.chartGrid}>
         <div className={styles.chartCard}>
           <h3 className={styles.sectionTitle}>Review volume trend</h3>
           <p className={styles.sectionSub}>Weekly ingest volume · last 5 weeks</p>
-          <VolumeChart values={vol} labels={d.volumeLabels} />
+          <VolumeChart values={vol} labels={stats.volumeLabels} />
         </div>
         <div className={styles.chartCard}>
           <h3 className={styles.sectionTitle}>Sentiment split</h3>
-          <p className={styles.sectionSub}>Positive · negative · neutral</p>
+          <p className={styles.sectionSub}>
+            4–5★ positive · 1–2★ negative · 3★ neutral
+          </p>
           <DonutChart
-            positive={d.sentimentSplit.positive}
-            negative={d.sentimentSplit.negative}
-            neutral={d.sentimentSplit.neutral}
+            positive={stats.sentimentSplit.positive}
+            negative={stats.sentimentSplit.negative}
+            neutral={stats.sentimentSplit.neutral}
           />
         </div>
       </div>
       <div className={styles.chartCard}>
         <h3 className={styles.sectionTitle}>Rating distribution</h3>
-        <p className={styles.sectionSub}>1–5 star breakdown · clustered automatically</p>
-        {d.ratingDistribution.map((count, i) => {
+        <p className={styles.sectionSub}>1–5 star breakdown from extracted reviews</p>
+        {stats.ratingDistribution.map((count, i) => {
           const stars = i + 1;
-          const max = Math.max(...d.ratingDistribution);
-          const pct = (count / max) * 100;
+          const scaled = ratings[i];
+          const max = Math.max(...ratings, 1);
+          const pct = (scaled / max) * 100;
           return (
             <div key={stars} className={styles.barRow}>
               <span className={styles.barLabel}>{stars} ★</span>
               <div className={styles.barTrack}>
                 <div className={styles.barFill} style={{ width: `${pct}%` }} />
               </div>
-              <span style={{ width: 40, textAlign: "right", color: "#71717a" }}>
-                {scaleCount(count, scale)}
-              </span>
+              <span className={styles.barCount}>{scaled}</span>
             </div>
           );
         })}

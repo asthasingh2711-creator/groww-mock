@@ -44,41 +44,32 @@ export function VolumeChart({
   values: number[];
   labels: string[];
 }) {
-  const max = Math.max(...values, 1);
-  const w = 100;
-  const h = 120;
+  const counts = labels.map((_, i) => values[i] ?? 0);
+  const max = Math.max(...counts, 1);
 
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} width="100%" height={h} aria-hidden>
-      {values.map((v, i) => {
-        const barW = w / values.length - 4;
-        const x = (i * w) / values.length + 2;
-        const barH = (v / max) * (h - 24);
+    <div
+      className={styles.volumeChart}
+      role="img"
+      aria-label={`Weekly review volume: ${labels.map((l, i) => `${l} ${counts[i]}`).join(", ")}`}
+    >
+      {labels.map((label, i) => {
+        const v = counts[i];
+        const pct = Math.max((v / max) * 100, v > 0 ? 6 : 0);
         return (
-          <g key={labels[i]}>
-            <rect
-              x={x}
-              y={h - 20 - barH}
-              width={barW}
-              height={barH}
-              rx="3"
-              fill="#00d09c"
-              opacity={0.85}
-            />
-            <text
-              x={x + barW / 2}
-              y={h - 4}
-              textAnchor="middle"
-              fill="#71717a"
-              fontSize="8"
-              fontWeight="700"
-            >
-              {labels[i]}
-            </text>
-          </g>
+          <div key={label} className={styles.volumeBarCol}>
+            <span className={styles.volumeBarValue}>{v > 0 ? v : ""}</span>
+            <div className={styles.volumeBarTrack}>
+              <div
+                className={styles.volumeBarFill}
+                style={{ height: `${pct}%` }}
+              />
+            </div>
+            <span className={styles.volumeBarLabel}>{label}</span>
+          </div>
         );
       })}
-    </svg>
+    </div>
   );
 }
 
