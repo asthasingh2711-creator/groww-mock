@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
+import { clearAdminSession, readAdminSession } from "@/lib/adminSession";
 import styles from "./TopNav.module.css";
 
 /**
@@ -31,6 +33,10 @@ function useDemoInitials(): string | null {
   return useSyncExternalStore(noop, readInitials, () => null);
 }
 
+function useIsAdmin(): boolean {
+  return useSyncExternalStore(noop, readAdminSession, () => false);
+}
+
 /**
  * Top nav for the /about-us demo page.
  *
@@ -45,7 +51,9 @@ function useDemoInitials(): string | null {
  * visitor sees the default "MF" badge.
  */
 export function TopNav() {
+  const pathname = usePathname();
   const rawInitials = useDemoInitials();
+  const isAdmin = useIsAdmin();
   const initials = rawInitials
     ? rawInitials.slice(0, 2).toUpperCase()
     : null;
@@ -53,6 +61,7 @@ export function TopNav() {
   const onLogoutClick = () => {
     try {
       sessionStorage.removeItem("demoInitials");
+      clearAdminSession();
     } catch {
       // Best-effort cleanup; routing still happens via <Link>.
     }
@@ -82,9 +91,20 @@ export function TopNav() {
             <Link className={styles.tab} href="/">
               Mutual Funds
             </Link>
-            <Link className={styles.tab} href="/about-us">
+            <Link
+              className={`${styles.tab} ${pathname === "/about-us" ? styles.tabActive : ""}`}
+              href="/about-us"
+            >
               More
             </Link>
+            {isAdmin ? (
+              <Link
+                className={`${styles.tab} ${styles.tabAnalytics} ${pathname.startsWith("/analytics") ? styles.tabActive : ""}`}
+                href="/analytics"
+              >
+                Analytics
+              </Link>
+            ) : null}
           </nav>
         </div>
 

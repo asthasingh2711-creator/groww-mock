@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./LoginModal.module.css";
 
+export type LoginMode = "user" | "admin";
+
 type Props = {
   open: boolean;
-  onSubmit: (initials: string) => void;
+  onSubmit: (initials: string, mode: LoginMode) => void | Promise<void>;
   onCancel: () => void;
 };
 
@@ -55,6 +57,9 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
   const submitRef = useRef<HTMLButtonElement | null>(null);
   const [tickerIndex, setTickerIndex] = useState(0);
   const [showPwd, setShowPwd] = useState(false);
+  const [mode, setMode] = useState<LoginMode>("user");
+  const [adminError, setAdminError] = useState("");
+  const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     if (!open) return;
@@ -76,12 +81,36 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
 
   if (!open) return null;
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
+    setAdminError("");
     const formData = new FormData(event.currentTarget);
     const rawEmail = (formData.get("email") as string | null) ?? "";
+    const password = (formData.get("password") as string | null) ?? "";
     const initials = deriveInitials(rawEmail);
-    onSubmit(initials);
+
+    if (mode === "admin") {
+      setBusy(true);
+      try {
+        const res = await fetch("/api/admin/login", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ password }),
+        });
+        if (!res.ok) {
+          setAdminError("Invalid admin password.");
+          return;
+        }
+        await onSubmit(initials, "admin");
+      } catch {
+        setAdminError("Could not reach server. Try again.");
+      } finally {
+        setBusy(false);
+      }
+      return;
+    }
+
+    await onSubmit(initials, "user");
   };
 
   return (
@@ -119,11 +148,39 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
         </aside>
 
         <section className={styles.right}>
+          <div className={styles.modeTabs} role="tablist">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mode === "user"}
+              className={mode === "user" ? styles.modeActive : styles.modeTab}
+              onClick={() => {
+                setMode("user");
+                setAdminError("");
+              }}
+            >
+              User
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mode === "admin"}
+              className={mode === "admin" ? styles.modeActive : styles.modeTab}
+              onClick={() => {
+                setMode("admin");
+                setAdminError("");
+              }}
+            >
+              Admin
+            </button>
+          </div>
           <h2 id="login-title" className={styles.title}>
-            Welcome Back
+            {mode === "admin" ? "Admin sign in" : "Welcome Back"}
           </h2>
           <p className={styles.demoNote}>
-            Demo only — nothing you type is saved or sent. Submit to continue.
+            {mode === "admin"
+              ? "Team access for Review Pulse analytics. Password is checked server-side; not stored."
+              : "Demo only — nothing you type is saved or sent. Submit to continue."}
           </p>
 
           <form
@@ -153,10 +210,12 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
               <div className={styles.inputWrap}>
                 <input
                   type={showPwd ? "text" : "password"}
+                  name="password"
                   className={styles.input}
-                  defaultValue="DemoPass1!"
+                  defaultValue={mode === "admin" ? "GrowwPulse2026!" : "DemoPass1!"}
                   autoComplete="off"
                   spellCheck={false}
+                  key={mode}
                 />
                 <button
                   type="button"
@@ -183,12 +242,19 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
               number & special characters (@$!%*?&).
             </p>
 
+            {adminError ? (
+              <p className={styles.adminError} role="alert">
+                {adminError}
+              </p>
+            ) : null}
+
             <button
               ref={submitRef}
               type="submit"
               className={styles.submit}
+              disabled={busy}
             >
-              Submit
+              {busy ? "Signing in…" : mode === "admin" ? "Sign in as admin" : "Submit"}
             </button>
           </form>
         </section>

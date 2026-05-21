@@ -45,10 +45,19 @@ npm run dev
 
 Open:
 
-- `http://localhost:3000/` — Groww-style homepage; click "Login/Sign up" or "Get started" (no auth flow, no email collection)
+- `http://localhost:3000/` — Groww-style homepage; click "Login/Sign up" or "Get started"
 - `http://localhost:3000/about-us` — About page with the bottom-right chat widget
+- `http://localhost:3000/analytics` — **Review Pulse** (admin only; see below)
 
-> **Deploying to Vercel?** Set `GROQ_API_KEY` in **Project → Settings → Environment Variables**. The `dotenv` calls in `next.config.ts` and `src/app/api/chat/route.ts` are no-ops on Vercel (no `../.env` exists in the build container) but harmlessly fall through to `process.env.GROQ_API_KEY`.
+### Admin → Analytics (Review Pulse)
+
+1. Homepage → **Login / Sign up** → **Admin** tab → sign in (password checked via `POST /api/admin/login`).
+2. You land on **/about-us** (same MF chat flow as a normal user).
+3. Nav shows **Analytics** next to **More** → opens `/analytics` (Dashboard, Weekly Pulse, Themes, Pipeline).
+
+Default admin password: `GrowwPulse2026!` (override with `ADMIN_PASSWORD` on Vercel).
+
+> **Deploying to Vercel?** Set `GROQ_API_KEY` and `ADMIN_PASSWORD` in **Project → Settings → Environment Variables**. The `dotenv` calls in `next.config.ts` and `src/app/api/chat/route.ts` are no-ops on Vercel (no `../.env` exists in the build container) but harmlessly fall through to `process.env.GROQ_API_KEY`.
 
 ---
 

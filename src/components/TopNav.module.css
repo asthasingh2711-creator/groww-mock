@@ -45,6 +45,27 @@
   background: radial-gradient(circle at 30% 30%, #7c3aed, #00d09c);
 }
 
+.tabActive {
+  color: var(--gw-text);
+  position: relative;
+}
+
+.tabActive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 2px;
+  background: var(--gw-green);
+  border-radius: 999px;
+}
+
+.tabAnalytics {
+  color: #047857;
+  font-weight: 800;
+}
+
 .tabs {
   display: flex;
   gap: 18px;

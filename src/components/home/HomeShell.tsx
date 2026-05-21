@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { setAdminSession } from "@/lib/adminSession";
+import type { LoginMode } from "./LoginModal";
 import { HomeHeader } from "./HomeHeader";
 import { HomeHero } from "./HomeHero";
 import { LoginModal } from "./LoginModal";
@@ -23,7 +25,10 @@ import styles from "./HomeShell.module.css";
  */
 export function HomeShell() {
   const router = useRouter();
-  const [loginOpen, setLoginOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const [loginOpen, setLoginOpen] = useState(
+    () => searchParams.get("login") === "1",
+  );
 
   const goToChat = useCallback(() => router.push("/about-us"), [router]);
 
@@ -38,7 +43,7 @@ export function HomeShell() {
    * LoginModal and never reaches this callback. Logout clears the key.
    */
   const onSubmit = useCallback(
-    (initials: string) => {
+    async (initials: string, mode: LoginMode) => {
       setLoginOpen(false);
       try {
         if (initials) {
@@ -46,6 +51,7 @@ export function HomeShell() {
         } else {
           sessionStorage.removeItem("demoInitials");
         }
+        setAdminSession(mode === "admin");
       } catch {
         // sessionStorage can throw in privacy mode — fine, avatar falls
         // back to "MF" and the rest of the demo keeps working.

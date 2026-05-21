@@ -1,0 +1,80 @@
+{
+  "weekLabel": "Week 20, 2026",
+  "period": "2026-02-20 \u2192 2026-05-15",
+  "reviewCount": 1812,
+  "wordCount": 284,
+  "wordLimit": 250,
+  "themeRows": [
+    {
+      "id": "onboarding",
+      "label": "Onboarding & first-time setup",
+      "count": 1439,
+      "pct": 79.4,
+      "avg": 4.21,
+      "lowPct": 17.0
+    },
+    {
+      "id": "payments",
+      "label": "Payments, deposits & trading charges",
+      "count": 320,
+      "pct": 17.7,
+      "avg": 2.4,
+      "lowPct": 61.0
+    },
+    {
+      "id": "statements",
+      "label": "Statements, tax docs & portfolio reports",
+      "count": 25,
+      "pct": 1.4,
+      "avg": 2.4,
+      "lowPct": 64.0
+    },
+    {
+      "id": "withdrawals",
+      "label": "Withdrawals & fund transfers out",
+      "count": 17,
+      "pct": 0.9,
+      "avg": 2.12,
+      "lowPct": 71.0
+    },
+    {
+      "id": "kyc",
+      "label": "KYC & verification",
+      "count": 11,
+      "pct": 0.6,
+      "avg": 2.09,
+      "lowPct": 73.0
+    }
+  ],
+  "topThemes": [
+    {
+      "label": "Onboarding",
+      "count": 1439,
+      "avg": 4.21,
+      "insight": "Users find the app easy to use and appreciate its transparency"
+    },
+    {
+      "label": "Payments",
+      "count": 320,
+      "avg": 2.4,
+      "insight": "Users face issues with payment execution and pricing"
+    },
+    {
+      "label": "Statements",
+      "count": 25,
+      "avg": 2.4,
+      "insight": "Users experience inaccuracies and difficulties with portfolio tracking"
+    }
+  ],
+  "quotes": [
+    "\u0d35\u0d33\u0d30\u0d46 \u0d35\u0d43\u0d24\u0d4d\u0d24\u0d3f\u0d15\u0d46\u0d1f\u0d4d\u0d1f app \u0d28\u0d2e\u0d4d\u0d2e\u0d7e \u0d15\u0d37\u0d4d\u0d1f\u0d2a\u0d4d\u0d2a\u0d46\u0d1f\u0d4d\u0d1f\u0d4d \u0d09\u0d23\u0d4d\u0d1f\u0d3e\u0d15\u0d41\u0d28\u0d4d\u0d28 \u0d2b\u0d4d\u0d30\u0d4b\u0d2b\u0d3f\u0d31\u0d4d\u0d31\u0d4d \u0d2b\u0d41\u0d7e \u0d05\u0d35\u0d7c \u0d24\u0d3f\u0d28\u0d4d\u0d28\u0d41\u0d02... \u0d0e\u0d28\u0d4d\u0d31\u0d46 \u0d2c\u0d3e\u0d32\u0d7b\u0d38\u0d3f\u0d7d \u0d07\u0d2a\u0d4d\u0d2a\u0d4b\u0d7e \u0d12\u0d30\u0d41 3000 \u0d30\u0d42\u0d2a \u0d15\u0d41\u0d31\u0d35\u0d4d \u0d09\u0d23\u0d4d\u0d1f\u0d4d.. \u0d05\u0d24\u0d3f\u0d28\u0d46\u0d15\u0d4d\u0d15\u0d41\u0d31\u0d3f\u0d1a\u0d4d\u0d1a\u0d41 \u0d1a\u0d4b\u0d26\u0d3f\u0d1a\u0d4d\u0d1a\u0d41 \u0d28\u0d4b\u0d15\u0d4d\u0d15\u0d40\u0d1f\u0d4d\u0d1f\u0d4d \u0d12\u0d30\u0d41 Ai \u0d0e\u0d28\u0d4d\u0d24\u0d4b \u0d2a\u0d41\u0d32\u0d2e\u0d4d\u0d2a\u0d41\u0d28\u0d4d\u0d28\u0d41... \u0d05\u0d32\u0d4d\u0d32\u0d3e\u0d24\u0d46 \u0d12\u0d30\u0d41 \u0d15\u0d3e\u0d30\u0d4d\u0d2f\u0d35\u0d41\u0d02 \u0d07\u0d32\u0d4d\u0d32",
+    "sabse ghatiya app hai sirf brokerage khata hai aur Kuchh Nahin Hai Koi Bhi Jaane Se download Na Karo Sahi ka App bahut Achcha hai yah third class app Hai yah sirf brokerage ke liye rahata hai aur aapke paise kha jata hai",
+    "The stock holding list is completely wrong. Raised the issue before 30days and no resolution yet, you must keep on calling and explain to a new guy every single day. Pathetic service WORSTEST ever."
+  ],
+  "actions": [
+    "Improve the payment execution process to allow for more control over pricing",
+    "Enhance the portfolio tracking feature to provide accurate and up-to-date information",
+    "Increase support staff responsiveness and effectiveness to resolve user issues promptly"
+  ],
+  "piiPassed": true
+}
