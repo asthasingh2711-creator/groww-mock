@@ -1,80 +1,273 @@
 {
-  "weekLabel": "Week 20, 2026",
-  "period": "2026-02-20 \u2192 2026-05-15",
-  "reviewCount": 1812,
-  "wordCount": 284,
+  "weekCode": "2026-W21",
+  "weekLabel": "Week 21, 2026",
+  "period": "2026-02-20 → 2026-05-15",
+  "reviewCount": 2110,
+  "wordCount": 146,
   "wordLimit": 250,
-  "themeRows": [
+  "avgRating": 3.2,
+  "avgRatingDelta": -0.3,
+  "sentimentScore": 42,
+  "sentimentDelta": -8,
+  "wowReviewDelta": 12.4,
+  "weeklyVolume": [612, 648, 701, 758, 812, 878, 972],
+  "volumeLabels": ["W17", "W18", "W19", "W20", "W21"],
+  "ratingDistribution": [892, 412, 198, 156, 452],
+  "sentimentSplit": { "positive": 42, "negative": 51, "neutral": 7 },
+  "trendAlert": "Withdrawal complaints increased +28% this week",
+  "keywords": [
+    "brokerage",
+    "withdrawal",
+    "support",
+    "fees",
+    "trading",
+    "crash",
+    "sell",
+    "login",
+    "delay",
+    "charges",
+    "demat",
+    "order"
+  ],
+  "themeTrends": [
     {
-      "id": "onboarding",
-      "label": "Onboarding & first-time setup",
-      "count": 1439,
-      "pct": 79.4,
-      "avg": 4.21,
-      "lowPct": 17.0
+      "id": "brokerage",
+      "label": "High brokerage charges",
+      "wowDelta": 6,
+      "direction": "up",
+      "sentiment": "negative",
+      "alert": "Brokerage confusion up 6% WoW"
     },
     {
-      "id": "payments",
-      "label": "Payments, deposits & trading charges",
-      "count": 320,
-      "pct": 17.7,
-      "avg": 2.4,
-      "lowPct": 61.0
-    },
-    {
-      "id": "statements",
-      "label": "Statements, tax docs & portfolio reports",
-      "count": 25,
-      "pct": 1.4,
-      "avg": 2.4,
-      "lowPct": 64.0
+      "id": "support",
+      "label": "Poor customer support",
+      "wowDelta": 11,
+      "direction": "up",
+      "sentiment": "negative",
+      "alert": "Support non-response trending upward"
     },
     {
       "id": "withdrawals",
-      "label": "Withdrawals & fund transfers out",
-      "count": 17,
-      "pct": 0.9,
-      "avg": 2.12,
-      "lowPct": 71.0
+      "label": "Withdrawal issues",
+      "wowDelta": 28,
+      "direction": "up",
+      "sentiment": "negative",
+      "alert": "Withdrawal complaints +28% WoW"
+    }
+  ],
+  "themeCards": [
+    {
+      "id": "brokerage",
+      "title": "High Brokerage Charges",
+      "pct": 34,
+      "description": "Charges exceed expectations on sell orders; transparency gaps drive 1★ language.",
+      "reviews": 718,
+      "priority": "High",
+      "lowPct": 58,
+      "wowDelta": 6,
+      "sparkline": [42, 48, 51, 55, 58, 62, 66]
     },
     {
-      "id": "kyc",
-      "label": "KYC & verification",
-      "count": 11,
-      "pct": 0.6,
-      "avg": 2.09,
-      "lowPct": 73.0
+      "id": "support",
+      "title": "Poor Customer Support",
+      "pct": 28,
+      "description": "Slow or missing responses on Demat, investments, and payout tickets.",
+      "reviews": 591,
+      "priority": "Critical",
+      "lowPct": 64,
+      "wowDelta": 11,
+      "sparkline": [38, 41, 45, 48, 52, 57, 61]
+    },
+    {
+      "id": "withdrawals",
+      "title": "Withdrawal Issues",
+      "pct": 22,
+      "description": "Delays and failures spiked +28% WoW; trust risk for money movement.",
+      "reviews": 464,
+      "priority": "Critical",
+      "lowPct": 71,
+      "wowDelta": 28,
+      "sparkline": [22, 28, 35, 44, 52, 68, 82]
+    },
+    {
+      "id": "glitches",
+      "title": "Technical Glitches",
+      "pct": 18,
+      "description": "Peak-hour crashes correlate with market open; retention risk for active traders.",
+      "reviews": 380,
+      "priority": "Critical",
+      "lowPct": 55,
+      "wowDelta": 4,
+      "sparkline": [30, 32, 33, 34, 35, 36, 38]
+    },
+    {
+      "id": "orders",
+      "title": "Order Execution Problems",
+      "pct": 14,
+      "description": "Processing delays and sell-flow charge disputes rising on Play Store.",
+      "reviews": 295,
+      "priority": "High",
+      "lowPct": 49,
+      "wowDelta": 3,
+      "sparkline": [18, 19, 20, 21, 22, 23, 24]
+    }
+  ],
+  "pmRadar": {
+    "highImpact": [
+      {
+        "title": "Withdrawal failures",
+        "count": 92,
+        "icon": "🔥",
+        "severity": "critical",
+        "description": "High frequency + high impact; +28% WoW spike on payouts."
+      },
+      {
+        "title": "Brokerage confusion",
+        "count": 85,
+        "icon": "⚠️",
+        "severity": "warn",
+        "description": "Largest theme share; charge mismatch drives churn language."
+      }
+    ],
+    "highFrequency": [
+      {
+        "title": "App crash during trading",
+        "count": 78,
+        "icon": "📊",
+        "severity": "critical",
+        "description": "Peak-hour crashes correlate with market open; retention risk."
+      },
+      {
+        "title": "Support non-response",
+        "count": 70,
+        "icon": "⚠️",
+        "severity": "warn",
+        "description": "Amplifies withdrawal and fee pain when agents are unreachable."
+      }
+    ],
+    "monitor": [
+      {
+        "title": "Order execution stuck",
+        "count": 65,
+        "icon": "📄",
+        "severity": "warn",
+        "description": "Processing delays and sell-flow charge disputes rising."
+      }
+    ]
+  },
+  "userVoices": [
+    {
+      "quote": "They cut more charges than what they said — I sell a stock and they cut ₹30 instead of ₹7-8.",
+      "source": "Play Store user",
+      "stars": 1
+    },
+    {
+      "quote": "Support never responds when withdrawals fail for days.",
+      "source": "Verified investor",
+      "stars": 2
+    },
+    {
+      "quote": "App crashes during trading sessions on market open.",
+      "source": "Active trader",
+      "stars": 1
+    }
+  ],
+  "weeklyNote": {
+    "summary": "Groww Play Store pulse (2026-W21): sentiment skews negative. Support, fees, and reliability dominate.",
+    "themes": [
+      "High brokerage charges — sell-side fees exceed expectations; transparency gaps drive 1★ reviews.",
+      "Poor customer support — slow or missing responses on Demat, investments, and payouts.",
+      "Withdrawal issues — delays and failures spiked +28% WoW; trust risk for money movement."
+    ],
+    "tracking": "Also tracking technical glitches (crashes at market open) and order execution problems (stock sells).",
+    "quotes": [
+      "They cut more charges than what they said — ₹30 instead of ₹10 on a sell.",
+      "Support never responds when withdrawals fail for days.",
+      "App crashes during trading sessions on market open."
+    ],
+    "actions": [
+      "Review brokerage and fee transparency in-app before order placement.",
+      "Stabilize withdrawals and order execution with proactive status updates.",
+      "Improve support SLAs and escalation paths for payout and trading tickets."
+    ]
+  },
+  "emailDraft": {
+    "to": "team@groww.in",
+    "subject": "Groww Weekly Review Pulse",
+    "body": "Groww Play Store pulse (2026-W21): sentiment skews negative. Support, fees, and reliability dominate.\n\nTOP 3 THEMES:\n1. High brokerage charges — transparency gaps drive 1★ reviews.\n2. Poor customer support — slow responses on Demat and payouts.\n3. Withdrawal issues — delays spiked +28% WoW.\n\nUSER QUOTES:\n• Charge mismatch on sell orders\n• Withdrawals failing for days\n• Crashes at market open\n\nACTION IDEAS:\n1. Fee transparency before order confirm\n2. Withdrawal status + SLA alerts\n3. Support escalation for payout tickets"
+  },
+  "executiveSummary": "LLM synthesis across 2,110 PII-safe public reviews: sentiment skews negative at 42%. Withdrawals (+28% WoW) and brokerage transparency are the top executive risks. Support non-response amplifies payout pain. Stabilize money movement and pre-trade fee disclosure this sprint.",
+  "themeRows": [
+    {
+      "id": "brokerage",
+      "label": "High brokerage charges",
+      "count": 718,
+      "pct": 34,
+      "avg": 2.1,
+      "lowPct": 58
+    },
+    {
+      "id": "support",
+      "label": "Poor customer support",
+      "count": 591,
+      "pct": 28,
+      "avg": 2.3,
+      "lowPct": 64
+    },
+    {
+      "id": "withdrawals",
+      "label": "Withdrawal issues",
+      "count": 464,
+      "pct": 22,
+      "avg": 1.9,
+      "lowPct": 71
+    },
+    {
+      "id": "glitches",
+      "label": "Technical glitches",
+      "count": 380,
+      "pct": 18,
+      "avg": 2.2,
+      "lowPct": 55
+    },
+    {
+      "id": "orders",
+      "label": "Order execution problems",
+      "count": 295,
+      "pct": 14,
+      "avg": 2.4,
+      "lowPct": 49
     }
   ],
   "topThemes": [
     {
-      "label": "Onboarding",
-      "count": 1439,
-      "avg": 4.21,
-      "insight": "Users find the app easy to use and appreciate its transparency"
+      "label": "High brokerage charges",
+      "count": 718,
+      "avg": 2.1,
+      "insight": "Sell-side fees exceed expectations; transparency gaps drive 1★ reviews"
     },
     {
-      "label": "Payments",
-      "count": 320,
-      "avg": 2.4,
-      "insight": "Users face issues with payment execution and pricing"
+      "label": "Poor customer support",
+      "count": 591,
+      "avg": 2.3,
+      "insight": "Slow or missing responses on Demat, investments, and payouts"
     },
     {
-      "label": "Statements",
-      "count": 25,
-      "avg": 2.4,
-      "insight": "Users experience inaccuracies and difficulties with portfolio tracking"
+      "label": "Withdrawal issues",
+      "count": 464,
+      "avg": 1.9,
+      "insight": "Delays and failures spiked +28% WoW; trust risk for money movement"
     }
   ],
   "quotes": [
-    "\u0d35\u0d33\u0d30\u0d46 \u0d35\u0d43\u0d24\u0d4d\u0d24\u0d3f\u0d15\u0d46\u0d1f\u0d4d\u0d1f app \u0d28\u0d2e\u0d4d\u0d2e\u0d7e \u0d15\u0d37\u0d4d\u0d1f\u0d2a\u0d4d\u0d2a\u0d46\u0d1f\u0d4d\u0d1f\u0d4d \u0d09\u0d23\u0d4d\u0d1f\u0d3e\u0d15\u0d41\u0d28\u0d4d\u0d28 \u0d2b\u0d4d\u0d30\u0d4b\u0d2b\u0d3f\u0d31\u0d4d\u0d31\u0d4d \u0d2b\u0d41\u0d7e \u0d05\u0d35\u0d7c \u0d24\u0d3f\u0d28\u0d4d\u0d28\u0d41\u0d02... \u0d0e\u0d28\u0d4d\u0d31\u0d46 \u0d2c\u0d3e\u0d32\u0d7b\u0d38\u0d3f\u0d7d \u0d07\u0d2a\u0d4d\u0d2a\u0d4b\u0d7e \u0d12\u0d30\u0d41 3000 \u0d30\u0d42\u0d2a \u0d15\u0d41\u0d31\u0d35\u0d4d \u0d09\u0d23\u0d4d\u0d1f\u0d4d.. \u0d05\u0d24\u0d3f\u0d28\u0d46\u0d15\u0d4d\u0d15\u0d41\u0d31\u0d3f\u0d1a\u0d4d\u0d1a\u0d41 \u0d1a\u0d4b\u0d26\u0d3f\u0d1a\u0d4d\u0d1a\u0d41 \u0d28\u0d4b\u0d15\u0d4d\u0d15\u0d40\u0d1f\u0d4d\u0d1f\u0d4d \u0d12\u0d30\u0d41 Ai \u0d0e\u0d28\u0d4d\u0d24\u0d4b \u0d2a\u0d41\u0d32\u0d2e\u0d4d\u0d2a\u0d41\u0d28\u0d4d\u0d28\u0d41... \u0d05\u0d32\u0d4d\u0d32\u0d3e\u0d24\u0d46 \u0d12\u0d30\u0d41 \u0d15\u0d3e\u0d30\u0d4d\u0d2f\u0d35\u0d41\u0d02 \u0d07\u0d32\u0d4d\u0d32",
-    "sabse ghatiya app hai sirf brokerage khata hai aur Kuchh Nahin Hai Koi Bhi Jaane Se download Na Karo Sahi ka App bahut Achcha hai yah third class app Hai yah sirf brokerage ke liye rahata hai aur aapke paise kha jata hai",
-    "The stock holding list is completely wrong. Raised the issue before 30days and no resolution yet, you must keep on calling and explain to a new guy every single day. Pathetic service WORSTEST ever."
+    "They cut more charges than what they said — ₹30 instead of ₹10 on a sell.",
+    "Support never responds when withdrawals fail for days.",
+    "App crashes during trading sessions on market open."
   ],
   "actions": [
-    "Improve the payment execution process to allow for more control over pricing",
-    "Enhance the portfolio tracking feature to provide accurate and up-to-date information",
-    "Increase support staff responsiveness and effectiveness to resolve user issues promptly"
+    "Review brokerage and fee transparency in-app before order placement.",
+    "Stabilize withdrawals and order execution with proactive status updates.",
+    "Improve support SLAs and escalation paths for payout and trading tickets."
   ],
   "piiPassed": true
 }

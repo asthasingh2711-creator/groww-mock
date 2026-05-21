@@ -100,7 +100,7 @@ export function TopNav() {
             {isAdmin ? (
               <Link
                 className={`${styles.tab} ${styles.tabAnalytics} ${pathname.startsWith("/analytics") ? styles.tabActive : ""}`}
-                href="/analytics"
+                href="/analytics?view=reviews"
               >
                 Analytics
               </Link>
