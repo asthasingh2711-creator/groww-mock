@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { draftFromAnalytics } from "@/lib/pulseExport";
+import { draftFromAnalytics, openGmailCompose } from "@/lib/pulseExport";
 import {
   storeLabel,
   type ReviewAnalyticsSlice,
@@ -11,19 +11,9 @@ import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
 
-function scaleCount(n: number, scale: number) {
-  return Math.round(n * scale);
-}
-
-export function ViewReviews({
-  stats,
-  scale,
-}: {
-  stats: ReviewAnalyticsSlice;
-  scale: number;
-}) {
+export function ViewReviews({ stats }: { stats: ReviewAnalyticsSlice }) {
   const [kw, setKw] = useState<string | null>(null);
-  const reviews = scaleCount(stats.reviewCount, scale);
+  const reviews = stats.reviewCount;
 
   return (
     <>
@@ -177,15 +167,13 @@ export function ViewReviews({
 export function ViewAnalytics({
   stats,
   platform,
-  scale,
 }: {
   stats: ReviewAnalyticsSlice;
   platform: ReviewPlatform | string;
-  scale: number;
 }) {
-  const vol = stats.weeklyVolume.map((v) => scaleCount(v, scale));
-  const ratings = stats.ratingDistribution.map((c) => scaleCount(c, scale));
-  const reviewTotal = scaleCount(stats.reviewCount, scale);
+  const vol = stats.weeklyVolume;
+  const ratings = stats.ratingDistribution;
+  const reviewTotal = stats.reviewCount;
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
@@ -233,13 +221,7 @@ export function ViewAnalytics({
   );
 }
 
-export function ViewThemes({
-  stats,
-  scale,
-}: {
-  stats: ReviewAnalyticsSlice;
-  scale: number;
-}) {
+export function ViewThemes({ stats }: { stats: ReviewAnalyticsSlice }) {
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
@@ -259,7 +241,7 @@ export function ViewThemes({
               {t.description}
             </p>
             <p style={{ fontSize: 12, color: "#71717a", marginTop: 12 }}>
-              {scaleCount(t.reviews, scale)} reviews
+              {t.reviews} reviews
             </p>
             <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
               <span
@@ -383,9 +365,16 @@ export function ViewDelivery({
             <button
               type="button"
               className={styles.btnPrimary}
+              onClick={() => openGmailCompose(initialDraft)}
+            >
+              ✉ Send Email
+            </button>
+            <button
+              type="button"
+              className={styles.btnGhost}
               onClick={() => setShowComposer(true)}
             >
-              ✉ Draft Email
+              Edit draft
             </button>
             <button type="button" className={styles.btnGhost} onClick={onAppendDocs}>
               📄 Append to Docs

@@ -25,12 +25,12 @@ export function draftFromAnalytics(
 /** @deprecated Use draftFromAnalytics */
 export const draftFromSnapshot = draftFromAnalytics;
 
-export function buildFullReportHtml(d: ReviewAnalyticsSlice, scale = 1): string {
-  const reviews = Math.round(d.reviewCount * scale);
+export function buildFullReportHtml(d: ReviewAnalyticsSlice): string {
+  const reviews = d.reviewCount;
   const themes = d.themeCards
     .map(
       (t) =>
-        `<li><strong>${t.title}</strong> (${t.pct}%) — ${t.description} · ${Math.round(t.reviews * scale)} reviews · ↑${t.wowDelta}% WoW</li>`,
+        `<li><strong>${t.title}</strong> (${t.pct}%) — ${t.description} · ${t.reviews} reviews · ↑${t.wowDelta}% WoW</li>`,
     )
     .join("");
   const radar = [
@@ -63,7 +63,7 @@ td,th{border:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#f0fdf4
 <h3>Action ideas</h3><ol>${d.weeklyNote.actions.map((a) => `<li>${a}</li>`).join("")}</ol>
 <h2>PM priority radar</h2><ul>${radar}</ul>
 <h2>Keywords</h2><p>${d.keywords.join(", ")}</p>
-<p style="margin-top:32px;font-size:12px;color:#6b7280">Generated from ${d.reviewCount.toLocaleString()} public App Store & Play reviews. Clustered automatically.</p>
+<p style="margin-top:32px;font-size:12px;color:#6b7280">Generated from ${reviews.toLocaleString()} public App Store & Play reviews (${d.period}).</p>
 </body></html>`;
 }
 

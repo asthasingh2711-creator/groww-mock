@@ -118,7 +118,7 @@ export function EmailComposer({ initial, onExportPdf, onClose }: Props) {
 
       <div className={styles.deliveryActions}>
         <button type="button" className={styles.btnPrimary} onClick={handleSend}>
-          ✉ Open in Gmail
+          ✉ Send Email
         </button>
         <button
           type="button"
@@ -129,7 +129,7 @@ export function EmailComposer({ initial, onExportPdf, onClose }: Props) {
         </button>
       </div>
       <p className={styles.sectionSub}>
-        Opens Gmail compose in a new tab with your fields. Scheduling is stored locally for this demo.
+        Send opens Gmail compose with your fields. Scheduling is stored locally for this demo.
       </p>
     </div>
   );

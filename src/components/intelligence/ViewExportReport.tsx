@@ -8,26 +8,18 @@ import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalytics";
 import { storeLabel } from "@/lib/reviewAnalytics";
 import styles from "./intelligence.module.css";
 
-function scaleCount(n: number, scale: number) {
-  return Math.round(n * scale);
-}
-
 export function ViewExportReport({
   stats,
-  scale,
   platform = "all",
 }: {
   stats: ReviewAnalyticsSlice;
-  scale: number;
   platform?: string;
 }) {
-  const reviews = scaleCount(stats.reviewCount, scale);
-
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
         Full intelligence report from {storeLabel(platform)} CSV exports — reviews,
-        analytics, themes, and weekly pulse.
+        analytics, themes, and weekly pulse. Counts match the selected time range.
       </p>
       <div className={styles.exportReportGrid}>
         <div className={styles.chartCard}>
@@ -35,8 +27,8 @@ export function ViewExportReport({
           <ul className={styles.exportList}>
             <li>Executive summary & trend alert</li>
             <li>
-              KPIs: {reviews.toLocaleString()} reviews, {stats.avgRating}★ avg,{" "}
-              {stats.sentimentScore}% sentiment
+              KPIs: {stats.reviewCount.toLocaleString()} reviews, {stats.avgRating}★
+              avg, {stats.sentimentScore}% sentiment
             </li>
             <li>{stats.themeCards.length} themes with WoW deltas</li>
             <li>PM Priority Radar items</li>
