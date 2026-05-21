@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import type { PulseSnapshot } from "@/lib/pulseSnapshot";
+import { draftFromSnapshot } from "@/lib/pulseExport";
+import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
 
@@ -311,12 +313,17 @@ export function ViewWeeklyPulse({ d }: { d: PulseSnapshot }) {
 
 export function ViewDelivery({
   d,
+  adminEmail,
+  onAppendDocs,
   onExportPdf,
 }: {
   d: PulseSnapshot;
-  onExportPdf: () => void;
+  adminEmail: string;
+  onAppendDocs: () => void;
+  onExportPdf: (form: import("@/lib/pulseExport").EmailDraftForm) => void;
 }) {
-  const email = `To: ${d.emailDraft.to}\nSubject: ${d.emailDraft.subject}\n\n${d.emailDraft.body}`;
+  const [showComposer, setShowComposer] = useState(false);
+  const initialDraft = draftFromSnapshot(d, adminEmail);
 
   return (
     <>
@@ -328,25 +335,51 @@ export function ViewDelivery({
           <span className={styles.statusDot}>●</span> Docs — Ready
         </span>
         <span className={styles.statusItem}>
-          <span className={styles.statusDot}>●</span> PDF — Ready
+          <span className={styles.statusDot}>●</span> PDF — Email only
         </span>
         <span className={styles.aiBadgeGreen} style={{ marginLeft: "auto" }}>
           Last pipeline run · 2h ago
         </span>
       </div>
-      <p className={styles.sectionSub}>EMAIL DRAFT PREVIEW · AI-generated</p>
-      <div className={styles.emailPreview}>{email}</div>
-      <div className={styles.deliveryActions}>
-        <button type="button" className={styles.btnPrimary}>
-          ✉ Draft Email
-        </button>
-        <button type="button" className={styles.btnGhost}>
-          📄 Append to Docs
-        </button>
-        <button type="button" className={styles.btnGhost} onClick={onExportPdf}>
-          ↓ Export PDF
-        </button>
-      </div>
+
+      {!showComposer ? (
+        <>
+          <p className={styles.sectionSub}>EMAIL DRAFT PREVIEW · AI-generated</p>
+          <div className={styles.emailPreview}>
+            <strong>To:</strong> {adminEmail}
+            <br />
+            <strong>Subject:</strong> {d.emailDraft.subject}
+            <br />
+            <br />
+            {d.emailDraft.body}
+          </div>
+          <div className={styles.deliveryActions}>
+            <button
+              type="button"
+              className={styles.btnPrimary}
+              onClick={() => setShowComposer(true)}
+            >
+              ✉ Draft Email
+            </button>
+            <button type="button" className={styles.btnGhost} onClick={onAppendDocs}>
+              📄 Append to Docs
+            </button>
+            <button
+              type="button"
+              className={styles.btnGhost}
+              onClick={() => onExportPdf(initialDraft)}
+            >
+              ↓ Export email PDF
+            </button>
+          </div>
+        </>
+      ) : (
+        <EmailComposer
+          initial={initialDraft}
+          onExportPdf={onExportPdf}
+          onClose={() => setShowComposer(false)}
+        />
+      )}
     </>
   );
 }
@@ -357,5 +390,6 @@ export const VIEW_SUBTITLES: Record<string, string> = {
   analytics: "Rating, sentiment, and volume charts.",
   themes: "Top 5 themed insights — click to expand.",
   "weekly-pulse": "Executive one-pager · LLM-generated.",
-  delivery: "Email draft preview and export actions.",
+  delivery: "Gmail compose, Docs append, and email PDF export.",
+  "export-report": "Full report — reviews, analytics, themes, and pulse.",
 };

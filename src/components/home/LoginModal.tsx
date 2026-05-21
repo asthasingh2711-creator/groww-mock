@@ -7,7 +7,7 @@ export type LoginMode = "user" | "admin";
 
 type Props = {
   open: boolean;
-  onSubmit: (initials: string, mode: LoginMode) => void | Promise<void>;
+  onSubmit: (initials: string, mode: LoginMode, email?: string) => void | Promise<void>;
   onCancel: () => void;
 };
 
@@ -101,7 +101,7 @@ export function LoginModal({ open, onSubmit, onCancel }: Props) {
           setAdminError("Invalid admin password.");
           return;
         }
-        await onSubmit(initials, "admin");
+        await onSubmit(initials, "admin", rawEmail.trim());
       } catch {
         setAdminError("Could not reach server. Try again.");
       } finally {

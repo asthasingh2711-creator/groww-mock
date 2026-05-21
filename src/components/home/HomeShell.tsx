@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { setAdminSession } from "@/lib/adminSession";
+import { setAdminEmail, setAdminSession } from "@/lib/adminSession";
 import type { LoginMode } from "./LoginModal";
 import { HomeHeader } from "./HomeHeader";
 import { HomeHero } from "./HomeHero";
@@ -43,7 +43,7 @@ export function HomeShell() {
    * LoginModal and never reaches this callback. Logout clears the key.
    */
   const onSubmit = useCallback(
-    async (initials: string, mode: LoginMode) => {
+    async (initials: string, mode: LoginMode, email?: string) => {
       setLoginOpen(false);
       try {
         if (initials) {
@@ -51,7 +51,12 @@ export function HomeShell() {
         } else {
           sessionStorage.removeItem("demoInitials");
         }
-        setAdminSession(mode === "admin");
+        if (mode === "admin") {
+          setAdminSession(true);
+          if (email) setAdminEmail(email);
+        } else {
+          setAdminSession(false);
+        }
       } catch {
         // sessionStorage can throw in privacy mode — fine, avatar falls
         // back to "MF" and the rest of the demo keeps working.

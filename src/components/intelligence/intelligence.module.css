@@ -1,3 +1,14 @@
+/* Groww about-us layout — intelligence panels use light theme */
+.lightShell {
+  width: 100%;
+  background: var(--gw-bg);
+  color: var(--gw-text);
+  border-radius: 16px;
+  border: 1px solid var(--gw-border);
+  overflow: hidden;
+  box-shadow: var(--gw-shadow);
+}
+
 .wrap {
   min-height: 100vh;
   background: #0a0a0b;
@@ -767,6 +778,237 @@
     display: none;
   }
   .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ——— Light theme (matches /about-us) ——— */
+.lightShell .header,
+.lightShell .filters {
+  background: #fff;
+  border-color: var(--gw-border);
+}
+
+.lightShell .title {
+  color: var(--gw-text);
+}
+
+.lightShell .subtitle,
+.lightShell .sectionSub,
+.lightShell .filterLabel,
+.lightShell .statusItem,
+.lightShell .kpiLabel,
+.lightShell .kpiHint,
+.lightShell .radarDesc,
+.lightShell .voiceMeta {
+  color: var(--gw-muted);
+}
+
+.lightShell .tab {
+  color: var(--gw-muted);
+}
+
+.lightShell .tab:hover,
+.lightShell .tabActive {
+  color: var(--gw-text);
+}
+
+.lightShell .tabActive {
+  border-bottom-color: var(--gw-green);
+}
+
+.lightShell .pill {
+  background: #f9fafb;
+  border-color: var(--gw-border);
+  color: var(--gw-muted);
+}
+
+.lightShell .pillActive {
+  background: var(--gw-green);
+  color: #052e1f;
+  border-color: var(--gw-green);
+}
+
+.lightShell .btnGhost {
+  background: #fff;
+  border-color: var(--gw-border);
+  color: var(--gw-text);
+}
+
+.lightShell .btnGhost:hover {
+  border-color: var(--gw-green);
+}
+
+.lightShell .btnPrimary {
+  background: var(--gw-green);
+  color: #052e1f;
+  border-color: var(--gw-green);
+}
+
+.lightShell .kpiCard,
+.lightShell .chartCard,
+.lightShell .noteCard,
+.lightShell .voiceCard,
+.lightShell .radarCard,
+.lightShell .themeCard,
+.lightShell .emailComposer {
+  background: #fff;
+  border-color: var(--gw-border);
+  box-shadow: 0 1px 3px rgba(17, 24, 39, 0.06);
+}
+
+.lightShell .radarCardCritical {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: #fffbfb;
+}
+
+.lightShell .radarCardWarn {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: #fffbeb;
+}
+
+.lightShell .alertBanner {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  color: #92400e;
+}
+
+.lightShell .keyword {
+  background: #f3f4f6;
+  border-color: var(--gw-border);
+  color: var(--gw-text);
+}
+
+.lightShell .keywordSel {
+  border-color: var(--gw-green);
+  color: #047857;
+  background: rgba(0, 208, 156, 0.1);
+}
+
+.lightShell .voiceQuote {
+  color: var(--gw-text);
+}
+
+.lightShell .noteBody {
+  color: var(--gw-text);
+}
+
+.lightShell .emailPreview {
+  background: #f9fafb;
+  border-color: var(--gw-border);
+  color: var(--gw-text);
+  font-family: inherit;
+}
+
+.lightShell .barTrack {
+  background: #e5e7eb;
+}
+
+.lightShell .aiBadge {
+  background: #f3f4f6;
+  color: var(--gw-muted);
+}
+
+.lightShell .sectionTitle {
+  color: var(--gw-text);
+}
+
+.lightShell .toast {
+  background: #fff;
+  border-color: var(--gw-green);
+  color: #047857;
+  box-shadow: var(--gw-shadow);
+}
+
+.emailComposer {
+  background: #fff;
+  border: 1px solid var(--gw-border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 12px;
+}
+
+.emailComposerHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.emailForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emailLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gw-muted);
+}
+
+.emailInput,
+.emailTextarea {
+  border: 1px solid var(--gw-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--gw-text);
+  background: #fff;
+}
+
+.emailInput:focus,
+.emailTextarea:focus {
+  outline: none;
+  border-color: var(--gw-green);
+  box-shadow: 0 0 0 3px rgba(0, 208, 156, 0.2);
+}
+
+.emailTextarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.scheduleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--gw-border);
+}
+
+.scheduleSaved {
+  font-size: 12px;
+  font-weight: 700;
+  color: #047857;
+}
+
+.exportReportGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+
+.exportList {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gw-text);
+}
+
+.exportList li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .exportReportGrid {
     grid-template-columns: 1fr;
   }
 }

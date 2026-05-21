@@ -7,15 +7,15 @@ export default function AnalyticsPage() {
       fallback={
         <div
           style={{
-            minHeight: "100vh",
-            background: "#0a0a0b",
-            color: "#71717a",
+            minHeight: "60vh",
+            background: "var(--gw-bg)",
+            color: "var(--gw-muted)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          Loading intelligence…
+          Loading analytics…
         </div>
       }
     >
