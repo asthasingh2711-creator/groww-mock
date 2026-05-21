@@ -1,26 +1,761 @@
 {
   "all": {
+    "weekCode": "2026-W20",
+    "weekLabel": "Week 20, 2026",
+    "period": "2026-05-01 \u2192 2026-05-14",
     "reviewCount": 700,
-    "volumeLabels": ["W16", "W17", "W18", "W19", "W20"],
-    "weeklyVolume": [0, 0, 52, 284, 364],
-    "ratingDistribution": [47, 7, 8, 40, 598],
-    "sentimentSplit": { "positive": 91, "negative": 8, "neutral": 1 },
-    "avgRating": 4.62
+    "wordCount": 18,
+    "wordLimit": 250,
+    "avgRating": 4.62,
+    "avgRatingDelta": -0.07,
+    "sentimentScore": 91,
+    "sentimentDelta": -2.1,
+    "wowReviewDelta": 28.2,
+    "weeklyVolume": [
+      0,
+      0,
+      52,
+      284,
+      364
+    ],
+    "volumeLabels": [
+      "W16",
+      "W17",
+      "W18",
+      "W19",
+      "W20"
+    ],
+    "ratingDistribution": [
+      47,
+      7,
+      8,
+      40,
+      598
+    ],
+    "sentimentSplit": {
+      "positive": 91,
+      "negative": 8,
+      "neutral": 1
+    },
+    "trendAlert": "Order Execution Problems mentions up +38% week-over-week",
+    "keywords": [
+      "easy",
+      "nice",
+      "user",
+      "great",
+      "trading",
+      "friendly",
+      "experience",
+      "excellent",
+      "interface",
+      "investment",
+      "platform",
+      "investing"
+    ],
+    "themeCards": [
+      {
+        "id": "orders",
+        "title": "Order Execution Problems",
+        "count": 34,
+        "pct": 5,
+        "lowPct": 21,
+        "wowDelta": 38,
+        "sparkline": [
+          0,
+          0,
+          3,
+          13,
+          18
+        ],
+        "reviews": 34,
+        "priority": "High",
+        "description": "Order flow complaints in 34 reviews across F&O and cash segments."
+      },
+      {
+        "id": "brokerage",
+        "title": "High Brokerage Charges",
+        "count": 22,
+        "pct": 3,
+        "lowPct": 55,
+        "wowDelta": 33,
+        "sparkline": [
+          0,
+          0,
+          1,
+          9,
+          12
+        ],
+        "reviews": 22,
+        "priority": "Critical",
+        "description": "Mentioned in 3% of sample reviews; 55% are 1\u20132\u2605 charge complaints."
+      },
+      {
+        "id": "withdrawal",
+        "title": "Withdrawal Issues",
+        "count": 20,
+        "pct": 3,
+        "lowPct": 35,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          2,
+          9,
+          9
+        ],
+        "reviews": 20,
+        "priority": "High",
+        "description": "Payout / withdrawal language in 20 reviews \u2014 trust-sensitive."
+      },
+      {
+        "id": "support",
+        "title": "Poor Customer Support",
+        "count": 19,
+        "pct": 3,
+        "lowPct": 47,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          0,
+          10,
+          9
+        ],
+        "reviews": 19,
+        "priority": "High",
+        "description": "Support friction in 19 reviews (47% low-rated)."
+      },
+      {
+        "id": "glitches",
+        "title": "Technical Glitches",
+        "count": 17,
+        "pct": 2,
+        "lowPct": 53,
+        "wowDelta": 29,
+        "sparkline": [
+          0,
+          0,
+          1,
+          7,
+          9
+        ],
+        "reviews": 17,
+        "priority": "Critical",
+        "description": "Stability issues cited in 17 reviews during peak usage."
+      }
+    ],
+    "pmRadar": {
+      "highImpact": [
+        {
+          "title": "High Brokerage Charges",
+          "count": 22,
+          "icon": "\ud83d\udcb0",
+          "severity": "critical",
+          "description": "Mentioned in 3% of sample reviews; 55% are 1\u20132\u2605 charge complaints."
+        },
+        {
+          "title": "Technical Glitches",
+          "count": 17,
+          "icon": "\u26a1",
+          "severity": "warn",
+          "description": "Stability issues cited in 17 reviews during peak usage."
+        }
+      ],
+      "highFrequency": [
+        {
+          "title": "Order Execution Problems",
+          "count": 34,
+          "icon": "\ud83d\udcc9",
+          "severity": "warn",
+          "description": "Order flow complaints in 34 reviews across F&O and cash segments."
+        },
+        {
+          "title": "High Brokerage Charges",
+          "count": 22,
+          "icon": "\ud83d\udcb0",
+          "severity": "warn",
+          "description": "Mentioned in 3% of sample reviews; 55% are 1\u20132\u2605 charge complaints."
+        }
+      ],
+      "monitor": [
+        {
+          "title": "Withdrawal Issues",
+          "count": 20,
+          "icon": "\ud83d\udd25",
+          "severity": "warn",
+          "description": "Payout / withdrawal language in 20 reviews \u2014 trust-sensitive."
+        },
+        {
+          "title": "Poor Customer Support",
+          "count": 19,
+          "icon": "\ud83d\udcde",
+          "severity": "warn",
+          "description": "Support friction in 19 reviews (47% low-rated)."
+        }
+      ]
+    },
+    "userVoices": [
+      {
+        "quote": "They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert san",
+        "source": "App Store",
+        "stars": 1
+      },
+      {
+        "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart",
+        "source": "App Store",
+        "stars": 1
+      },
+      {
+        "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second",
+        "source": "Play Store",
+        "stars": 1
+      },
+      {
+        "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders i",
+        "source": "App Store",
+        "stars": 2
+      },
+      {
+        "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the l",
+        "source": "App Store",
+        "stars": 2
+      },
+      {
+        "quote": "Its been 1 month I am struggling to get my money back, there customer service is pathetic and very disappointing, no one is helping , they just need to send me",
+        "source": "App Store",
+        "stars": 1
+      }
+    ],
+    "weeklyNote": {
+      "summary": "Weekly pulse from 700 extracted public reviews: 4.62\u2605 average, 91% positive sentiment. Order Execution Problems leads negative mentions.",
+      "themes": [
+        "Order Execution Problems \u2014 5% of corpus (34 reviews, \u219138% WoW)",
+        "High Brokerage Charges \u2014 3% of corpus (22 reviews, \u219133% WoW)",
+        "Withdrawal Issues \u2014 3% of corpus (20 reviews, \u21910% WoW)"
+      ],
+      "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
+      "quotes": [
+        "\u2022 They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert san",
+        "\u2022 1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart",
+        "\u2022 abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second"
+      ],
+      "actions": [
+        "Address order execution problems with a product + comms fix this sprint",
+        "Publish fee / withdrawal SLAs in-app before money movement",
+        "Route 1\u20132\u2605 tickets to expedited support within 24h"
+      ]
+    },
+    "emailDraft": {
+      "to": "team@groww.in",
+      "subject": "Groww Weekly Review Pulse",
+      "body": "Groww public review pulse (2026-W20): 700 reviews, 4.62\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 5% of sample (\u219138% WoW)\n2. High Brokerage Charges \u2014 3% of sample (\u219133% WoW)\n3. Withdrawal Issues \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nThey grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+    },
+    "executiveSummary": "Analysis of 700 public App Store & Play reviews (2026-05-01 \u2192 2026-05-14): average 4.62\u2605 with 91% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Withdrawal Issues."
   },
   "ios": {
+    "weekCode": "2026-W20",
+    "weekLabel": "Week 20, 2026",
+    "period": "2026-05-01 \u2192 2026-05-13",
     "reviewCount": 500,
-    "volumeLabels": ["W16", "W17", "W18", "W19", "W20"],
-    "weeklyVolume": [0, 0, 52, 284, 164],
-    "ratingDistribution": [24, 4, 2, 28, 442],
-    "sentimentSplit": { "positive": 94, "negative": 6, "neutral": 0 },
-    "avgRating": 4.72
+    "wordCount": 18,
+    "wordLimit": 250,
+    "avgRating": 4.72,
+    "avgRatingDelta": 0.17,
+    "sentimentScore": 94,
+    "sentimentDelta": 5.0,
+    "wowReviewDelta": -42.3,
+    "weeklyVolume": [
+      0,
+      0,
+      52,
+      284,
+      164
+    ],
+    "volumeLabels": [
+      "W16",
+      "W17",
+      "W18",
+      "W19",
+      "W20"
+    ],
+    "ratingDistribution": [
+      24,
+      4,
+      2,
+      28,
+      442
+    ],
+    "sentimentSplit": {
+      "positive": 94,
+      "negative": 6,
+      "neutral": 0
+    },
+    "trendAlert": "Negative reviews at 6% of 500 public store samples",
+    "keywords": [
+      "easy",
+      "nice",
+      "user",
+      "great",
+      "trading",
+      "friendly",
+      "experience",
+      "excellent",
+      "investment",
+      "interface",
+      "platform",
+      "investing"
+    ],
+    "themeCards": [
+      {
+        "id": "orders",
+        "title": "Order Execution Problems",
+        "count": 29,
+        "pct": 6,
+        "lowPct": 17,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          3,
+          13,
+          13
+        ],
+        "reviews": 29,
+        "priority": "High",
+        "description": "Order flow complaints in 29 reviews across F&O and cash segments."
+      },
+      {
+        "id": "support",
+        "title": "Poor Customer Support",
+        "count": 18,
+        "pct": 4,
+        "lowPct": 44,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          0,
+          10,
+          8
+        ],
+        "reviews": 18,
+        "priority": "High",
+        "description": "Support friction in 18 reviews (44% low-rated)."
+      },
+      {
+        "id": "withdrawal",
+        "title": "Withdrawal Issues",
+        "count": 16,
+        "pct": 3,
+        "lowPct": 44,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          2,
+          9,
+          5
+        ],
+        "reviews": 16,
+        "priority": "High",
+        "description": "Payout / withdrawal language in 16 reviews \u2014 trust-sensitive."
+      },
+      {
+        "id": "brokerage",
+        "title": "High Brokerage Charges",
+        "count": 13,
+        "pct": 3,
+        "lowPct": 38,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          1,
+          9,
+          3
+        ],
+        "reviews": 13,
+        "priority": "High",
+        "description": "Mentioned in 3% of sample reviews; 38% are 1\u20132\u2605 charge complaints."
+      },
+      {
+        "id": "glitches",
+        "title": "Technical Glitches",
+        "count": 12,
+        "pct": 2,
+        "lowPct": 42,
+        "wowDelta": 0,
+        "sparkline": [
+          0,
+          0,
+          1,
+          7,
+          4
+        ],
+        "reviews": 12,
+        "priority": "High",
+        "description": "Stability issues cited in 12 reviews during peak usage."
+      }
+    ],
+    "pmRadar": {
+      "highImpact": [
+        {
+          "title": "Poor Customer Support",
+          "count": 18,
+          "icon": "\ud83d\udcde",
+          "severity": "warn",
+          "description": "Support friction in 18 reviews (44% low-rated)."
+        },
+        {
+          "title": "Withdrawal Issues",
+          "count": 16,
+          "icon": "\ud83d\udd25",
+          "severity": "warn",
+          "description": "Payout / withdrawal language in 16 reviews \u2014 trust-sensitive."
+        }
+      ],
+      "highFrequency": [
+        {
+          "title": "Order Execution Problems",
+          "count": 29,
+          "icon": "\ud83d\udcc9",
+          "severity": "warn",
+          "description": "Order flow complaints in 29 reviews across F&O and cash segments."
+        },
+        {
+          "title": "Poor Customer Support",
+          "count": 18,
+          "icon": "\ud83d\udcde",
+          "severity": "warn",
+          "description": "Support friction in 18 reviews (44% low-rated)."
+        }
+      ],
+      "monitor": [
+        {
+          "title": "Withdrawal Issues",
+          "count": 16,
+          "icon": "\ud83d\udd25",
+          "severity": "warn",
+          "description": "Payout / withdrawal language in 16 reviews \u2014 trust-sensitive."
+        },
+        {
+          "title": "High Brokerage Charges",
+          "count": 13,
+          "icon": "\ud83d\udcb0",
+          "severity": "warn",
+          "description": "Mentioned in 3% of sample reviews; 38% are 1\u20132\u2605 charge complaints."
+        }
+      ]
+    },
+    "userVoices": [
+      {
+        "quote": "They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert san",
+        "source": "App Store",
+        "stars": 1
+      },
+      {
+        "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart",
+        "source": "App Store",
+        "stars": 1
+      },
+      {
+        "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders i",
+        "source": "App Store",
+        "stars": 2
+      },
+      {
+        "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the l",
+        "source": "App Store",
+        "stars": 2
+      },
+      {
+        "quote": "Its been 1 month I am struggling to get my money back, there customer service is pathetic and very disappointing, no one is helping , they just need to send me",
+        "source": "App Store",
+        "stars": 1
+      },
+      {
+        "quote": "I put order in groww in F&O, it didn\u2019t take it even it went down so much. Too much technical errors in this App. Zerodha would be best compare to groww. Worst a",
+        "source": "App Store",
+        "stars": 1
+      }
+    ],
+    "weeklyNote": {
+      "summary": "Weekly pulse from 500 extracted public reviews: 4.72\u2605 average, 94% positive sentiment. Order Execution Problems leads negative mentions.",
+      "themes": [
+        "Order Execution Problems \u2014 6% of corpus (29 reviews, \u21910% WoW)",
+        "Poor Customer Support \u2014 4% of corpus (18 reviews, \u21910% WoW)",
+        "Withdrawal Issues \u2014 3% of corpus (16 reviews, \u21910% WoW)"
+      ],
+      "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
+      "quotes": [
+        "\u2022 They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert san",
+        "\u2022 1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart",
+        "\u2022 This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders i"
+      ],
+      "actions": [
+        "Address order execution problems with a product + comms fix this sprint",
+        "Publish fee / withdrawal SLAs in-app before money movement",
+        "Route 1\u20132\u2605 tickets to expedited support within 24h"
+      ]
+    },
+    "emailDraft": {
+      "to": "team@groww.in",
+      "subject": "Groww Weekly Review Pulse",
+      "body": "Groww public review pulse (2026-W20): 500 reviews, 4.72\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 6% of sample (\u21910% WoW)\n2. Poor Customer Support \u2014 4% of sample (\u21910% WoW)\n3. Withdrawal Issues \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nThey grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+    },
+    "executiveSummary": "Analysis of 500 public App Store & Play reviews (2026-05-01 \u2192 2026-05-13): average 4.72\u2605 with 94% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, Withdrawal Issues."
   },
   "android": {
+    "weekCode": "2026-W20",
+    "weekLabel": "Week 20, 2026",
+    "period": "2026-05-13 \u2192 2026-05-14",
     "reviewCount": 200,
-    "volumeLabels": ["W16", "W17", "W18", "W19", "W20"],
-    "weeklyVolume": [0, 0, 0, 0, 200],
-    "ratingDistribution": [23, 3, 6, 12, 156],
-    "sentimentSplit": { "positive": 84, "negative": 13, "neutral": 3 },
-    "avgRating": 4.38
+    "wordCount": 18,
+    "wordLimit": 250,
+    "avgRating": 4.38,
+    "avgRatingDelta": 0.0,
+    "sentimentScore": 84,
+    "sentimentDelta": 84.0,
+    "wowReviewDelta": 20000,
+    "weeklyVolume": [
+      0,
+      0,
+      0,
+      0,
+      200
+    ],
+    "volumeLabels": [
+      "W16",
+      "W17",
+      "W18",
+      "W19",
+      "W20"
+    ],
+    "ratingDistribution": [
+      23,
+      3,
+      6,
+      12,
+      156
+    ],
+    "sentimentSplit": {
+      "positive": 84,
+      "negative": 13,
+      "neutral": 3
+    },
+    "trendAlert": "High Brokerage Charges mentions up +900% week-over-week",
+    "keywords": [
+      "nice",
+      "experience",
+      "easy",
+      "trading",
+      "charge",
+      "charges",
+      "user",
+      "service",
+      "excellent",
+      "platform",
+      "time",
+      "friendly"
+    ],
+    "themeCards": [
+      {
+        "id": "brokerage",
+        "title": "High Brokerage Charges",
+        "count": 9,
+        "pct": 4,
+        "lowPct": 78,
+        "wowDelta": 900,
+        "sparkline": [
+          0,
+          0,
+          0,
+          0,
+          9
+        ],
+        "reviews": 9,
+        "priority": "Critical",
+        "description": "Mentioned in 4% of sample reviews; 78% are 1\u20132\u2605 charge complaints."
+      },
+      {
+        "id": "glitches",
+        "title": "Technical Glitches",
+        "count": 5,
+        "pct": 2,
+        "lowPct": 80,
+        "wowDelta": 500,
+        "sparkline": [
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        "reviews": 5,
+        "priority": "Critical",
+        "description": "Stability issues cited in 5 reviews during peak usage."
+      },
+      {
+        "id": "orders",
+        "title": "Order Execution Problems",
+        "count": 5,
+        "pct": 2,
+        "lowPct": 40,
+        "wowDelta": 500,
+        "sparkline": [
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        "reviews": 5,
+        "priority": "High",
+        "description": "Order flow complaints in 5 reviews across F&O and cash segments."
+      },
+      {
+        "id": "withdrawal",
+        "title": "Withdrawal Issues",
+        "count": 4,
+        "pct": 2,
+        "lowPct": 0,
+        "wowDelta": 400,
+        "sparkline": [
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        "reviews": 4,
+        "priority": "High",
+        "description": "Payout / withdrawal language in 4 reviews \u2014 trust-sensitive."
+      },
+      {
+        "id": "support",
+        "title": "Poor Customer Support",
+        "count": 1,
+        "pct": 0,
+        "lowPct": 100,
+        "wowDelta": 100,
+        "sparkline": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "reviews": 1,
+        "priority": "Critical",
+        "description": "Support friction in 1 reviews (100% low-rated)."
+      }
+    ],
+    "pmRadar": {
+      "highImpact": [
+        {
+          "title": "Poor Customer Support",
+          "count": 1,
+          "icon": "\ud83d\udcde",
+          "severity": "critical",
+          "description": "Support friction in 1 reviews (100% low-rated)."
+        },
+        {
+          "title": "Technical Glitches",
+          "count": 5,
+          "icon": "\u26a1",
+          "severity": "critical",
+          "description": "Stability issues cited in 5 reviews during peak usage."
+        }
+      ],
+      "highFrequency": [
+        {
+          "title": "High Brokerage Charges",
+          "count": 9,
+          "icon": "\ud83d\udcb0",
+          "severity": "warn",
+          "description": "Mentioned in 4% of sample reviews; 78% are 1\u20132\u2605 charge complaints."
+        },
+        {
+          "title": "Technical Glitches",
+          "count": 5,
+          "icon": "\u26a1",
+          "severity": "warn",
+          "description": "Stability issues cited in 5 reviews during peak usage."
+        }
+      ],
+      "monitor": [
+        {
+          "title": "Order Execution Problems",
+          "count": 5,
+          "icon": "\ud83d\udcc9",
+          "severity": "warn",
+          "description": "Order flow complaints in 5 reviews across F&O and cash segments."
+        },
+        {
+          "title": "Withdrawal Issues",
+          "count": 4,
+          "icon": "\ud83d\udd25",
+          "severity": "warn",
+          "description": "Payout / withdrawal language in 4 reviews \u2014 trust-sensitive."
+        }
+      ]
+    },
+    "userVoices": [
+      {
+        "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second",
+        "source": "Play Store",
+        "stars": 1
+      },
+      {
+        "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting",
+        "source": "Play Store",
+        "stars": 1
+      },
+      {
+        "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more",
+        "source": "Play Store",
+        "stars": 1
+      },
+      {
+        "quote": "stop giving ad's on youtube. YouTube ad's have become intrusive and if you continue to show me your ad's on youtube then I will stop using your application. ser",
+        "source": "Play Store",
+        "stars": 1
+      },
+      {
+        "quote": "it's been more than a year raised multiple complaints about slow app loading in the morning and evening session but their development team unableto fix this bug",
+        "source": "Play Store",
+        "stars": 1
+      },
+      {
+        "quote": "Different data is showing on the MF website, and incorrect data is showing in the Groww application. Kindly sync your data with the MF website.",
+        "source": "Play Store",
+        "stars": 1
+      }
+    ],
+    "weeklyNote": {
+      "summary": "Weekly pulse from 200 extracted public reviews: 4.38\u2605 average, 84% positive sentiment. High Brokerage Charges leads negative mentions.",
+      "themes": [
+        "High Brokerage Charges \u2014 4% of corpus (9 reviews, \u2191900% WoW)",
+        "Technical Glitches \u2014 2% of corpus (5 reviews, \u2191500% WoW)",
+        "Order Execution Problems \u2014 2% of corpus (5 reviews, \u2191500% WoW)"
+      ],
+      "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
+      "quotes": [
+        "\u2022 abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second",
+        "\u2022 Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting",
+        "\u2022 Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more"
+      ],
+      "actions": [
+        "Address high brokerage charges with a product + comms fix this sprint",
+        "Publish fee / withdrawal SLAs in-app before money movement",
+        "Route 1\u20132\u2605 tickets to expedited support within 24h"
+      ]
+    },
+    "emailDraft": {
+      "to": "team@groww.in",
+      "subject": "Groww Weekly Review Pulse",
+      "body": "Groww public review pulse (2026-W20): 200 reviews, 4.38\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 4% of sample (\u2191900% WoW)\n2. Technical Glitches \u2014 2% of sample (\u2191500% WoW)\n3. Order Execution Problems \u2014 2% of sample (\u2191500% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+    },
+    "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems."
   }
 }

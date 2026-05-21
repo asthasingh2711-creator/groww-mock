@@ -1,34 +1,44 @@
 "use client";
 
-import type { PulseSnapshot } from "@/lib/pulseSnapshot";
 import {
   downloadFullReportDoc,
   downloadFullReportMarkdown,
 } from "@/lib/pulseExport";
+import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalytics";
+import { storeLabel } from "@/lib/reviewAnalytics";
 import styles from "./intelligence.module.css";
 
+function scaleCount(n: number, scale: number) {
+  return Math.round(n * scale);
+}
+
 export function ViewExportReport({
-  d,
+  stats,
   scale,
+  platform = "all",
 }: {
-  d: PulseSnapshot;
+  stats: ReviewAnalyticsSlice;
   scale: number;
+  platform?: string;
 }) {
-  const reviews = Math.round(d.reviewCount * scale);
+  const reviews = scaleCount(stats.reviewCount, scale);
 
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        Full intelligence report — reviews, analytics, themes, and weekly pulse in
-        one document. AI-generated · PII-safe export.
+        Full intelligence report from {storeLabel(platform)} CSV exports — reviews,
+        analytics, themes, and weekly pulse.
       </p>
       <div className={styles.exportReportGrid}>
         <div className={styles.chartCard}>
           <h3 className={styles.sectionTitle}>What&apos;s included</h3>
           <ul className={styles.exportList}>
             <li>Executive summary & trend alert</li>
-            <li>KPIs: {reviews.toLocaleString()} reviews, {d.avgRating}★ avg, {d.sentimentScore}% sentiment</li>
-            <li>All 5 themes with WoW deltas</li>
+            <li>
+              KPIs: {reviews.toLocaleString()} reviews, {stats.avgRating}★ avg,{" "}
+              {stats.sentimentScore}% sentiment
+            </li>
+            <li>{stats.themeCards.length} themes with WoW deltas</li>
             <li>PM Priority Radar items</li>
             <li>Weekly pulse, quotes, and action ideas</li>
             <li>Analytics: ratings, sentiment split, volume trend</li>
@@ -41,14 +51,14 @@ export function ViewExportReport({
             <button
               type="button"
               className={styles.btnPrimary}
-              onClick={() => downloadFullReportDoc(d)}
+              onClick={() => downloadFullReportDoc(stats)}
             >
               ↓ Export full report (.doc)
             </button>
             <button
               type="button"
               className={styles.btnGhost}
-              onClick={() => downloadFullReportMarkdown(d)}
+              onClick={() => downloadFullReportMarkdown(stats)}
             >
               ↓ Export full report (.md)
             </button>

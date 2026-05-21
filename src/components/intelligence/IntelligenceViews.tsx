@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import type { PulseSnapshot } from "@/lib/pulseSnapshot";
-import { draftFromSnapshot } from "@/lib/pulseExport";
-import { getReviewAnalytics, type ReviewPlatform } from "@/lib/reviewAnalytics";
+import { draftFromAnalytics } from "@/lib/pulseExport";
+import {
+  storeLabel,
+  type ReviewAnalyticsSlice,
+  type ReviewPlatform,
+} from "@/lib/reviewAnalytics";
 import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
@@ -12,16 +15,22 @@ function scaleCount(n: number, scale: number) {
   return Math.round(n * scale);
 }
 
-export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
+export function ViewReviews({
+  stats,
+  scale,
+}: {
+  stats: ReviewAnalyticsSlice;
+  scale: number;
+}) {
   const [kw, setKw] = useState<string | null>(null);
-  const reviews = scaleCount(d.reviewCount, scale);
+  const reviews = scaleCount(stats.reviewCount, scale);
 
   return (
     <>
       <div className={styles.alertBanner}>
         <span>⚠</span>
         <span>
-          <strong>Trend Alert:</strong> {d.trendAlert}
+          <strong>Trend Alert:</strong> {stats.trendAlert}
         </span>
         <span className={styles.aiBadgeGreen} style={{ marginLeft: "auto" }}>
           AI-detected
@@ -32,47 +41,47 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
             <span className={styles.kpiIcon}>📈</span>
-            <DeltaBadge value={d.wowReviewDelta} suffix="%" />
+            <DeltaBadge value={stats.wowReviewDelta} suffix="%" />
           </div>
           <div className={styles.kpiValue}>{reviews.toLocaleString()}</div>
           <div className={styles.kpiLabel}>Reviews analysed</div>
-          <div className={styles.kpiHint}>Click for details · PII-safe export</div>
+          <div className={styles.kpiHint}>From public store CSV export</div>
         </div>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
             <span className={styles.kpiIcon}>★</span>
-            <DeltaBadge value={d.avgRatingDelta} />
+            <DeltaBadge value={stats.avgRatingDelta} />
           </div>
-          <div className={styles.kpiValue}>{d.avgRating}</div>
+          <div className={styles.kpiValue}>{stats.avgRating}</div>
           <div className={styles.kpiLabel}>Average rating</div>
-          <div className={styles.kpiHint}>Clustered automatically</div>
+          <div className={styles.kpiHint}>Computed from star ratings</div>
         </div>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
             <span className={styles.kpiIcon}>⚡</span>
-            <DeltaBadge value={d.sentimentDelta} suffix="%" />
+            <DeltaBadge value={stats.sentimentDelta} suffix="%" />
           </div>
-          <div className={styles.kpiValue}>{d.sentimentScore}%</div>
+          <div className={styles.kpiValue}>{stats.sentimentScore}%</div>
           <div className={styles.kpiLabel}>Sentiment score</div>
-          <div className={styles.kpiHint}>LLM-scored from clusters</div>
+          <div className={styles.kpiHint}>4–5★ share of corpus</div>
         </div>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
             <span className={styles.kpiIcon}>🏷</span>
             <span className={styles.deltaFlat}>→ 0</span>
           </div>
-          <div className={styles.kpiValue}>5</div>
+          <div className={styles.kpiValue}>{stats.themeCards.length}</div>
           <div className={styles.kpiLabel}>Theme count</div>
-          <div className={styles.kpiHint}>Generated from public reviews</div>
+          <div className={styles.kpiHint}>Keyword-clustered from CSV</div>
         </div>
       </div>
 
       <h3 className={styles.sectionTitle}>Trending keywords</h3>
       <p className={styles.sectionSub}>
-        Clustered automatically · click a keyword to highlight related themes
+        Extracted from review text · click a keyword to highlight
       </p>
       <div className={styles.keywordCloud}>
-        {d.keywords.map((word, i) => (
+        {stats.keywords.map((word, i) => (
           <button
             key={word}
             type="button"
@@ -92,7 +101,7 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
       <div className={styles.radarGrid}>
         <div className={styles.radarCol}>
           <h4>HIGH IMPACT (Fix first)</h4>
-          {d.pmRadar.highImpact.map((item) => (
+          {stats.pmRadar.highImpact.map((item) => (
             <div
               key={item.title}
               className={`${styles.radarCard} ${
@@ -113,7 +122,7 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
         </div>
         <div className={styles.radarCol}>
           <h4>HIGH FREQUENCY (Volume drivers)</h4>
-          {d.pmRadar.highFrequency.map((item) => (
+          {stats.pmRadar.highFrequency.map((item) => (
             <div
               key={item.title}
               className={`${styles.radarCard} ${
@@ -134,7 +143,7 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
         </div>
         <div className={styles.radarCol}>
           <h4>MONITOR (Watch closely)</h4>
-          {d.pmRadar.monitor.map((item) => (
+          {stats.pmRadar.monitor.map((item) => (
             <div key={item.title} className={`${styles.radarCard} ${styles.radarCardWarn}`}>
               <div className={styles.radarCardHead}>
                 <span className={styles.radarCardTitle}>
@@ -151,7 +160,7 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
       <h3 className={styles.sectionTitle}>User voices</h3>
       <p className={styles.sectionSub}>Verbatim · PII-redacted · from public store exports</p>
       <div className={styles.voiceGrid}>
-        {d.userVoices.map((v) => (
+        {stats.userVoices.map((v) => (
           <div key={v.quote.slice(0, 30)} className={styles.voiceCard}>
             <p className={styles.voiceQuote}>&ldquo;{v.quote}&rdquo;</p>
             <div className={styles.voiceMeta}>
@@ -166,27 +175,21 @@ export function ViewReviews({ d, scale }: { d: PulseSnapshot; scale: number }) {
 }
 
 export function ViewAnalytics({
+  stats,
   platform,
   scale,
 }: {
+  stats: ReviewAnalyticsSlice;
   platform: ReviewPlatform | string;
   scale: number;
 }) {
-  const stats = getReviewAnalytics(platform);
   const vol = stats.weeklyVolume.map((v) => scaleCount(v, scale));
   const ratings = stats.ratingDistribution.map((c) => scaleCount(c, scale));
   const reviewTotal = scaleCount(stats.reviewCount, scale);
-  const storeLabel =
-    platform === "ios"
-      ? "App Store"
-      : platform === "android"
-        ? "Play Store"
-        : "App Store + Play Store";
-
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        Live from public review CSVs · {storeLabel} · {reviewTotal.toLocaleString()}{" "}
+        Live from public review CSVs · {storeLabel(platform)} · {reviewTotal.toLocaleString()}{" "}
         reviews · avg {stats.avgRating}★
       </p>
       <div className={styles.chartGrid}>
@@ -230,14 +233,20 @@ export function ViewAnalytics({
   );
 }
 
-export function ViewThemes({ d, scale }: { d: PulseSnapshot; scale: number }) {
+export function ViewThemes({
+  stats,
+  scale,
+}: {
+  stats: ReviewAnalyticsSlice;
+  scale: number;
+}) {
   return (
     <>
       <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        Top 5 themed insights — clustered automatically · click to expand
+        Top themes from CSV review text · keyword-clustered · click to expand
       </p>
       <div className={styles.themeGrid}>
-        {d.themeCards.map((t) => (
+        {stats.themeCards.map((t) => (
           <div key={t.id} className={styles.themeCard}>
             <div className={styles.themeCardHead}>
               <div>
@@ -277,8 +286,8 @@ export function ViewThemes({ d, scale }: { d: PulseSnapshot; scale: number }) {
   );
 }
 
-export function ViewWeeklyPulse({ d }: { d: PulseSnapshot }) {
-  const n = d.weeklyNote;
+export function ViewWeeklyPulse({ stats }: { stats: ReviewAnalyticsSlice }) {
+  const n = stats.weeklyNote;
 
   return (
     <div className={styles.noteCard}>
@@ -288,13 +297,13 @@ export function ViewWeeklyPulse({ d }: { d: PulseSnapshot }) {
             <span>✦</span> Weekly Pulse Note
           </div>
           <p className={styles.sectionSub} style={{ margin: "6px 0 0" }}>
-            Executive one-pager · LLM limit ≤{d.wordLimit} words
+            Executive one-pager · ≤{stats.wordLimit} words
           </p>
         </div>
         <div className={styles.noteMeta}>
-          <strong>{d.weekCode}</strong>
+          <strong>{stats.weekCode}</strong>
           <span>
-            {d.wordCount} words · AI-generated
+            {stats.wordCount} words · CSV-derived
           </span>
         </div>
       </div>
@@ -321,26 +330,26 @@ export function ViewWeeklyPulse({ d }: { d: PulseSnapshot }) {
         </ol>
       </div>
       <p style={{ marginTop: 16, fontSize: 12, color: "#71717a" }}>
-        LLM-generated executive summary · PII-safe export · Generated from{" "}
-        {d.reviewCount.toLocaleString()} public reviews
+        Executive summary from public store CSVs ·{" "}
+        {stats.reviewCount.toLocaleString()} reviews · {stats.period}
       </p>
     </div>
   );
 }
 
 export function ViewDelivery({
-  d,
+  stats,
   adminEmail,
   onAppendDocs,
   onExportPdf,
 }: {
-  d: PulseSnapshot;
+  stats: ReviewAnalyticsSlice;
   adminEmail: string;
   onAppendDocs: () => void;
   onExportPdf: (form: import("@/lib/pulseExport").EmailDraftForm) => void;
 }) {
   const [showComposer, setShowComposer] = useState(false);
-  const initialDraft = draftFromSnapshot(d, adminEmail);
+  const initialDraft = draftFromAnalytics(stats, adminEmail);
 
   return (
     <>
@@ -365,10 +374,10 @@ export function ViewDelivery({
           <div className={styles.emailPreview}>
             <strong>To:</strong> {adminEmail}
             <br />
-            <strong>Subject:</strong> {d.emailDraft.subject}
+            <strong>Subject:</strong> {stats.emailDraft.subject}
             <br />
             <br />
-            {d.emailDraft.body}
+            {stats.emailDraft.body}
           </div>
           <div className={styles.deliveryActions}>
             <button

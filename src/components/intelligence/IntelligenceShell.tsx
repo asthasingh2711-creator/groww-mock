@@ -7,7 +7,7 @@ import aboutStyles from "@/app/about-us/styles.module.css";
 import { TopNav } from "@/components/TopNav";
 import { readAdminEmail, readAdminSession } from "@/lib/adminSession";
 import { appendToGoogleDocs, exportEmailPdf } from "@/lib/pulseExport";
-import { getPulseSnapshot } from "@/lib/pulseSnapshot";
+import { getReviewAnalytics } from "@/lib/reviewAnalytics";
 import {
   ViewAnalytics,
   ViewDelivery,
@@ -36,12 +36,6 @@ function useIsAdmin() {
   return useSyncExternalStore(noop, readAdminSession, () => false);
 }
 
-const PLATFORM_SCALE: Record<string, number> = {
-  all: 1,
-  android: 0.82,
-  ios: 0.18,
-};
-
 const RANGE_SCALE: Record<string, number> = {
   today: 0.03,
   "7d": 0.12,
@@ -53,7 +47,6 @@ export function IntelligenceShell() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isAdmin = useIsAdmin();
-  const d = getPulseSnapshot();
   const adminEmail = useSyncExternalStore(noop, readAdminEmail, () => "admin@groww.in");
 
   const view = (searchParams.get("view") as TabId) || "reviews";
@@ -62,10 +55,8 @@ export function IntelligenceShell() {
   const [synced, setSynced] = useState(true);
   const [toast, setToast] = useState<string | null>(null);
 
-  const scale = useMemo(
-    () => (PLATFORM_SCALE[platform] ?? 1) * (RANGE_SCALE[range] ?? 1),
-    [platform, range],
-  );
+  const stats = useMemo(() => getReviewAnalytics(platform), [platform]);
+  const scale = useMemo(() => RANGE_SCALE[range] ?? 1, [range]);
 
   useEffect(() => {
     if (!isAdmin) router.replace("/?login=1");
@@ -165,25 +156,25 @@ export function IntelligenceShell() {
           </div>
 
           <div className={styles.content}>
-            {view === "reviews" && <ViewReviews d={d} scale={scale} />}
+            {view === "reviews" && <ViewReviews stats={stats} scale={scale} />}
             {view === "analytics" && (
-              <ViewAnalytics platform={platform} scale={scale} />
+              <ViewAnalytics stats={stats} platform={platform} scale={scale} />
             )}
-            {view === "themes" && <ViewThemes d={d} scale={scale} />}
-            {view === "weekly-pulse" && <ViewWeeklyPulse d={d} />}
+            {view === "themes" && <ViewThemes stats={stats} scale={scale} />}
+            {view === "weekly-pulse" && <ViewWeeklyPulse stats={stats} />}
             {view === "delivery" && (
               <ViewDelivery
-                d={d}
+                stats={stats}
                 adminEmail={adminEmail}
                 onAppendDocs={() => {
-                  appendToGoogleDocs(d);
+                  appendToGoogleDocs(stats);
                   showToast("Report downloaded — open in Google Docs");
                 }}
                 onExportPdf={(form) => exportEmailPdf(form)}
               />
             )}
             {view === "export-report" && (
-              <ViewExportReport d={d} scale={scale} />
+              <ViewExportReport stats={stats} scale={scale} platform={platform} />
             )}
           </div>
         </div>

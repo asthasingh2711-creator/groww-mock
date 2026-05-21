@@ -1,4 +1,4 @@
-import type { PulseSnapshot } from "@/lib/pulseSnapshot";
+import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalytics";
 
 export type EmailDraftForm = {
   to: string;
@@ -8,7 +8,10 @@ export type EmailDraftForm = {
   body: string;
 };
 
-export function draftFromSnapshot(d: PulseSnapshot, to: string): EmailDraftForm {
+export function draftFromAnalytics(
+  d: ReviewAnalyticsSlice,
+  to: string,
+): EmailDraftForm {
   const distro = d.emailDraft.to.trim();
   return {
     to,
@@ -19,7 +22,10 @@ export function draftFromSnapshot(d: PulseSnapshot, to: string): EmailDraftForm 
   };
 }
 
-export function buildFullReportHtml(d: PulseSnapshot, scale = 1): string {
+/** @deprecated Use draftFromAnalytics */
+export const draftFromSnapshot = draftFromAnalytics;
+
+export function buildFullReportHtml(d: ReviewAnalyticsSlice, scale = 1): string {
   const reviews = Math.round(d.reviewCount * scale);
   const themes = d.themeCards
     .map(
@@ -40,7 +46,7 @@ export function buildFullReportHtml(d: PulseSnapshot, scale = 1): string {
 h1{font-size:22px}h2{font-size:16px;margin-top:24px;color:#047857}table{border-collapse:collapse;width:100%}
 td,th{border:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#f0fdf4}</style></head><body>
 <h1>Groww Review Intelligence — Full Report</h1>
-<p><em>AI-generated · PII-safe export · ${d.weekCode} · ${d.period}</em></p>
+<p><em>From public store CSV exports · ${d.weekCode} · ${d.period}</em></p>
 <h2>Executive summary</h2><p>${d.executiveSummary}</p>
 <h2>Reviews overview</h2>
 <table><tr><th>Metric</th><th>Value</th></tr>
@@ -61,9 +67,9 @@ td,th{border:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#f0fdf4
 </body></html>`;
 }
 
-export function buildFullReportMarkdown(d: PulseSnapshot): string {
+export function buildFullReportMarkdown(d: ReviewAnalyticsSlice): string {
   return `# Groww Review Intelligence — Full Report
-**${d.weekCode}** · ${d.period} · AI-generated · PII-safe export
+**${d.weekCode}** · ${d.period} · From public store CSV exports
 
 ## Executive summary
 ${d.executiveSummary}
@@ -81,7 +87,7 @@ ${d.themeCards.map((t, i) => `${i + 1}. **${t.title}** (${t.pct}%) — ${t.descr
 ## Weekly pulse
 ${d.weeklyNote.summary}
 
-### Top 3 themes
+### Top themes
 ${d.weeklyNote.themes.map((t, i) => `${i + 1}. ${t}`).join("\n")}
 
 ### User quotes
@@ -106,7 +112,7 @@ function downloadBlob(content: string, filename: string, mime: string) {
   URL.revokeObjectURL(a.href);
 }
 
-export function downloadFullReportDoc(d: PulseSnapshot) {
+export function downloadFullReportDoc(d: ReviewAnalyticsSlice) {
   downloadBlob(
     buildFullReportHtml(d),
     `groww-review-report-${d.weekCode}.doc`,
@@ -114,7 +120,7 @@ export function downloadFullReportDoc(d: PulseSnapshot) {
   );
 }
 
-export function downloadFullReportMarkdown(d: PulseSnapshot) {
+export function downloadFullReportMarkdown(d: ReviewAnalyticsSlice) {
   downloadBlob(
     buildFullReportMarkdown(d),
     `groww-review-report-${d.weekCode}.md`,
@@ -122,7 +128,7 @@ export function downloadFullReportMarkdown(d: PulseSnapshot) {
   );
 }
 
-export function appendToGoogleDocs(d: PulseSnapshot) {
+export function appendToGoogleDocs(d: ReviewAnalyticsSlice) {
   downloadBlob(
     buildFullReportHtml(d),
     `groww-pulse-append-${d.weekCode}.doc`,
