@@ -17,9 +17,9 @@ export function ViewExportReport({
 }) {
   return (
     <>
-      <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        Full intelligence report from {storeLabel(platform)} CSV exports — reviews,
-        analytics, themes, and weekly pulse. Counts match the selected time range.
+      <p className={styles.leadText}>
+        Full intelligence report for {storeLabel(platform)} — reviews, analytics,
+        themes, and weekly pulse for the selected time range.
       </p>
       <div className={styles.exportReportGrid}>
         <div className={styles.chartCard}>
@@ -39,23 +39,23 @@ export function ViewExportReport({
         <div className={styles.chartCard}>
           <h3 className={styles.sectionTitle}>Download report</h3>
           <p className={styles.sectionSub}>Word-compatible .doc or Markdown</p>
-          <div className={styles.deliveryActions} style={{ flexDirection: "column" }}>
+          <div className={styles.exportActionsCol}>
             <button
               type="button"
               className={styles.btnPrimary}
               onClick={() => downloadFullReportDoc(stats)}
             >
-              ↓ Export full report (.doc)
+              Export full report (.doc)
             </button>
             <button
               type="button"
               className={styles.btnGhost}
               onClick={() => downloadFullReportMarkdown(stats)}
             >
-              ↓ Export full report (.md)
+              Export full report (.md)
             </button>
           </div>
-          <p className={styles.sectionSub} style={{ marginTop: 12 }}>
+          <p className={styles.exportHint}>
             Import the .doc file into Google Docs via File → Open.
           </p>
         </div>

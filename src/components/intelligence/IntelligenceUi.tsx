@@ -103,7 +103,7 @@ export function DonutChart({
           cy="70"
           r={r}
           fill="none"
-          stroke="#27272a"
+          stroke="#e2e8f0"
           strokeWidth="14"
         />
         <circle
@@ -142,15 +142,15 @@ export function DonutChart({
       </svg>
       <div className={styles.donutLegend}>
         <span>
-          <span className={styles.legendDot} style={{ background: "#f87171" }} />
+          <span className={`${styles.legendDot} ${styles.legendNeg}`} />
           Negative {negative}%
         </span>
         <span>
-          <span className={styles.legendDot} style={{ background: "#00d09c" }} />
+          <span className={`${styles.legendDot} ${styles.legendPos}`} />
           Positive {positive}%
         </span>
         <span>
-          <span className={styles.legendDot} style={{ background: "#52525b" }} />
+          <span className={`${styles.legendDot} ${styles.legendNeu}`} />
           Neutral {neutral}%
         </span>
       </div>

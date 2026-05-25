@@ -7,6 +7,7 @@ import type {
   ReviewAnalyticsSlice,
   ReviewPlatform,
 } from "@/lib/reviewAnalyticsTypes";
+import { IconDocument, IconDownload, IconMail } from "@/components/ui/Icons";
 import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
@@ -40,11 +41,13 @@ export function ViewReviews({ stats }: { stats: ReviewAnalyticsSlice }) {
   return (
     <>
       <div className={styles.alertBanner}>
-        <span>⚠</span>
-        <span>
-          <strong>Trend Alert:</strong> {stats.trendAlert}
+        <span className={styles.alertIcon} aria-hidden>
+          !
         </span>
-        <span className={styles.aiBadgeGreen} style={{ marginLeft: "auto" }}>
+        <span>
+          <strong>Trend alert:</strong> {stats.trendAlert}
+        </span>
+        <span className={`${styles.aiBadgeGreen} ${styles.alertBannerEnd}`}>
           AI-detected
         </span>
       </div>
@@ -52,39 +55,47 @@ export function ViewReviews({ stats }: { stats: ReviewAnalyticsSlice }) {
       <div className={styles.kpiGrid}>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
-            <span className={styles.kpiIcon}>📈</span>
+            <span className={`${styles.kpiIconBox} ${styles.kpiIconReviews}`}>
+              RV
+            </span>
             <DeltaBadge value={stats.wowReviewDelta} suffix="%" />
           </div>
           <div className={styles.kpiValue}>{reviews.toLocaleString()}</div>
           <div className={styles.kpiLabel}>Reviews analysed</div>
-          <div className={styles.kpiHint}>From public store CSV export</div>
+          <div className={styles.kpiHint}>Public App Store &amp; Play data</div>
         </div>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
-            <span className={styles.kpiIcon}>★</span>
+            <span className={`${styles.kpiIconBox} ${styles.kpiIconRating}`}>
+              ★
+            </span>
             <DeltaBadge value={stats.avgRatingDelta} />
           </div>
           <div className={styles.kpiValue}>{stats.avgRating}</div>
           <div className={styles.kpiLabel}>Average rating</div>
-          <div className={styles.kpiHint}>Computed from star ratings</div>
+          <div className={styles.kpiHint}>Weighted star average</div>
         </div>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
-            <span className={styles.kpiIcon}>⚡</span>
+            <span className={`${styles.kpiIconBox} ${styles.kpiIconSentiment}`}>
+              +%
+            </span>
             <DeltaBadge value={stats.sentimentDelta} suffix="%" />
           </div>
           <div className={styles.kpiValue}>{stats.sentimentScore}%</div>
           <div className={styles.kpiLabel}>Sentiment score</div>
-          <div className={styles.kpiHint}>4–5★ share of corpus</div>
+          <div className={styles.kpiHint}>4–5★ positive share</div>
         </div>
         <div className={styles.kpiCard}>
           <div className={styles.kpiTop}>
-            <span className={styles.kpiIcon}>🏷</span>
+            <span className={`${styles.kpiIconBox} ${styles.kpiIconThemes}`}>
+              TH
+            </span>
             <span className={styles.deltaFlat}>→ 0</span>
           </div>
           <div className={styles.kpiValue}>{stats.themeCards.length}</div>
-          <div className={styles.kpiLabel}>Theme count</div>
-          <div className={styles.kpiHint}>Keyword-clustered from CSV</div>
+          <div className={styles.kpiLabel}>Active themes</div>
+          <div className={styles.kpiHint}>Keyword-clustered insights</div>
         </div>
       </div>
 
@@ -100,8 +111,13 @@ export function ViewReviews({ stats }: { stats: ReviewAnalyticsSlice }) {
           <button
             key={hit.keyword}
             type="button"
-            className={`${styles.keyword} ${kw === hit.keyword ? styles.keywordSel : ""}`}
-            style={{ fontSize: 12 + (i % 3) }}
+            className={`${styles.keyword} ${kw === hit.keyword ? styles.keywordSel : ""} ${
+              i % 3 === 0
+                ? styles.keywordSm
+                : i % 3 === 1
+                  ? styles.keywordMd
+                  : styles.keywordLg
+            }`}
             onClick={() => setKw(kw === hit.keyword ? null : hit.keyword)}
             title={`${hit.count} reviews mention “${hit.keyword}”`}
           >
@@ -239,9 +255,9 @@ export function ViewAnalytics({
   const reviewTotal = stats.reviewCount;
   return (
     <>
-      <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        Live from public review CSVs · {storeLabel(platform)} · {reviewTotal.toLocaleString()}{" "}
-        reviews · avg {stats.avgRating}★
+      <p className={styles.leadText}>
+        {storeLabel(platform)} · {reviewTotal.toLocaleString()} reviews in window ·
+        average {stats.avgRating}★
       </p>
       <div className={styles.chartGrid}>
         <div className={styles.chartCard}>
@@ -294,42 +310,31 @@ export function ViewAnalytics({
 export function ViewThemes({ stats }: { stats: ReviewAnalyticsSlice }) {
   return (
     <>
-      <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
-        Top themes from CSV review text · keyword-clustered · click to expand
+      <p className={styles.leadText}>
+        Top themes from review text · keyword-clustered · ranked by volume
       </p>
       <div className={styles.themeGrid}>
         {stats.themeCards.map((t) => (
           <div key={t.id} className={styles.themeCard}>
             <div className={styles.themeCardHead}>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 800 }}>{t.title}</div>
+                <div className={styles.themeTitle}>{t.title}</div>
                 <span className={styles.tagNeg}>Negative</span>
               </div>
               <span className={styles.themePct}>{t.pct}%</span>
             </div>
-            <p style={{ fontSize: 12, color: "#a1a1aa", lineHeight: 1.45, flex: 1 }}>
-              {t.description}
-            </p>
-            <p style={{ fontSize: 12, color: "#71717a", marginTop: 12 }}>
-              {t.reviews} reviews
-            </p>
-            <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
+            <p className={styles.themeDesc}>{t.description}</p>
+            <p className={styles.themeReviews}>{t.reviews} reviews</p>
+            <div className={styles.themeFooter}>
               <span
                 className={t.priority === "Critical" ? styles.tagCrit : styles.tagHigh}
               >
                 {t.priority}
               </span>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                marginTop: 12,
-              }}
-            >
-              <Sparkline values={t.sparkline} />
               <span className={styles.deltaUp}>↑ {t.wowDelta}%</span>
+            </div>
+            <div className={styles.themeSparkRow}>
+              <Sparkline values={t.sparkline} />
             </div>
           </div>
         ))}
@@ -346,9 +351,12 @@ export function ViewWeeklyPulse({ stats }: { stats: ReviewAnalyticsSlice }) {
       <div className={styles.noteHeader}>
         <div>
           <div className={styles.noteTitle}>
-            <span>✦</span> Weekly Pulse Note
+            <span className={styles.noteSparkle} aria-hidden>
+              ✦
+            </span>
+            Weekly Pulse Note
           </div>
-          <p className={styles.sectionSub} style={{ margin: "6px 0 0" }}>
+          <p className={styles.sectionSub}>
             Executive one-pager · ≤{stats.wordLimit} words
           </p>
         </div>
@@ -381,8 +389,8 @@ export function ViewWeeklyPulse({ stats }: { stats: ReviewAnalyticsSlice }) {
           ))}
         </ol>
       </div>
-      <p style={{ marginTop: 16, fontSize: 12, color: "#71717a" }}>
-        Executive summary from public store CSVs ·{" "}
+      <p className={styles.footnote}>
+        Executive summary from public store data ·{" "}
         {stats.reviewCount.toLocaleString()} reviews · {stats.period}
       </p>
     </div>
@@ -407,16 +415,19 @@ export function ViewDelivery({
     <>
       <div className={styles.deliveryStatus}>
         <span className={styles.statusItem}>
-          <span className={styles.statusDot}>●</span> Gmail — Ready
+          <span className={`${styles.statusDot} ${styles.statusDotLive}`}>●</span>
+          Gmail — Ready
         </span>
         <span className={styles.statusItem}>
-          <span className={styles.statusDot}>●</span> Docs — Ready
+          <span className={`${styles.statusDot} ${styles.statusDotLive}`}>●</span>
+          Docs — Ready
         </span>
         <span className={styles.statusItem}>
-          <span className={styles.statusDot}>●</span> PDF — Email only
+          <span className={`${styles.statusDot} ${styles.statusDotLive}`}>●</span>
+          PDF — Email only
         </span>
-        <span className={styles.aiBadgeGreen} style={{ marginLeft: "auto" }}>
-          Last pipeline run · 2h ago
+        <span className={`${styles.aiBadgeGreen} ${styles.alertBannerEnd}`}>
+          Pipeline ready
         </span>
       </div>
 
@@ -434,10 +445,11 @@ export function ViewDelivery({
           <div className={styles.deliveryActions}>
             <button
               type="button"
-              className={styles.btnPrimary}
+              className={`${styles.btnPrimary} ${styles.btnIcon}`}
               onClick={() => openGmailCompose(initialDraft)}
             >
-              ✉ Send Email
+              <IconMail />
+              Send email
             </button>
             <button
               type="button"
@@ -446,15 +458,21 @@ export function ViewDelivery({
             >
               Edit draft
             </button>
-            <button type="button" className={styles.btnGhost} onClick={onAppendDocs}>
-              📄 Append to Docs
+            <button
+              type="button"
+              className={`${styles.btnGhost} ${styles.btnIcon}`}
+              onClick={onAppendDocs}
+            >
+              <IconDocument />
+              Append to Docs
             </button>
             <button
               type="button"
-              className={styles.btnGhost}
+              className={`${styles.btnGhost} ${styles.btnIcon}`}
               onClick={() => onExportPdf(initialDraft)}
             >
-              ↓ Export email PDF
+              <IconDownload />
+              Export PDF
             </button>
           </div>
         </>

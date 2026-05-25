@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 import { clearAdminSession, readAdminSession } from "@/lib/adminSession";
+import { IconBell, IconSearch } from "@/components/ui/Icons";
 import styles from "./TopNav.module.css";
 
 /**
@@ -110,14 +111,12 @@ export function TopNav() {
 
         <div className={styles.right}>
           <div className={styles.search} aria-label="Search">
-            <span className={styles.searchIcon} aria-hidden="true">
-              ⌕
-            </span>
+            <IconSearch className={styles.searchIcon} />
             <span className={styles.searchText}>Search Groww...</span>
             <kbd className={styles.kbd}>⌘K</kbd>
           </div>
           <button type="button" className={styles.iconBtn} aria-label="Notifications">
-            🔔
+            <IconBell />
           </button>
           <div
             className={styles.avatar}

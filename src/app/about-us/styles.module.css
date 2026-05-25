@@ -1,6 +1,6 @@
 .page {
   min-height: 100svh;
-  background: var(--gw-bg);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 32%, #f8fafc 100%);
 }
 
 .loading {
@@ -13,6 +13,12 @@
 .main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px 64px 10px;
+  padding: 20px 16px 72px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 28px 24px 80px;
+  }
 }
 

@@ -26,6 +26,7 @@ import {
   ViewWeeklyPulse,
   VIEW_SUBTITLES,
 } from "./IntelligenceViews";
+import { IconDocument, IconSync } from "@/components/ui/Icons";
 import { ViewExportReport } from "./ViewExportReport";
 import styles from "./intelligence.module.css";
 
@@ -164,39 +165,57 @@ export function IntelligenceShell() {
         <div className={styles.lightShell}>
           <header className={styles.header}>
             <div className={styles.headerTop}>
-              <div>
-                <div className={styles.titleRow}>
-                  <h1 className={styles.title}>Groww Review Intelligence</h1>
-                  <span className={styles.aiBadge}>AI-POWERED</span>
-                  {synced && !syncing ? (
-                    <span className={styles.synced}>Synced</span>
+              <div className={styles.headerIntro}>
+                <div className={styles.titleBlock}>
+                  <span className={styles.productMark} aria-hidden>
+                    G
+                  </span>
+                  <div>
+                    <div className={styles.titleRow}>
+                      <h1 className={styles.title}>Review Intelligence</h1>
+                      <span className={styles.aiBadge}>AI-POWERED</span>
+                      {synced && !syncing ? (
+                        <span className={styles.synced}>Live</span>
+                      ) : null}
+                      {syncing ? (
+                        <span className={styles.aiBadge}>Syncing…</span>
+                      ) : null}
+                    </div>
+                    <p className={styles.subtitle}>{VIEW_SUBTITLES[view]}</p>
+                  </div>
+                </div>
+                <div className={styles.metaRow}>
+                  <span className={styles.metaChip}>
+                    <strong>{adminEmail}</strong>
+                  </span>
+                  {lastSyncedAt ? (
+                    <span className={styles.metaChip}>
+                      Last sync <strong>{formatSyncTime(lastSyncedAt)}</strong>
+                    </span>
                   ) : null}
-                  {syncing ? (
-                    <span className={styles.aiBadge}>Syncing…</span>
+                  {dataThrough ? (
+                    <span className={styles.metaChip}>
+                      Latest review <strong>{dataThrough}</strong>
+                    </span>
                   ) : null}
                 </div>
-                <p className={styles.subtitle}>
-                  {VIEW_SUBTITLES[view]} · Signed in as {adminEmail}
-                  {lastSyncedAt
-                    ? ` · Last sync ${formatSyncTime(lastSyncedAt)}`
-                    : ""}
-                  {dataThrough ? ` · Latest review ${dataThrough}` : ""}
-                </p>
               </div>
               <div className={styles.headerActions}>
                 <button
                   type="button"
-                  className={styles.btnGhost}
+                  className={`${styles.btnGhost} ${styles.btnIcon}`}
                   onClick={handleSync}
                   disabled={syncing}
                 >
-                  {syncing ? "↻ Syncing…" : "↻ Sync Reviews"}
+                  <IconSync />
+                  {syncing ? "Syncing…" : "Sync reviews"}
                 </button>
                 <Link
                   href="/analytics?view=export-report"
-                  className={styles.btnGhost}
+                  className={`${styles.btnGhost} ${styles.btnIcon}`}
                 >
-                  📄 Export Report
+                  <IconDocument />
+                  Export report
                 </Link>
               </div>
             </div>

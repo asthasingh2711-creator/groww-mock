@@ -1,27 +1,59 @@
 :root {
-  --gw-text: #111827;
-  --gw-muted: #6b7280;
-  --gw-border: rgba(17, 24, 39, 0.1);
+  /* Brand */
+  --gw-text: #0f172a;
+  --gw-text-secondary: #334155;
+  --gw-muted: #64748b;
+  --gw-border: rgba(15, 23, 42, 0.08);
+  --gw-border-strong: rgba(15, 23, 42, 0.14);
   --gw-bg: #ffffff;
-  --gw-bgMint: #eafff6;
+  --gw-surface: #ffffff;
+  --gw-surface-subtle: #f8fafc;
+  --gw-surface-muted: #f1f5f9;
+  --gw-bgMint: #ecfdf5;
   --gw-green: #00d09c;
+  --gw-green-dark: #00b887;
   --gw-green2: #00c08f;
+  --gw-green-soft: rgba(0, 208, 156, 0.12);
   --gw-orange: #f97316;
-  --gw-shadow: 0 14px 30px rgba(17, 24, 39, 0.12);
+  --gw-red: #ef4444;
+  --gw-amber: #f59e0b;
+  --gw-violet: #7c3aed;
+
+  /* Elevation */
+  --gw-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --gw-shadow: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --gw-shadow-md: 0 12px 40px rgba(15, 23, 42, 0.08);
+  --gw-shadow-lg: 0 24px 64px rgba(15, 23, 42, 0.1);
+
+  /* Radius */
+  --gw-radius-sm: 8px;
+  --gw-radius: 12px;
+  --gw-radius-lg: 16px;
+  --gw-radius-xl: 20px;
+  --gw-radius-full: 999px;
+
+  /* Typography */
+  --gw-font-display: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --gw-font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Motion */
+  --gw-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --gw-duration: 0.18s;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background: var(--gw-bg);
+  background: var(--gw-surface-subtle);
   color: var(--gw-text);
 }
 
 body {
   min-height: 100svh;
-  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: var(--gw-font-display);
+  font-size: 15px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,4 +67,16 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--gw-green-soft);
+  color: #065f46;
 }
