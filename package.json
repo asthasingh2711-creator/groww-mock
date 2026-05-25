@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1 --port 3000",
+    "sync-reviews": "npx tsx scripts/run-sync.ts",
+    "prebuild": "npm run sync-reviews",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

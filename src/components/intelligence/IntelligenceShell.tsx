@@ -8,7 +8,16 @@ import { TopNav } from "@/components/TopNav";
 import { readAdminEmail, readAdminSession } from "@/lib/adminSession";
 import { appendToGoogleDocs, exportEmailPdf } from "@/lib/pulseExport";
 import { getReviewAnalytics } from "@/lib/reviewAnalytics";
-import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalyticsTypes";
+import {
+  formatSyncTime,
+  getStatsFromFile,
+  loadAnalyticsFromSession,
+  saveAnalyticsToSession,
+} from "@/lib/reviewAnalyticsClient";
+import type {
+  ReviewAnalyticsFile,
+  ReviewAnalyticsSlice,
+} from "@/lib/reviewAnalyticsTypes";
 import {
   ViewAnalytics,
   ViewDelivery,
@@ -49,12 +58,35 @@ export function IntelligenceShell() {
   const [synced, setSynced] = useState(true);
   const [syncing, setSyncing] = useState(false);
   const [dataThrough, setDataThrough] = useState<string | null>(null);
+  const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
-  const [stats, setStats] = useState<ReviewAnalyticsSlice>(() =>
-    getReviewAnalytics(platform, range),
+
+  const applyFile = useCallback(
+    (file: ReviewAnalyticsFile, platformId: string, rangeId: string) => {
+      const slice = getStatsFromFile(file, platformId, rangeId);
+      setStats(slice);
+      const p =
+        platformId === "ios" || platformId === "android" ? platformId : "all";
+      const anchor = (file[p] as { _anchor?: string } | undefined)?._anchor;
+      setDataThrough(anchor ?? slice.dataThrough ?? null);
+      setLastSyncedAt(file.syncedAt ?? null);
+    },
+    [],
   );
 
+  const [stats, setStats] = useState<ReviewAnalyticsSlice>(() => {
+    const session = typeof window !== "undefined" ? loadAnalyticsFromSession() : null;
+    if (session) return getStatsFromFile(session, platform, range);
+    return getReviewAnalytics(platform, range);
+  });
+
   const loadAnalytics = useCallback(async () => {
+    const session = loadAnalyticsFromSession();
+    if (session?.syncedAt) {
+      applyFile(session, platform, range);
+      setSynced(true);
+      return;
+    }
     try {
       const res = await fetch(
         `/api/reviews/analytics?platform=${encodeURIComponent(platform)}&range=${encodeURIComponent(range)}`,
@@ -68,12 +100,13 @@ export function IntelligenceShell() {
       };
       setStats(body.stats);
       setDataThrough(body.dataThrough ?? body.stats.dataThrough ?? null);
+      setLastSyncedAt(body.syncedAt ?? null);
       setSynced(true);
     } catch {
       setStats(getReviewAnalytics(platform, range));
       setSynced(true);
     }
-  }, [platform, range]);
+  }, [platform, range, applyFile]);
 
   useEffect(() => {
     if (!isAdmin) router.replace("/?login=1");
@@ -98,16 +131,21 @@ export function IntelligenceShell() {
         error?: string;
         dataThrough?: string;
         message?: string;
+        analytics?: ReviewAnalyticsFile;
       };
       if (!res.ok) {
         showToast(body.error ?? "Sync failed — run scripts locally");
         return;
       }
-      await loadAnalytics();
-      const through = body.dataThrough ?? dataThrough;
+      if (body.analytics) {
+        saveAnalyticsToSession(body.analytics);
+        applyFile(body.analytics, platform, range);
+      } else {
+        await loadAnalytics();
+      }
       showToast(
         body.message ??
-          `Synced through ${through ?? "latest"} · ${platform} · ${range}`,
+          `Synced · latest review ${body.dataThrough ?? "—"}`,
       );
     } catch {
       showToast("Sync failed — check server logs or run extract script locally");
@@ -139,7 +177,10 @@ export function IntelligenceShell() {
                 </div>
                 <p className={styles.subtitle}>
                   {VIEW_SUBTITLES[view]} · Signed in as {adminEmail}
-                  {dataThrough ? ` · Data through ${dataThrough}` : ""}
+                  {lastSyncedAt
+                    ? ` · Last sync ${formatSyncTime(lastSyncedAt)}`
+                    : ""}
+                  {dataThrough ? ` · Latest review ${dataThrough}` : ""}
                 </p>
               </div>
               <div className={styles.headerActions}>

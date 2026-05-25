@@ -33,7 +33,8 @@ export async function POST() {
       syncedAt: data.syncedAt,
       dataThrough: data.all?._anchor ?? null,
       counts: { appStore: app.length, playStore: play.length, total: combined.length },
-      message: `Synced ${combined.length} public reviews (App Store ${app.length}, Play ${play.length}).`,
+      analytics: data,
+      message: `Synced ${combined.length} public reviews (App Store ${app.length}, Play ${play.length}). Latest review: ${data.all?._anchor ?? "—"}.`,
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Sync failed";
