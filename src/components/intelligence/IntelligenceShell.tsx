@@ -7,7 +7,7 @@ import aboutStyles from "@/app/about-us/styles.module.css";
 import { TopNav } from "@/components/TopNav";
 import { readAdminEmail, readAdminSession } from "@/lib/adminSession";
 import { appendToGoogleDocs, exportEmailPdf } from "@/lib/pulseExport";
-import { applyTimeRangeScale, getReviewAnalytics } from "@/lib/reviewAnalytics";
+import { getReviewAnalytics } from "@/lib/reviewAnalytics";
 import {
   ViewAnalytics,
   ViewDelivery,
@@ -36,20 +36,6 @@ function useIsAdmin() {
   return useSyncExternalStore(noop, readAdminSession, () => false);
 }
 
-const RANGE_SCALE: Record<string, number> = {
-  today: 0.03,
-  "7d": 0.12,
-  "30d": 0.45,
-  "8-12w": 1,
-};
-
-const RANGE_LABELS: Record<string, string> = {
-  today: "Today",
-  "7d": "7 Days",
-  "30d": "30 Days",
-  "8-12w": "8-12 Weeks",
-};
-
 export function IntelligenceShell() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -62,15 +48,9 @@ export function IntelligenceShell() {
   const [synced, setSynced] = useState(true);
   const [toast, setToast] = useState<string | null>(null);
 
-  const scale = useMemo(() => RANGE_SCALE[range] ?? 1, [range]);
   const stats = useMemo(
-    () =>
-      applyTimeRangeScale(
-        getReviewAnalytics(platform),
-        scale,
-        RANGE_LABELS[range],
-      ),
-    [platform, scale, range],
+    () => getReviewAnalytics(platform, range),
+    [platform, range],
   );
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import analytics from "@/data/review_analytics.json";
 
 export type ReviewPlatform = "all" | "android" | "ios";
+export type TimeRange = "today" | "7d" | "30d" | "8-12w";
 
 export type ReviewThemeCard = {
   id: string;
@@ -64,86 +65,45 @@ export type ReviewAnalyticsSlice = {
   executiveSummary: string;
 };
 
-const DATA = analytics as Record<ReviewPlatform, ReviewAnalyticsSlice>;
+type PlatformAnalytics = Record<TimeRange, ReviewAnalyticsSlice>;
 
-export function getReviewAnalytics(platform: string): ReviewAnalyticsSlice {
-  const key = platform as ReviewPlatform;
-  return DATA[key] ?? DATA.all;
+const DATA = analytics as Record<ReviewPlatform, PlatformAnalytics>;
+
+const RANGES: TimeRange[] = ["today", "7d", "30d", "8-12w"];
+
+export function sentimentFromDistribution(
+  dist: number[],
+): { positive: number; negative: number; neutral: number } {
+  const [one = 0, two = 0, three = 0, four = 0, five = 0] = dist;
+  const total = one + two + three + four + five;
+  if (total === 0) return { positive: 0, negative: 0, neutral: 0 };
+  const pos = four + five;
+  const neg = one + two;
+  const neu = three;
+  return {
+    positive: Math.round((100 * pos) / total),
+    negative: Math.round((100 * neg) / total),
+    neutral: Math.round((100 * neu) / total),
+  };
+}
+
+export function getReviewAnalytics(
+  platform: string,
+  range: string = "8-12w",
+): ReviewAnalyticsSlice {
+  const p = (platform in DATA ? platform : "all") as ReviewPlatform;
+  const r = (RANGES.includes(range as TimeRange) ? range : "8-12w") as TimeRange;
+  const slice = DATA[p]?.[r] ?? DATA.all["8-12w"];
+  const split = sentimentFromDistribution(slice.ratingDistribution);
+  return {
+    ...slice,
+    sentimentSplit: split,
+    sentimentScore: split.positive,
+  };
 }
 
 export function storeLabel(platform: ReviewPlatform | string): string {
   if (platform === "ios") return "App Store";
   if (platform === "android") return "Play Store";
   return "App Store + Play Store";
-}
-
-function scaleCount(n: number, scale: number): number {
-  return Math.max(0, Math.round(n * scale));
-}
-
-function replaceFirstCount(text: string, from: number, to: number): string {
-  if (from === to) return text;
-  const re = new RegExp(`\\b${from}\\b`);
-  return re.test(text) ? text.replace(re, String(to)) : text;
-}
-
-/** Apply time-range filter consistently across tabs and exports. */
-export function applyTimeRangeScale(
-  stats: ReviewAnalyticsSlice,
-  scale: number,
-  rangeLabel?: string,
-): ReviewAnalyticsSlice {
-  if (scale >= 0.999) return stats;
-
-  const reviewCount = scaleCount(stats.reviewCount, scale);
-  const windowNote = rangeLabel ? ` · ${rangeLabel} window` : "";
-
-  const themeCards = stats.themeCards.map((t) => {
-    const reviews = scaleCount(t.reviews, scale);
-    return {
-      ...t,
-      reviews,
-      sparkline: t.sparkline.map((v) => scaleCount(v, scale)),
-      pct: reviewCount > 0 ? Math.round((reviews / reviewCount) * 100) : t.pct,
-    };
-  });
-
-  const scaleRadar = (items: ReviewRadarItem[]) =>
-    items.map((i) => ({ ...i, count: scaleCount(i.count, scale) }));
-
-  const weeklyNote = {
-    ...stats.weeklyNote,
-    summary: `${replaceFirstCount(stats.weeklyNote.summary, stats.reviewCount, reviewCount)}${windowNote}`,
-    themes: stats.weeklyNote.themes.map((line) =>
-      line.replace(/\((\d+) reviews/g, (_, n) =>
-        `(${scaleCount(parseInt(n, 10), scale)} reviews`,
-      ),
-    ),
-    tracking: `${stats.weeklyNote.tracking}${windowNote}`,
-  };
-
-  const emailBody = stats.emailDraft.body.replace(
-    /^Groww public review pulse \([^)]+\): \d+ reviews/,
-    `Groww public review pulse (${stats.weekCode}): ${reviewCount} reviews${windowNote}`,
-  );
-
-  const voiceLimit = Math.max(1, Math.ceil(stats.userVoices.length * scale));
-
-  return {
-    ...stats,
-    reviewCount,
-    weeklyVolume: stats.weeklyVolume.map((v) => scaleCount(v, scale)),
-    ratingDistribution: stats.ratingDistribution.map((c) => scaleCount(c, scale)),
-    themeCards,
-    pmRadar: {
-      highImpact: scaleRadar(stats.pmRadar.highImpact),
-      highFrequency: scaleRadar(stats.pmRadar.highFrequency),
-      monitor: scaleRadar(stats.pmRadar.monitor),
-    },
-    userVoices: stats.userVoices.slice(0, voiceLimit),
-    weeklyNote,
-    executiveSummary: `${replaceFirstCount(stats.executiveSummary, stats.reviewCount, reviewCount)}${windowNote}`,
-    emailDraft: { ...stats.emailDraft, body: emailBody },
-    period: `${stats.period}${windowNote}`,
-  };
 }

@@ -93,8 +93,28 @@ def extract_keywords(rows: list[dict], limit: int = 12) -> list[str]:
     return [w for w, _ in words.most_common(limit)]
 
 
-def build(rows: list[dict[str, str]]) -> dict:
-    parsed = [parse_row(r) for r in rows]
+RANGE_CONFIG: list[tuple[str, int | None, str]] = [
+    ("today", 1, "Today"),
+    ("7d", 7, "7 Days"),
+    ("30d", 30, "30 Days"),
+    ("8-12w", None, "8-12 Weeks"),
+]
+
+
+def filter_by_range(parsed: list[dict], range_id: str) -> list[dict]:
+    if not parsed:
+        return []
+    if range_id == "8-12w":
+        return parsed
+    days = next((d for rid, d, _ in RANGE_CONFIG if rid == range_id), 30)
+    if days is None:
+        return parsed
+    max_date = max(r["date"] for r in parsed)
+    cut = max_date - timedelta(days=days)
+    return [r for r in parsed if r["date"] >= cut]
+
+
+def build_from_parsed(parsed: list[dict], range_label: str = "") -> dict:
     if not parsed:
         return empty_payload()
 
@@ -192,6 +212,9 @@ def build(rows: list[dict[str, str]]) -> dict:
     week_code = f"{y}-W{w}"
     period_end = max(r["date"] for r in parsed).strftime("%Y-%m-%d")
     period_start = min(r["date"] for r in parsed).strftime("%Y-%m-%d")
+    period = f"{period_start} → {period_end}"
+    if range_label:
+        period = f"{period} · {range_label}"
 
     executive = (
         f"Analysis of {total} public App Store & Play reviews ({period_start} → "
@@ -206,7 +229,7 @@ def build(rows: list[dict[str, str]]) -> dict:
     return {
         "weekCode": week_code,
         "weekLabel": f"Week {w}, {y}",
-        "period": f"{period_start} → {period_end}",
+        "period": period,
         "reviewCount": total,
         "wordCount": len(weekly_note["summary"].split()),
         "wordLimit": 250,
@@ -404,7 +427,13 @@ def empty_payload() -> dict:
 
 
 def main() -> None:
-    payload = {key: build(load_rows(path)) for key, path in SOURCES.items()}
+    payload: dict = {}
+    for key, path in SOURCES.items():
+        parsed = [parse_row(r) for r in load_rows(path)]
+        payload[key] = {}
+        for range_id, _, label in RANGE_CONFIG:
+            subset = filter_by_range(parsed, range_id)
+            payload[key][range_id] = build_from_parsed(subset, label)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUT}")

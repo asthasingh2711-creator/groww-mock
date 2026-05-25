@@ -192,6 +192,7 @@ export function ViewAnalytics({
             4–5★ positive · 1–2★ negative · 3★ neutral
           </p>
           <DonutChart
+            key={`${platform}-${stats.reviewCount}-${stats.sentimentSplit.positive}-${stats.sentimentSplit.negative}`}
             positive={stats.sentimentSplit.positive}
             negative={stats.sentimentSplit.negative}
             neutral={stats.sentimentSplit.neutral}
