@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import aboutStyles from "@/app/about-us/styles.module.css";
 import { TopNav } from "@/components/TopNav";
 import { readAdminEmail, readAdminSession } from "@/lib/adminSession";
 import { appendToGoogleDocs, exportEmailPdf } from "@/lib/pulseExport";
 import { getReviewAnalytics } from "@/lib/reviewAnalytics";
+import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalyticsTypes";
 import {
   ViewAnalytics,
   ViewDelivery,
@@ -46,28 +47,74 @@ export function IntelligenceShell() {
   const [platform, setPlatform] = useState("all");
   const [range, setRange] = useState("8-12w");
   const [synced, setSynced] = useState(true);
+  const [syncing, setSyncing] = useState(false);
+  const [dataThrough, setDataThrough] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
-
-  const stats = useMemo(
-    () => getReviewAnalytics(platform, range),
-    [platform, range],
+  const [stats, setStats] = useState<ReviewAnalyticsSlice>(() =>
+    getReviewAnalytics(platform, range),
   );
+
+  const loadAnalytics = useCallback(async () => {
+    try {
+      const res = await fetch(
+        `/api/reviews/analytics?platform=${encodeURIComponent(platform)}&range=${encodeURIComponent(range)}`,
+        { cache: "no-store" },
+      );
+      if (!res.ok) throw new Error("Analytics unavailable");
+      const body = (await res.json()) as {
+        stats: ReviewAnalyticsSlice;
+        dataThrough?: string;
+        syncedAt?: string;
+      };
+      setStats(body.stats);
+      setDataThrough(body.dataThrough ?? body.stats.dataThrough ?? null);
+      setSynced(true);
+    } catch {
+      setStats(getReviewAnalytics(platform, range));
+      setSynced(true);
+    }
+  }, [platform, range]);
 
   useEffect(() => {
     if (!isAdmin) router.replace("/?login=1");
   }, [isAdmin, router]);
 
+  useEffect(() => {
+    loadAnalytics();
+  }, [loadAnalytics]);
+
   const showToast = useCallback((msg: string) => {
     setToast(msg);
-    setTimeout(() => setToast(null), 2800);
+    setTimeout(() => setToast(null), 3200);
   }, []);
 
-  const handleSync = () => {
+  const handleSync = async () => {
+    setSyncing(true);
     setSynced(false);
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/reviews/sync", { method: "POST" });
+      const body = (await res.json()) as {
+        ok?: boolean;
+        error?: string;
+        dataThrough?: string;
+        message?: string;
+      };
+      if (!res.ok) {
+        showToast(body.error ?? "Sync failed — run scripts locally");
+        return;
+      }
+      await loadAnalytics();
+      const through = body.dataThrough ?? dataThrough;
+      showToast(
+        body.message ??
+          `Synced through ${through ?? "latest"} · ${platform} · ${range}`,
+      );
+    } catch {
+      showToast("Sync failed — check server logs or run extract script locally");
+    } finally {
+      setSyncing(false);
       setSynced(true);
-      showToast(`Reviews synced · ${platform} · ${range}`);
-    }, 900);
+    }
   };
 
   if (!isAdmin) return null;
@@ -83,15 +130,26 @@ export function IntelligenceShell() {
                 <div className={styles.titleRow}>
                   <h1 className={styles.title}>Groww Review Intelligence</h1>
                   <span className={styles.aiBadge}>AI-POWERED</span>
-                  {synced ? <span className={styles.synced}>Synced</span> : null}
+                  {synced && !syncing ? (
+                    <span className={styles.synced}>Synced</span>
+                  ) : null}
+                  {syncing ? (
+                    <span className={styles.aiBadge}>Syncing…</span>
+                  ) : null}
                 </div>
                 <p className={styles.subtitle}>
                   {VIEW_SUBTITLES[view]} · Signed in as {adminEmail}
+                  {dataThrough ? ` · Data through ${dataThrough}` : ""}
                 </p>
               </div>
               <div className={styles.headerActions}>
-                <button type="button" className={styles.btnGhost} onClick={handleSync}>
-                  ↻ Sync Reviews
+                <button
+                  type="button"
+                  className={styles.btnGhost}
+                  onClick={handleSync}
+                  disabled={syncing}
+                >
+                  {syncing ? "↻ Syncing…" : "↻ Sync Reviews"}
                 </button>
                 <Link
                   href="/analytics?view=export-report"

@@ -4,8 +4,8 @@ import {
   downloadFullReportDoc,
   downloadFullReportMarkdown,
 } from "@/lib/pulseExport";
-import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalytics";
 import { storeLabel } from "@/lib/reviewAnalytics";
+import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalyticsTypes";
 import styles from "./intelligence.module.css";
 
 export function ViewExportReport({

@@ -1,4 +1,4 @@
-import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalytics";
+import type { ReviewAnalyticsSlice } from "@/lib/reviewAnalyticsTypes";
 
 export type EmailDraftForm = {
   to: string;

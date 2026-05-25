@@ -59,32 +59,54 @@ def parse_row(r: dict[str, str]) -> dict:
 
 
 def build_volume_series(
-    parsed: list[dict], range_id: str
+    parsed: list[dict], range_id: str, anchor: date
 ) -> tuple[list[str], list[int], str, str]:
-    """Daily buckets that match the selected time window (no empty ISO weeks)."""
+    """Volume buckets aligned to calendar time range (fixed slot count per filter)."""
     if not parsed:
         return [], [], "daily", "No reviews in selected window"
 
     day_counts: Counter[date] = Counter(r["date"].date() for r in parsed)
-    max_d = max(day_counts.keys())
-    min_d = min(day_counts.keys())
 
-    days = sorted(day_counts.keys())
     if range_id == "today":
-        subtitle = f"Daily ingest · {len(days)} day(s) with activity"
-    elif range_id == "7d":
-        subtitle = f"Daily ingest · {len(days)} day(s) in 7-day window"
-    else:
-        subtitle = f"Daily ingest · {min_d.strftime('%b %d')} – {max_d.strftime('%b %d')}"
+        labels = [anchor.strftime("%b %d")]
+        values = [len(parsed)]
+        return labels, values, "daily", f"Reviews on latest day · {anchor.strftime('%b %d, %Y')}"
 
-    labels = [d.strftime("%b %d") for d in days]
-    values = [day_counts.get(d, 0) for d in days]
-    return labels, values, "daily", subtitle
+    if range_id == "7d":
+        days = [anchor - timedelta(days=i) for i in range(6, -1, -1)]
+        labels = [d.strftime("%a %d") for d in days]
+        values = [day_counts.get(d, 0) for d in days]
+        return labels, values, "daily", "Daily volume · last 7 calendar days"
+
+    if range_id == "30d":
+        days = [anchor - timedelta(days=i) for i in range(29, -1, -1)]
+        labels = [d.strftime("%b %d") for d in days]
+        values = [day_counts.get(d, 0) for d in days]
+        return labels, values, "daily", "Daily volume · last 30 calendar days"
+
+    # 8–12 weeks: weekly buckets (only weeks that overlap the window)
+    week_counts: Counter[str] = Counter(r["week"] for r in parsed)
+    week_keys = sorted(week_counts.keys())[-12:]
+    labels = [f"W{int(w.split('-W')[1])}" for w in week_keys]
+    values = [week_counts[w] for w in week_keys]
+    start = anchor - timedelta(days=83)
+    return (
+        labels,
+        values,
+        "weekly",
+        f"Weekly volume · {start.strftime('%b %d')} – {anchor.strftime('%b %d')}",
+    )
 
 
-def ordered_days_for_range(parsed: list[dict], range_id: str) -> list[date]:
+def ordered_days_for_range(parsed: list[dict], range_id: str, anchor: date) -> list[date]:
     if not parsed:
         return []
+    if range_id == "today":
+        return [anchor]
+    if range_id == "7d":
+        return [anchor - timedelta(days=i) for i in range(6, -1, -1)]
+    if range_id == "30d":
+        return [anchor - timedelta(days=i) for i in range(29, -1, -1)]
     return sorted({r["date"].date() for r in parsed})
 
 
@@ -119,32 +141,42 @@ RANGE_CONFIG: list[tuple[str, int | None, str]] = [
 ]
 
 
-def filter_by_range(parsed: list[dict], range_id: str) -> list[dict]:
+def filter_by_range(parsed: list[dict], range_id: str, anchor: date) -> list[dict]:
+    """Filter reviews to calendar windows ending on anchor (latest review day)."""
     if not parsed:
         return []
+    if range_id == "today":
+        return [r for r in parsed if r["date"].date() == anchor]
+    if range_id == "7d":
+        start = anchor - timedelta(days=6)
+        return [r for r in parsed if start <= r["date"].date() <= anchor]
+    if range_id == "30d":
+        start = anchor - timedelta(days=29)
+        return [r for r in parsed if start <= r["date"].date() <= anchor]
     if range_id == "8-12w":
-        return parsed
-    days = next((d for rid, d, _ in RANGE_CONFIG if rid == range_id), 30)
-    if days is None:
-        return parsed
-    max_date = max(r["date"] for r in parsed)
-    cut = max_date - timedelta(days=days)
-    return [r for r in parsed if r["date"] >= cut]
+        start = anchor - timedelta(days=83)
+        return [r for r in parsed if r["date"].date() >= start]
+    return parsed
 
 
 def build_from_parsed(
-    parsed: list[dict], range_label: str = "", range_id: str = "8-12w"
+    parsed: list[dict],
+    range_label: str = "",
+    range_id: str = "8-12w",
+    anchor: date | None = None,
+    data_through: str = "",
 ) -> dict:
     if not parsed:
         return empty_payload()
 
+    anchor = anchor or max(r["date"].date() for r in parsed)
     ratings: Counter[int] = Counter(r["rating"] for r in parsed)
     weeks: Counter[str] = Counter(r["week"] for r in parsed)
     latest_week = sorted(weeks.keys())[-1]
     volume_labels, volume_values, volume_granularity, volume_subtitle = (
-        build_volume_series(parsed, range_id)
+        build_volume_series(parsed, range_id, anchor)
     )
-    chart_days = ordered_days_for_range(parsed, range_id)
+    chart_days = ordered_days_for_range(parsed, range_id, anchor)
 
     total = len(parsed)
     pos = sum(ratings[k] for k in ratings if k >= 4)
@@ -243,6 +275,8 @@ def build_from_parsed(
     period = f"{period_start} → {period_end}"
     if range_label:
         period = f"{period} · {range_label}"
+    if data_through:
+        period = f"{period} · through {data_through}"
 
     executive = (
         f"Analysis of {total} public App Store & Play reviews ({period_start} → "
@@ -288,6 +322,7 @@ def build_from_parsed(
             "body": email_body,
         },
         "executiveSummary": executive,
+        "dataThrough": data_through or period_end,
     }
 
 
@@ -455,20 +490,30 @@ def empty_payload() -> dict:
         },
         "emailDraft": {"to": "team@groww.in", "subject": "Groww Weekly Review Pulse", "body": ""},
         "executiveSummary": "",
+        "dataThrough": "",
     }
 
 
 def main() -> None:
-    payload: dict = {}
+    synced_at = datetime.now().isoformat(timespec="seconds")
+    payload: dict = {"syncedAt": synced_at}
     for key, path in SOURCES.items():
-        parsed = [parse_row(r) for r in load_rows(path)]
-        payload[key] = {}
+        parsed_all = [parse_row(r) for r in load_rows(path)]
+        anchor = (
+            max(r["date"].date() for r in parsed_all)
+            if parsed_all
+            else date.today()
+        )
+        data_through = anchor.isoformat()
+        payload[key] = {"_anchor": data_through}
         for range_id, _, label in RANGE_CONFIG:
-            subset = filter_by_range(parsed, range_id)
-            payload[key][range_id] = build_from_parsed(subset, label, range_id)
+            subset = filter_by_range(parsed_all, range_id, anchor)
+            payload[key][range_id] = build_from_parsed(
+                subset, label, range_id, anchor, data_through
+            )
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {OUT}")
+    print(f"Wrote {OUT} (synced {synced_at})")
 
 
 if __name__ == "__main__":

@@ -1,178 +1,173 @@
 {
+  "syncedAt": "2026-05-25T20:33:39",
   "all": {
+    "_anchor": "2026-05-14",
     "today": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 Today",
-      "reviewCount": 200,
+      "period": "2026-05-14 \u2192 2026-05-14 \u00b7 Today \u00b7 through 2026-05-14",
+      "reviewCount": 146,
       "wordCount": 18,
       "wordLimit": 250,
-      "avgRating": 4.46,
+      "avgRating": 4.35,
       "avgRatingDelta": 0.0,
-      "sentimentScore": 86,
+      "sentimentScore": 84,
       "sentimentDelta": 0.0,
-      "wowReviewDelta": 170.4,
+      "wowReviewDelta": 0.0,
       "weeklyVolume": [
-        54,
         146
       ],
       "volumeLabels": [
-        "May 13",
         "May 14"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 2 day(s) with activity",
+      "volumeSubtitle": "Reviews on latest day \u00b7 May 14, 2026",
       "ratingDistribution": [
-        19,
+        17,
         3,
-        6,
-        12,
-        160
+        4,
+        10,
+        112
       ],
       "sentimentSplit": {
-        "positive": 86,
-        "negative": 11,
+        "positive": 84,
+        "negative": 14,
         "neutral": 3
       },
-      "trendAlert": "Review volume up +170.4% in the latest week",
+      "trendAlert": "Negative reviews at 14% of 146 public store samples",
       "keywords": [
         "nice",
         "experience",
-        "easy",
         "trading",
-        "great",
-        "market",
-        "platform",
+        "easy",
         "charge",
-        "excellent",
         "charges",
-        "investments",
-        "stock"
+        "great",
+        "service",
+        "quantity",
+        "excellent",
+        "platform",
+        "trade"
       ],
       "themeCards": [
-        {
-          "id": "orders",
-          "title": "Order Execution Problems",
-          "count": 8,
-          "pct": 4,
-          "lowPct": 12,
-          "wowDelta": 0,
-          "sparkline": [
-            7,
-            1
-          ],
-          "reviews": 8,
-          "priority": "High",
-          "description": "Order flow complaints in 8 reviews across F&O and cash segments."
-        },
         {
           "id": "brokerage",
           "title": "High Brokerage Charges",
           "count": 7,
-          "pct": 4,
+          "pct": 5,
           "lowPct": 86,
           "wowDelta": 0,
           "sparkline": [
-            0,
             7
           ],
           "reviews": 7,
           "priority": "Critical",
-          "description": "Mentioned in 4% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+          "description": "Mentioned in 5% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
         },
         {
           "id": "glitches",
           "title": "Technical Glitches",
-          "count": 5,
-          "pct": 2,
-          "lowPct": 80,
+          "count": 4,
+          "pct": 3,
+          "lowPct": 75,
           "wowDelta": 0,
           "sparkline": [
-            1,
             4
           ],
-          "reviews": 5,
+          "reviews": 4,
           "priority": "Critical",
-          "description": "Stability issues cited in 5 reviews during peak usage."
+          "description": "Stability issues cited in 4 reviews during peak usage."
         },
         {
           "id": "withdrawal",
           "title": "Withdrawal Issues",
-          "count": 4,
+          "count": 3,
           "pct": 2,
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
-            1,
             3
           ],
-          "reviews": 4,
+          "reviews": 3,
           "priority": "High",
-          "description": "Payout / withdrawal language in 4 reviews \u2014 trust-sensitive."
+          "description": "Payout / withdrawal language in 3 reviews \u2014 trust-sensitive."
         },
         {
           "id": "support",
           "title": "Poor Customer Support",
-          "count": 2,
+          "count": 1,
           "pct": 1,
-          "lowPct": 50,
+          "lowPct": 100,
           "wowDelta": 0,
           "sparkline": [
-            1,
             1
           ],
-          "reviews": 2,
-          "priority": "High",
-          "description": "Support friction in 2 reviews (50% low-rated)."
+          "reviews": 1,
+          "priority": "Critical",
+          "description": "Support friction in 1 reviews (100% low-rated)."
+        },
+        {
+          "id": "orders",
+          "title": "Order Execution Problems",
+          "count": 1,
+          "pct": 1,
+          "lowPct": 100,
+          "wowDelta": 0,
+          "sparkline": [
+            1
+          ],
+          "reviews": 1,
+          "priority": "Critical",
+          "description": "Order flow complaints in 1 reviews across F&O and cash segments."
         }
       ],
       "pmRadar": {
         "highImpact": [
           {
-            "title": "High Brokerage Charges",
-            "count": 7,
-            "icon": "\ud83d\udcb0",
+            "title": "Poor Customer Support",
+            "count": 1,
+            "icon": "\ud83d\udcde",
             "severity": "critical",
-            "description": "Mentioned in 4% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+            "description": "Support friction in 1 reviews (100% low-rated)."
           },
           {
-            "title": "Technical Glitches",
-            "count": 5,
-            "icon": "\u26a1",
+            "title": "Order Execution Problems",
+            "count": 1,
+            "icon": "\ud83d\udcc9",
             "severity": "critical",
-            "description": "Stability issues cited in 5 reviews during peak usage."
+            "description": "Order flow complaints in 1 reviews across F&O and cash segments."
           }
         ],
         "highFrequency": [
           {
-            "title": "Order Execution Problems",
-            "count": 8,
-            "icon": "\ud83d\udcc9",
-            "severity": "warn",
-            "description": "Order flow complaints in 8 reviews across F&O and cash segments."
-          },
-          {
             "title": "High Brokerage Charges",
             "count": 7,
             "icon": "\ud83d\udcb0",
             "severity": "warn",
-            "description": "Mentioned in 4% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+            "description": "Mentioned in 5% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+          },
+          {
+            "title": "Technical Glitches",
+            "count": 4,
+            "icon": "\u26a1",
+            "severity": "warn",
+            "description": "Stability issues cited in 4 reviews during peak usage."
           }
         ],
         "monitor": [
           {
-            "title": "Technical Glitches",
-            "count": 5,
-            "icon": "\u26a1",
-            "severity": "warn",
-            "description": "Stability issues cited in 5 reviews during peak usage."
-          },
-          {
             "title": "Withdrawal Issues",
-            "count": 4,
+            "count": 3,
             "icon": "\ud83d\udd25",
             "severity": "warn",
-            "description": "Payout / withdrawal language in 4 reviews \u2014 trust-sensitive."
+            "description": "Payout / withdrawal language in 3 reviews \u2014 trust-sensitive."
+          },
+          {
+            "title": "Poor Customer Support",
+            "count": 1,
+            "icon": "\ud83d\udcde",
+            "severity": "warn",
+            "description": "Support friction in 1 reviews (100% low-rated)."
           }
         ]
       },
@@ -209,11 +204,11 @@
         }
       ],
       "weeklyNote": {
-        "summary": "Weekly pulse from 200 extracted public reviews: 4.46\u2605 average, 86% positive sentiment. Order Execution Problems leads negative mentions.",
+        "summary": "Weekly pulse from 146 extracted public reviews: 4.35\u2605 average, 84% positive sentiment. High Brokerage Charges leads negative mentions.",
         "themes": [
-          "Order Execution Problems \u2014 4% of corpus (8 reviews, \u21910% WoW)",
-          "High Brokerage Charges \u2014 4% of corpus (7 reviews, \u21910% WoW)",
-          "Technical Glitches \u2014 2% of corpus (5 reviews, \u21910% WoW)"
+          "High Brokerage Charges \u2014 5% of corpus (7 reviews, \u21910% WoW)",
+          "Technical Glitches \u2014 3% of corpus (4 reviews, \u21910% WoW)",
+          "Withdrawal Issues \u2014 2% of corpus (3 reviews, \u21910% WoW)"
         ],
         "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
         "quotes": [
@@ -222,7 +217,7 @@
           "\u2022 Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more"
         ],
         "actions": [
-          "Address order execution problems with a product + comms fix this sprint",
+          "Address high brokerage charges with a product + comms fix this sprint",
           "Publish fee / withdrawal SLAs in-app before money movement",
           "Route 1\u20132\u2605 tickets to expedited support within 24h"
         ]
@@ -230,24 +225,24 @@
       "emailDraft": {
         "to": "team@groww.in",
         "subject": "Groww Weekly Review Pulse",
-        "body": "Groww public review pulse (2026-W20): 200 reviews, 4.46\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 4% of sample (\u21910% WoW)\n2. High Brokerage Charges \u2014 4% of sample (\u21910% WoW)\n3. Technical Glitches \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+        "body": "Groww public review pulse (2026-W20): 146 reviews, 4.35\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 5% of sample (\u21910% WoW)\n2. Technical Glitches \u2014 3% of sample (\u21910% WoW)\n3. Withdrawal Issues \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.46\u2605 with 86% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Technical Glitches."
+      "executiveSummary": "Analysis of 146 public App Store & Play reviews (2026-05-14 \u2192 2026-05-14): average 4.35\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Withdrawal Issues.",
+      "dataThrough": "2026-05-14"
     },
     "7d": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-07 \u2192 2026-05-14 \u00b7 7 Days",
-      "reviewCount": 498,
+      "period": "2026-05-08 \u2192 2026-05-14 \u00b7 7 Days \u00b7 through 2026-05-14",
+      "reviewCount": 478,
       "wordCount": 18,
       "wordLimit": 250,
-      "avgRating": 4.61,
-      "avgRatingDelta": -0.13,
-      "sentimentScore": 91,
-      "sentimentDelta": -3.4,
+      "avgRating": 4.6,
+      "avgRatingDelta": -0.09,
+      "sentimentScore": 90,
+      "sentimentDelta": -2.3,
       "wowReviewDelta": 32.7,
       "weeklyVolume": [
-        20,
         41,
         21,
         52,
@@ -257,26 +252,25 @@
         146
       ],
       "volumeLabels": [
-        "May 07",
-        "May 08",
-        "May 09",
-        "May 10",
-        "May 11",
-        "May 12",
-        "May 13",
-        "May 14"
+        "Fri 08",
+        "Sat 09",
+        "Sun 10",
+        "Mon 11",
+        "Tue 12",
+        "Wed 13",
+        "Thu 14"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 8 day(s) in 7-day window",
+      "volumeSubtitle": "Daily volume \u00b7 last 7 calendar days",
       "ratingDistribution": [
         33,
         5,
         8,
-        30,
-        422
+        29,
+        403
       ],
       "sentimentSplit": {
-        "positive": 91,
+        "positive": 90,
         "negative": 8,
         "neutral": 2
       },
@@ -289,8 +283,8 @@
         "friendly",
         "great",
         "experience",
-        "excellent",
         "investment",
+        "excellent",
         "interface",
         "super",
         "platform"
@@ -299,12 +293,11 @@
         {
           "id": "orders",
           "title": "Order Execution Problems",
-          "count": 27,
+          "count": 25,
           "pct": 5,
-          "lowPct": 19,
-          "wowDelta": 100,
+          "lowPct": 20,
+          "wowDelta": 157,
           "sparkline": [
-            2,
             3,
             0,
             4,
@@ -313,19 +306,18 @@
             12,
             1
           ],
-          "reviews": 27,
+          "reviews": 25,
           "priority": "High",
-          "description": "Order flow complaints in 27 reviews across F&O and cash segments."
+          "description": "Order flow complaints in 25 reviews across F&O and cash segments."
         },
         {
           "id": "brokerage",
           "title": "High Brokerage Charges",
           "count": 17,
-          "pct": 3,
+          "pct": 4,
           "lowPct": 53,
           "wowDelta": 140,
           "sparkline": [
-            0,
             1,
             1,
             3,
@@ -336,7 +328,7 @@
           ],
           "reviews": 17,
           "priority": "Critical",
-          "description": "Mentioned in 3% of sample reviews; 53% are 1\u20132\u2605 charge complaints."
+          "description": "Mentioned in 4% of sample reviews; 53% are 1\u20132\u2605 charge complaints."
         },
         {
           "id": "glitches",
@@ -346,7 +338,6 @@
           "lowPct": 54,
           "wowDelta": 125,
           "sparkline": [
-            0,
             2,
             0,
             2,
@@ -363,11 +354,10 @@
           "id": "support",
           "title": "Poor Customer Support",
           "count": 12,
-          "pct": 2,
+          "pct": 3,
           "lowPct": 42,
           "wowDelta": 200,
           "sparkline": [
-            0,
             0,
             1,
             2,
@@ -388,7 +378,6 @@
           "lowPct": 18,
           "wowDelta": 350,
           "sparkline": [
-            0,
             0,
             0,
             2,
@@ -416,23 +405,23 @@
             "count": 17,
             "icon": "\ud83d\udcb0",
             "severity": "warn",
-            "description": "Mentioned in 3% of sample reviews; 53% are 1\u20132\u2605 charge complaints."
+            "description": "Mentioned in 4% of sample reviews; 53% are 1\u20132\u2605 charge complaints."
           }
         ],
         "highFrequency": [
           {
             "title": "Order Execution Problems",
-            "count": 27,
+            "count": 25,
             "icon": "\ud83d\udcc9",
             "severity": "warn",
-            "description": "Order flow complaints in 27 reviews across F&O and cash segments."
+            "description": "Order flow complaints in 25 reviews across F&O and cash segments."
           },
           {
             "title": "High Brokerage Charges",
             "count": 17,
             "icon": "\ud83d\udcb0",
             "severity": "warn",
-            "description": "Mentioned in 3% of sample reviews; 53% are 1\u20132\u2605 charge complaints."
+            "description": "Mentioned in 4% of sample reviews; 53% are 1\u20132\u2605 charge complaints."
           }
         ],
         "monitor": [
@@ -485,10 +474,10 @@
         }
       ],
       "weeklyNote": {
-        "summary": "Weekly pulse from 498 extracted public reviews: 4.61\u2605 average, 91% positive sentiment. Order Execution Problems leads negative mentions.",
+        "summary": "Weekly pulse from 478 extracted public reviews: 4.6\u2605 average, 90% positive sentiment. Order Execution Problems leads negative mentions.",
         "themes": [
-          "Order Execution Problems \u2014 5% of corpus (27 reviews, \u2191100% WoW)",
-          "High Brokerage Charges \u2014 3% of corpus (17 reviews, \u2191140% WoW)",
+          "Order Execution Problems \u2014 5% of corpus (25 reviews, \u2191157% WoW)",
+          "High Brokerage Charges \u2014 4% of corpus (17 reviews, \u2191140% WoW)",
           "Technical Glitches \u2014 3% of corpus (13 reviews, \u2191125% WoW)"
         ],
         "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
@@ -506,14 +495,15 @@
       "emailDraft": {
         "to": "team@groww.in",
         "subject": "Groww Weekly Review Pulse",
-        "body": "Groww public review pulse (2026-W20): 498 reviews, 4.61\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 5% of sample (\u2191100% WoW)\n2. High Brokerage Charges \u2014 3% of sample (\u2191140% WoW)\n3. Technical Glitches \u2014 3% of sample (\u2191125% WoW)\n\nUSER QUOTES:\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+        "body": "Groww public review pulse (2026-W20): 478 reviews, 4.6\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 5% of sample (\u2191157% WoW)\n2. High Brokerage Charges \u2014 4% of sample (\u2191140% WoW)\n3. Technical Glitches \u2014 3% of sample (\u2191125% WoW)\n\nUSER QUOTES:\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 498 public App Store & Play reviews (2026-05-07 \u2192 2026-05-14): average 4.61\u2605 with 91% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Technical Glitches."
+      "executiveSummary": "Analysis of 478 public App Store & Play reviews (2026-05-08 \u2192 2026-05-14): average 4.6\u2605 with 90% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Technical Glitches.",
+      "dataThrough": "2026-05-14"
     },
     "30d": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-01 \u2192 2026-05-14 \u00b7 30 Days",
+      "period": "2026-05-01 \u2192 2026-05-14 \u00b7 30 Days \u00b7 through 2026-05-14",
       "reviewCount": 700,
       "wordCount": 18,
       "wordLimit": 250,
@@ -523,6 +513,22 @@
       "sentimentDelta": -2.1,
       "wowReviewDelta": 32.7,
       "weeklyVolume": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         6,
         20,
         26,
@@ -539,6 +545,22 @@
         146
       ],
       "volumeLabels": [
+        "Apr 15",
+        "Apr 16",
+        "Apr 17",
+        "Apr 18",
+        "Apr 19",
+        "Apr 20",
+        "Apr 21",
+        "Apr 22",
+        "Apr 23",
+        "Apr 24",
+        "Apr 25",
+        "Apr 26",
+        "Apr 27",
+        "Apr 28",
+        "Apr 29",
+        "Apr 30",
         "May 01",
         "May 02",
         "May 03",
@@ -555,7 +577,7 @@
         "May 14"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 May 01 \u2013 May 14",
+      "volumeSubtitle": "Daily volume \u00b7 last 30 calendar days",
       "ratingDistribution": [
         47,
         7,
@@ -592,6 +614,22 @@
           "lowPct": 21,
           "wowDelta": 38,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             2,
             0,
@@ -621,6 +659,22 @@
           "sparkline": [
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             1,
             3,
@@ -646,6 +700,22 @@
           "lowPct": 35,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             1,
             1,
@@ -676,6 +746,22 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             2,
             2,
@@ -700,6 +786,22 @@
           "lowPct": 53,
           "wowDelta": 29,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             1,
@@ -826,12 +928,13 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 700 reviews, 4.62\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 5% of sample (\u219138% WoW)\n2. High Brokerage Charges \u2014 3% of sample (\u219133% WoW)\n3. Withdrawal Issues \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nThey grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 700 public App Store & Play reviews (2026-05-01 \u2192 2026-05-14): average 4.62\u2605 with 91% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Withdrawal Issues."
+      "executiveSummary": "Analysis of 700 public App Store & Play reviews (2026-05-01 \u2192 2026-05-14): average 4.62\u2605 with 91% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Withdrawal Issues.",
+      "dataThrough": "2026-05-14"
     },
     "8-12w": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-01 \u2192 2026-05-14 \u00b7 8-12 Weeks",
+      "period": "2026-05-01 \u2192 2026-05-14 \u00b7 8-12 Weeks \u00b7 through 2026-05-14",
       "reviewCount": 700,
       "wordCount": 18,
       "wordLimit": 250,
@@ -839,41 +942,19 @@
       "avgRatingDelta": -0.07,
       "sentimentScore": 91,
       "sentimentDelta": -2.1,
-      "wowReviewDelta": 32.7,
+      "wowReviewDelta": 28.2,
       "weeklyVolume": [
-        6,
-        20,
-        26,
-        37,
-        48,
-        41,
-        44,
-        41,
-        21,
         52,
-        55,
-        53,
-        110,
-        146
+        284,
+        364
       ],
       "volumeLabels": [
-        "May 01",
-        "May 02",
-        "May 03",
-        "May 04",
-        "May 05",
-        "May 06",
-        "May 07",
-        "May 08",
-        "May 09",
-        "May 10",
-        "May 11",
-        "May 12",
-        "May 13",
-        "May 14"
+        "W18",
+        "W19",
+        "W20"
       ],
-      "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 May 01 \u2013 May 14",
+      "volumeGranularity": "weekly",
+      "volumeSubtitle": "Weekly volume \u00b7 Feb 20 \u2013 May 14",
       "ratingDistribution": [
         47,
         7,
@@ -1144,45 +1225,45 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 700 reviews, 4.62\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 5% of sample (\u219138% WoW)\n2. High Brokerage Charges \u2014 3% of sample (\u219133% WoW)\n3. Withdrawal Issues \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nThey grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 700 public App Store & Play reviews (2026-05-01 \u2192 2026-05-14): average 4.62\u2605 with 91% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Withdrawal Issues."
+      "executiveSummary": "Analysis of 700 public App Store & Play reviews (2026-05-01 \u2192 2026-05-14): average 4.62\u2605 with 91% positive sentiment. Top friction: Order Execution Problems, High Brokerage Charges, Withdrawal Issues.",
+      "dataThrough": "2026-05-14"
     }
   },
   "ios": {
+    "_anchor": "2026-05-13",
     "today": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-12 \u2192 2026-05-13 \u00b7 Today",
-      "reviewCount": 58,
+      "period": "2026-05-13 \u2192 2026-05-13 \u00b7 Today \u00b7 through 2026-05-13",
+      "reviewCount": 56,
       "wordCount": 18,
       "wordLimit": 250,
-      "avgRating": 4.74,
+      "avgRating": 4.75,
       "avgRatingDelta": 0.0,
-      "sentimentScore": 97,
+      "sentimentScore": 96,
       "sentimentDelta": 0.0,
-      "wowReviewDelta": 2700.0,
+      "wowReviewDelta": 0.0,
       "weeklyVolume": [
-        2,
         56
       ],
       "volumeLabels": [
-        "May 12",
         "May 13"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 2 day(s) with activity",
+      "volumeSubtitle": "Reviews on latest day \u00b7 May 13, 2026",
       "ratingDistribution": [
         2,
         0,
         0,
-        7,
-        49
+        6,
+        48
       ],
       "sentimentSplit": {
-        "positive": 97,
-        "negative": 3,
+        "positive": 96,
+        "negative": 4,
         "neutral": 0
       },
-      "trendAlert": "Review volume up +2700.0% in the latest week",
+      "trendAlert": "Negative reviews at 4% of 56 public store samples",
       "keywords": [
         "great",
         "easy",
@@ -1206,7 +1287,6 @@
           "lowPct": 12,
           "wowDelta": 0,
           "sparkline": [
-            0,
             8
           ],
           "reviews": 8,
@@ -1221,7 +1301,6 @@
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
-            0,
             3
           ],
           "reviews": 3,
@@ -1232,26 +1311,24 @@
           "id": "brokerage",
           "title": "High Brokerage Charges",
           "count": 2,
-          "pct": 3,
+          "pct": 4,
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
-            0,
             2
           ],
           "reviews": 2,
           "priority": "High",
-          "description": "Mentioned in 3% of sample reviews; 0% are 1\u20132\u2605 charge complaints."
+          "description": "Mentioned in 4% of sample reviews; 0% are 1\u20132\u2605 charge complaints."
         },
         {
           "id": "withdrawal",
           "title": "Withdrawal Issues",
           "count": 2,
-          "pct": 3,
+          "pct": 4,
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
-            0,
             2
           ],
           "reviews": 2,
@@ -1266,7 +1343,6 @@
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
-            0,
             1
           ],
           "reviews": 1,
@@ -1313,7 +1389,7 @@
             "count": 2,
             "icon": "\ud83d\udcb0",
             "severity": "warn",
-            "description": "Mentioned in 3% of sample reviews; 0% are 1\u20132\u2605 charge complaints."
+            "description": "Mentioned in 4% of sample reviews; 0% are 1\u20132\u2605 charge complaints."
           },
           {
             "title": "Withdrawal Issues",
@@ -1357,11 +1433,11 @@
         }
       ],
       "weeklyNote": {
-        "summary": "Weekly pulse from 58 extracted public reviews: 4.74\u2605 average, 97% positive sentiment. Order Execution Problems leads negative mentions.",
+        "summary": "Weekly pulse from 56 extracted public reviews: 4.75\u2605 average, 96% positive sentiment. Order Execution Problems leads negative mentions.",
         "themes": [
           "Order Execution Problems \u2014 14% of corpus (8 reviews, \u21910% WoW)",
           "Poor Customer Support \u2014 5% of corpus (3 reviews, \u21910% WoW)",
-          "High Brokerage Charges \u2014 3% of corpus (2 reviews, \u21910% WoW)"
+          "High Brokerage Charges \u2014 4% of corpus (2 reviews, \u21910% WoW)"
         ],
         "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
         "quotes": [
@@ -1378,24 +1454,24 @@
       "emailDraft": {
         "to": "team@groww.in",
         "subject": "Groww Weekly Review Pulse",
-        "body": "Groww public review pulse (2026-W20): 58 reviews, 4.74\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 14% of sample (\u21910% WoW)\n2. Poor Customer Support \u2014 5% of sample (\u21910% WoW)\n3. High Brokerage Charges \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nI put order in groww in F&O, it didn\u2019t take it even it went down so much. Too much technical errors \nVery expensive for f&o\nHave to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wan\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+        "body": "Groww public review pulse (2026-W20): 56 reviews, 4.75\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 14% of sample (\u21910% WoW)\n2. Poor Customer Support \u2014 5% of sample (\u21910% WoW)\n3. High Brokerage Charges \u2014 4% of sample (\u21910% WoW)\n\nUSER QUOTES:\nI put order in groww in F&O, it didn\u2019t take it even it went down so much. Too much technical errors \nVery expensive for f&o\nHave to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wan\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 58 public App Store & Play reviews (2026-05-12 \u2192 2026-05-13): average 4.74\u2605 with 97% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, High Brokerage Charges."
+      "executiveSummary": "Analysis of 56 public App Store & Play reviews (2026-05-13 \u2192 2026-05-13): average 4.75\u2605 with 96% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, High Brokerage Charges.",
+      "dataThrough": "2026-05-13"
     },
     "7d": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-06 \u2192 2026-05-13 \u00b7 7 Days",
-      "reviewCount": 325,
+      "period": "2026-05-07 \u2192 2026-05-13 \u00b7 7 Days \u00b7 through 2026-05-13",
+      "reviewCount": 322,
       "wordCount": 18,
       "wordLimit": 250,
       "avgRating": 4.76,
       "avgRatingDelta": 0.12,
       "sentimentScore": 95,
-      "sentimentDelta": 3.8,
+      "sentimentDelta": 3.9,
       "wowReviewDelta": 5.7,
       "weeklyVolume": [
-        3,
         44,
         41,
         21,
@@ -1405,23 +1481,22 @@
         56
       ],
       "volumeLabels": [
-        "May 06",
-        "May 07",
-        "May 08",
-        "May 09",
-        "May 10",
-        "May 11",
-        "May 12",
-        "May 13"
+        "Thu 07",
+        "Fri 08",
+        "Sat 09",
+        "Sun 10",
+        "Mon 11",
+        "Tue 12",
+        "Wed 13"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 8 day(s) in 7-day window",
+      "volumeSubtitle": "Daily volume \u00b7 last 7 calendar days",
       "ratingDistribution": [
         12,
         2,
         2,
         19,
-        290
+        287
       ],
       "sentimentSplit": {
         "positive": 95,
@@ -1438,8 +1513,8 @@
         "trading",
         "investment",
         "excellent",
-        "experience",
         "interface",
+        "experience",
         "super",
         "well"
       ],
@@ -1452,7 +1527,6 @@
           "lowPct": 13,
           "wowDelta": 30,
           "sparkline": [
-            0,
             3,
             3,
             0,
@@ -1473,7 +1547,6 @@
           "lowPct": 38,
           "wowDelta": 60,
           "sparkline": [
-            0,
             2,
             0,
             1,
@@ -1495,7 +1568,6 @@
           "wowDelta": 0,
           "sparkline": [
             0,
-            0,
             1,
             1,
             3,
@@ -1515,7 +1587,6 @@
           "lowPct": 38,
           "wowDelta": 67,
           "sparkline": [
-            0,
             1,
             0,
             0,
@@ -1536,7 +1607,6 @@
           "lowPct": 38,
           "wowDelta": 0,
           "sparkline": [
-            0,
             0,
             2,
             0,
@@ -1633,7 +1703,7 @@
         }
       ],
       "weeklyNote": {
-        "summary": "Weekly pulse from 325 extracted public reviews: 4.76\u2605 average, 95% positive sentiment. Order Execution Problems leads negative mentions.",
+        "summary": "Weekly pulse from 322 extracted public reviews: 4.76\u2605 average, 95% positive sentiment. Order Execution Problems leads negative mentions.",
         "themes": [
           "Order Execution Problems \u2014 7% of corpus (23 reviews, \u219130% WoW)",
           "Poor Customer Support \u2014 4% of corpus (13 reviews, \u219160% WoW)",
@@ -1654,14 +1724,15 @@
       "emailDraft": {
         "to": "team@groww.in",
         "subject": "Groww Weekly Review Pulse",
-        "body": "Groww public review pulse (2026-W20): 325 reviews, 4.76\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 7% of sample (\u219130% WoW)\n2. Poor Customer Support \u2014 4% of sample (\u219160% WoW)\n3. High Brokerage Charges \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\nI put order in groww in F&O, it didn\u2019t take it even it went down so much. Too much technical errors \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+        "body": "Groww public review pulse (2026-W20): 322 reviews, 4.76\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 7% of sample (\u219130% WoW)\n2. Poor Customer Support \u2014 4% of sample (\u219160% WoW)\n3. High Brokerage Charges \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\nI put order in groww in F&O, it didn\u2019t take it even it went down so much. Too much technical errors \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 325 public App Store & Play reviews (2026-05-06 \u2192 2026-05-13): average 4.76\u2605 with 95% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, High Brokerage Charges."
+      "executiveSummary": "Analysis of 322 public App Store & Play reviews (2026-05-07 \u2192 2026-05-13): average 4.76\u2605 with 95% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, High Brokerage Charges.",
+      "dataThrough": "2026-05-13"
     },
     "30d": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-01 \u2192 2026-05-13 \u00b7 30 Days",
+      "period": "2026-05-01 \u2192 2026-05-13 \u00b7 30 Days \u00b7 through 2026-05-13",
       "reviewCount": 500,
       "wordCount": 18,
       "wordLimit": 250,
@@ -1671,6 +1742,23 @@
       "sentimentDelta": 5.0,
       "wowReviewDelta": 5.7,
       "weeklyVolume": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         6,
         20,
         26,
@@ -1686,6 +1774,23 @@
         56
       ],
       "volumeLabels": [
+        "Apr 14",
+        "Apr 15",
+        "Apr 16",
+        "Apr 17",
+        "Apr 18",
+        "Apr 19",
+        "Apr 20",
+        "Apr 21",
+        "Apr 22",
+        "Apr 23",
+        "Apr 24",
+        "Apr 25",
+        "Apr 26",
+        "Apr 27",
+        "Apr 28",
+        "Apr 29",
+        "Apr 30",
         "May 01",
         "May 02",
         "May 03",
@@ -1701,7 +1806,7 @@
         "May 13"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 May 01 \u2013 May 13",
+      "volumeSubtitle": "Daily volume \u00b7 last 30 calendar days",
       "ratingDistribution": [
         24,
         4,
@@ -1738,6 +1843,23 @@
           "lowPct": 17,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             2,
             0,
@@ -1767,6 +1889,23 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             2,
             2,
@@ -1790,6 +1929,23 @@
           "lowPct": 44,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             1,
             1,
@@ -1818,6 +1974,23 @@
           "sparkline": [
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             1,
             3,
@@ -1842,6 +2015,23 @@
           "lowPct": 42,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             0,
             1,
@@ -1967,12 +2157,13 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 500 reviews, 4.72\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 6% of sample (\u21910% WoW)\n2. Poor Customer Support \u2014 4% of sample (\u21910% WoW)\n3. Withdrawal Issues \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nThey grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 500 public App Store & Play reviews (2026-05-01 \u2192 2026-05-13): average 4.72\u2605 with 94% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, Withdrawal Issues."
+      "executiveSummary": "Analysis of 500 public App Store & Play reviews (2026-05-01 \u2192 2026-05-13): average 4.72\u2605 with 94% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, Withdrawal Issues.",
+      "dataThrough": "2026-05-13"
     },
     "8-12w": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-01 \u2192 2026-05-13 \u00b7 8-12 Weeks",
+      "period": "2026-05-01 \u2192 2026-05-13 \u00b7 8-12 Weeks \u00b7 through 2026-05-13",
       "reviewCount": 500,
       "wordCount": 18,
       "wordLimit": 250,
@@ -1980,39 +2171,19 @@
       "avgRatingDelta": 0.17,
       "sentimentScore": 94,
       "sentimentDelta": 5.0,
-      "wowReviewDelta": 5.7,
+      "wowReviewDelta": -42.3,
       "weeklyVolume": [
-        6,
-        20,
-        26,
-        37,
-        48,
-        41,
-        44,
-        41,
-        21,
         52,
-        55,
-        53,
-        56
+        284,
+        164
       ],
       "volumeLabels": [
-        "May 01",
-        "May 02",
-        "May 03",
-        "May 04",
-        "May 05",
-        "May 06",
-        "May 07",
-        "May 08",
-        "May 09",
-        "May 10",
-        "May 11",
-        "May 12",
-        "May 13"
+        "W18",
+        "W19",
+        "W20"
       ],
-      "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 May 01 \u2013 May 13",
+      "volumeGranularity": "weekly",
+      "volumeSubtitle": "Weekly volume \u00b7 Feb 19 \u2013 May 13",
       "ratingDistribution": [
         24,
         4,
@@ -2278,119 +2449,101 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 500 reviews, 4.72\u2605 average.\n\nTOP THEMES:\n1. Order Execution Problems \u2014 6% of sample (\u21910% WoW)\n2. Poor Customer Support \u2014 4% of sample (\u21910% WoW)\n3. Withdrawal Issues \u2014 3% of sample (\u21910% WoW)\n\nUSER QUOTES:\nThey grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for\n1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on i\nThis app user interface is one the best in the market and easy to use, but its functionality and usa\n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 500 public App Store & Play reviews (2026-05-01 \u2192 2026-05-13): average 4.72\u2605 with 94% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, Withdrawal Issues."
+      "executiveSummary": "Analysis of 500 public App Store & Play reviews (2026-05-01 \u2192 2026-05-13): average 4.72\u2605 with 94% positive sentiment. Top friction: Order Execution Problems, Poor Customer Support, Withdrawal Issues.",
+      "dataThrough": "2026-05-13"
     }
   },
   "android": {
+    "_anchor": "2026-05-14",
     "today": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 Today",
-      "reviewCount": 180,
+      "period": "2026-05-14 \u2192 2026-05-14 \u00b7 Today \u00b7 through 2026-05-14",
+      "reviewCount": 146,
       "wordCount": 18,
       "wordLimit": 250,
-      "avgRating": 4.4,
+      "avgRating": 4.35,
       "avgRatingDelta": 0.0,
       "sentimentScore": 84,
       "sentimentDelta": 0.0,
-      "wowReviewDelta": 329.4,
+      "wowReviewDelta": 0.0,
       "weeklyVolume": [
-        34,
         146
       ],
       "volumeLabels": [
-        "May 13",
         "May 14"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 2 day(s) with activity",
+      "volumeSubtitle": "Reviews on latest day \u00b7 May 14, 2026",
       "ratingDistribution": [
-        19,
+        17,
         3,
-        6,
-        11,
-        141
+        4,
+        10,
+        112
       ],
       "sentimentSplit": {
         "positive": 84,
-        "negative": 12,
+        "negative": 14,
         "neutral": 3
       },
-      "trendAlert": "Review volume up +329.4% in the latest week",
+      "trendAlert": "Negative reviews at 14% of 146 public store samples",
       "keywords": [
         "nice",
         "experience",
         "trading",
         "easy",
         "charge",
+        "charges",
+        "great",
+        "service",
+        "quantity",
         "excellent",
         "platform",
-        "charges",
-        "user",
-        "friendly",
-        "great",
-        "service"
+        "trade"
       ],
       "themeCards": [
         {
           "id": "brokerage",
           "title": "High Brokerage Charges",
           "count": 7,
-          "pct": 4,
+          "pct": 5,
           "lowPct": 86,
           "wowDelta": 0,
           "sparkline": [
-            0,
             7
           ],
           "reviews": 7,
           "priority": "Critical",
-          "description": "Mentioned in 4% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+          "description": "Mentioned in 5% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
         },
         {
           "id": "glitches",
           "title": "Technical Glitches",
-          "count": 5,
+          "count": 4,
           "pct": 3,
-          "lowPct": 80,
+          "lowPct": 75,
           "wowDelta": 0,
           "sparkline": [
-            1,
             4
           ],
-          "reviews": 5,
+          "reviews": 4,
           "priority": "Critical",
-          "description": "Stability issues cited in 5 reviews during peak usage."
+          "description": "Stability issues cited in 4 reviews during peak usage."
         },
         {
           "id": "withdrawal",
           "title": "Withdrawal Issues",
-          "count": 4,
+          "count": 3,
           "pct": 2,
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
-            1,
             3
           ],
-          "reviews": 4,
+          "reviews": 3,
           "priority": "High",
-          "description": "Payout / withdrawal language in 4 reviews \u2014 trust-sensitive."
-        },
-        {
-          "id": "orders",
-          "title": "Order Execution Problems",
-          "count": 4,
-          "pct": 2,
-          "lowPct": 25,
-          "wowDelta": 0,
-          "sparkline": [
-            3,
-            1
-          ],
-          "reviews": 4,
-          "priority": "High",
-          "description": "Order flow complaints in 4 reviews across F&O and cash segments."
+          "description": "Payout / withdrawal language in 3 reviews \u2014 trust-sensitive."
         },
         {
           "id": "support",
@@ -2400,12 +2553,25 @@
           "lowPct": 100,
           "wowDelta": 0,
           "sparkline": [
-            0,
             1
           ],
           "reviews": 1,
           "priority": "Critical",
           "description": "Support friction in 1 reviews (100% low-rated)."
+        },
+        {
+          "id": "orders",
+          "title": "Order Execution Problems",
+          "count": 1,
+          "pct": 1,
+          "lowPct": 100,
+          "wowDelta": 0,
+          "sparkline": [
+            1
+          ],
+          "reviews": 1,
+          "priority": "Critical",
+          "description": "Order flow complaints in 1 reviews across F&O and cash segments."
         }
       ],
       "pmRadar": {
@@ -2418,11 +2584,11 @@
             "description": "Support friction in 1 reviews (100% low-rated)."
           },
           {
-            "title": "High Brokerage Charges",
-            "count": 7,
-            "icon": "\ud83d\udcb0",
+            "title": "Order Execution Problems",
+            "count": 1,
+            "icon": "\ud83d\udcc9",
             "severity": "critical",
-            "description": "Mentioned in 4% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+            "description": "Order flow complaints in 1 reviews across F&O and cash segments."
           }
         ],
         "highFrequency": [
@@ -2431,30 +2597,30 @@
             "count": 7,
             "icon": "\ud83d\udcb0",
             "severity": "warn",
-            "description": "Mentioned in 4% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
+            "description": "Mentioned in 5% of sample reviews; 86% are 1\u20132\u2605 charge complaints."
           },
           {
             "title": "Technical Glitches",
-            "count": 5,
+            "count": 4,
             "icon": "\u26a1",
             "severity": "warn",
-            "description": "Stability issues cited in 5 reviews during peak usage."
+            "description": "Stability issues cited in 4 reviews during peak usage."
           }
         ],
         "monitor": [
           {
             "title": "Withdrawal Issues",
-            "count": 4,
+            "count": 3,
             "icon": "\ud83d\udd25",
             "severity": "warn",
-            "description": "Payout / withdrawal language in 4 reviews \u2014 trust-sensitive."
+            "description": "Payout / withdrawal language in 3 reviews \u2014 trust-sensitive."
           },
           {
-            "title": "Order Execution Problems",
-            "count": 4,
-            "icon": "\ud83d\udcc9",
+            "title": "Poor Customer Support",
+            "count": 1,
+            "icon": "\ud83d\udcde",
             "severity": "warn",
-            "description": "Order flow complaints in 4 reviews across F&O and cash segments."
+            "description": "Support friction in 1 reviews (100% low-rated)."
           }
         ]
       },
@@ -2491,11 +2657,11 @@
         }
       ],
       "weeklyNote": {
-        "summary": "Weekly pulse from 180 extracted public reviews: 4.4\u2605 average, 84% positive sentiment. High Brokerage Charges leads negative mentions.",
+        "summary": "Weekly pulse from 146 extracted public reviews: 4.35\u2605 average, 84% positive sentiment. High Brokerage Charges leads negative mentions.",
         "themes": [
-          "High Brokerage Charges \u2014 4% of corpus (7 reviews, \u21910% WoW)",
-          "Technical Glitches \u2014 3% of corpus (5 reviews, \u21910% WoW)",
-          "Withdrawal Issues \u2014 2% of corpus (4 reviews, \u21910% WoW)"
+          "High Brokerage Charges \u2014 5% of corpus (7 reviews, \u21910% WoW)",
+          "Technical Glitches \u2014 3% of corpus (4 reviews, \u21910% WoW)",
+          "Withdrawal Issues \u2014 2% of corpus (3 reviews, \u21910% WoW)"
         ],
         "tracking": "WoW deltas computed from ISO week buckets in App Store & Play CSV exports.",
         "quotes": [
@@ -2512,14 +2678,15 @@
       "emailDraft": {
         "to": "team@groww.in",
         "subject": "Groww Weekly Review Pulse",
-        "body": "Groww public review pulse (2026-W20): 180 reviews, 4.4\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 4% of sample (\u21910% WoW)\n2. Technical Glitches \u2014 3% of sample (\u21910% WoW)\n3. Withdrawal Issues \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
+        "body": "Groww public review pulse (2026-W20): 146 reviews, 4.35\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 5% of sample (\u21910% WoW)\n2. Technical Glitches \u2014 3% of sample (\u21910% WoW)\n3. Withdrawal Issues \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 180 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.4\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Withdrawal Issues."
+      "executiveSummary": "Analysis of 146 public App Store & Play reviews (2026-05-14 \u2192 2026-05-14): average 4.35\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Withdrawal Issues.",
+      "dataThrough": "2026-05-14"
     },
     "7d": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 7 Days",
+      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 7 Days \u00b7 through 2026-05-14",
       "reviewCount": 200,
       "wordCount": 18,
       "wordLimit": 250,
@@ -2529,15 +2696,25 @@
       "sentimentDelta": 0.0,
       "wowReviewDelta": 170.4,
       "weeklyVolume": [
+        0,
+        0,
+        0,
+        0,
+        0,
         54,
         146
       ],
       "volumeLabels": [
-        "May 13",
-        "May 14"
+        "Fri 08",
+        "Sat 09",
+        "Sun 10",
+        "Mon 11",
+        "Tue 12",
+        "Wed 13",
+        "Thu 14"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 2 day(s) in 7-day window",
+      "volumeSubtitle": "Daily volume \u00b7 last 7 calendar days",
       "ratingDistribution": [
         23,
         3,
@@ -2574,6 +2751,11 @@
           "lowPct": 78,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
             2,
             7
           ],
@@ -2589,6 +2771,11 @@
           "lowPct": 80,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             4
           ],
@@ -2604,6 +2791,11 @@
           "lowPct": 40,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
             4,
             1
           ],
@@ -2619,6 +2811,11 @@
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             3
           ],
@@ -2634,6 +2831,11 @@
           "lowPct": 100,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             1
           ],
@@ -2748,12 +2950,13 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 200 reviews, 4.38\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 4% of sample (\u21910% WoW)\n2. Technical Glitches \u2014 2% of sample (\u21910% WoW)\n3. Order Execution Problems \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems."
+      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems.",
+      "dataThrough": "2026-05-14"
     },
     "30d": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 30 Days",
+      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 30 Days \u00b7 through 2026-05-14",
       "reviewCount": 200,
       "wordCount": 18,
       "wordLimit": 250,
@@ -2763,15 +2966,71 @@
       "sentimentDelta": 0.0,
       "wowReviewDelta": 170.4,
       "weeklyVolume": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         54,
         146
       ],
       "volumeLabels": [
+        "Apr 15",
+        "Apr 16",
+        "Apr 17",
+        "Apr 18",
+        "Apr 19",
+        "Apr 20",
+        "Apr 21",
+        "Apr 22",
+        "Apr 23",
+        "Apr 24",
+        "Apr 25",
+        "Apr 26",
+        "Apr 27",
+        "Apr 28",
+        "Apr 29",
+        "Apr 30",
+        "May 01",
+        "May 02",
+        "May 03",
+        "May 04",
+        "May 05",
+        "May 06",
+        "May 07",
+        "May 08",
+        "May 09",
+        "May 10",
+        "May 11",
+        "May 12",
         "May 13",
         "May 14"
       ],
       "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 May 13 \u2013 May 14",
+      "volumeSubtitle": "Daily volume \u00b7 last 30 calendar days",
       "ratingDistribution": [
         23,
         3,
@@ -2808,6 +3067,34 @@
           "lowPct": 78,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             2,
             7
           ],
@@ -2823,6 +3110,34 @@
           "lowPct": 80,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             4
           ],
@@ -2838,6 +3153,34 @@
           "lowPct": 40,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             4,
             1
           ],
@@ -2853,6 +3196,34 @@
           "lowPct": 0,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             1,
             3
           ],
@@ -2868,6 +3239,34 @@
           "lowPct": 100,
           "wowDelta": 0,
           "sparkline": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0,
             1
           ],
@@ -2982,12 +3381,13 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 200 reviews, 4.38\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 4% of sample (\u21910% WoW)\n2. Technical Glitches \u2014 2% of sample (\u21910% WoW)\n3. Order Execution Problems \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems."
+      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems.",
+      "dataThrough": "2026-05-14"
     },
     "8-12w": {
       "weekCode": "2026-W20",
       "weekLabel": "Week 20, 2026",
-      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 8-12 Weeks",
+      "period": "2026-05-13 \u2192 2026-05-14 \u00b7 8-12 Weeks \u00b7 through 2026-05-14",
       "reviewCount": 200,
       "wordCount": 18,
       "wordLimit": 250,
@@ -2995,17 +3395,15 @@
       "avgRatingDelta": 0.0,
       "sentimentScore": 84,
       "sentimentDelta": 0.0,
-      "wowReviewDelta": 170.4,
+      "wowReviewDelta": 0.0,
       "weeklyVolume": [
-        54,
-        146
+        200
       ],
       "volumeLabels": [
-        "May 13",
-        "May 14"
+        "W20"
       ],
-      "volumeGranularity": "daily",
-      "volumeSubtitle": "Daily ingest \u00b7 May 13 \u2013 May 14",
+      "volumeGranularity": "weekly",
+      "volumeSubtitle": "Weekly volume \u00b7 Feb 20 \u2013 May 14",
       "ratingDistribution": [
         23,
         3,
@@ -3018,7 +3416,7 @@
         "negative": 13,
         "neutral": 3
       },
-      "trendAlert": "Review volume up +170.4% in the latest week",
+      "trendAlert": "Negative reviews at 13% of 200 public store samples",
       "keywords": [
         "nice",
         "experience",
@@ -3216,7 +3614,8 @@
         "subject": "Groww Weekly Review Pulse",
         "body": "Groww public review pulse (2026-W20): 200 reviews, 4.38\u2605 average.\n\nTOP THEMES:\n1. High Brokerage Charges \u2014 4% of sample (\u21910% WoW)\n2. Technical Glitches \u2014 2% of sample (\u21910% WoW)\n3. Order Execution Problems \u2014 2% of sample (\u21910% WoW)\n\nUSER QUOTES:\nabe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagt\nVery bad experience with Groww. The customer service is extremely poor and issues take too long to r\nLimit order execution is not proper. Not able to sell all quantity at a time at a predefined price, \n\nACTION IDEAS:\n1. Clarify fees before order confirm\n2. Withdrawal status + SLA in app\n3. Escalate payout-related support tickets"
       },
-      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems."
+      "executiveSummary": "Analysis of 200 public App Store & Play reviews (2026-05-13 \u2192 2026-05-14): average 4.38\u2605 with 84% positive sentiment. Top friction: High Brokerage Charges, Technical Glitches, Order Execution Problems.",
+      "dataThrough": "2026-05-14"
     }
   }
 }

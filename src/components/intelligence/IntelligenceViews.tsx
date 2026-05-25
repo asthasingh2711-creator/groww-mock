@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { draftFromAnalytics, openGmailCompose } from "@/lib/pulseExport";
-import {
-  storeLabel,
-  type ReviewAnalyticsSlice,
-  type ReviewPlatform,
-} from "@/lib/reviewAnalytics";
+import { storeLabel } from "@/lib/reviewAnalytics";
+import type {
+  ReviewAnalyticsSlice,
+  ReviewPlatform,
+} from "@/lib/reviewAnalyticsTypes";
 import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
