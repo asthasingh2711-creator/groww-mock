@@ -885,6 +885,66 @@
   background: rgba(0, 208, 156, 0.1);
 }
 
+.keywordCount {
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  opacity: 0.75;
+}
+
+.keywordReviewPanel {
+  margin: 16px 0 24px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid var(--gw-border);
+  border-radius: 12px;
+}
+
+.keywordPanelTitle {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--gw-text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.keywordPanelMeta {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gw-muted);
+}
+
+.keywordReviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.keywordReviewCard {
+  background: #fff;
+  border: 1px solid var(--gw-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.keywordReviewQuote {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gw-text);
+}
+
+.kwHighlight {
+  background: rgba(0, 208, 156, 0.35);
+  color: #065f46;
+  padding: 0 2px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
 .lightShell .voiceQuote {
   color: var(--gw-text);
 }

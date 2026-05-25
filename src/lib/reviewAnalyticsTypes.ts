@@ -27,6 +27,12 @@ export type ReviewUserVoice = {
   stars: number;
 };
 
+export type KeywordHit = {
+  keyword: string;
+  count: number;
+  reviews: ReviewUserVoice[];
+};
+
 export type ReviewAnalyticsSlice = {
   weekCode: string;
   weekLabel: string;
@@ -47,6 +53,7 @@ export type ReviewAnalyticsSlice = {
   sentimentSplit: { positive: number; negative: number; neutral: number };
   trendAlert: string;
   keywords: string[];
+  keywordHits: KeywordHit[];
   themeCards: ReviewThemeCard[];
   pmRadar: {
     highImpact: ReviewRadarItem[];

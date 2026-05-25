@@ -11,6 +11,28 @@ import { EmailComposer } from "./EmailComposer";
 import { DonutChart, DeltaBadge, Sparkline, VolumeChart } from "./IntelligenceUi";
 import styles from "./intelligence.module.css";
 
+function escapeRegex(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function HighlightedQuote({ text, keyword }: { text: string; keyword: string }) {
+  if (!keyword.trim()) return <>{text}</>;
+  const parts = text.split(new RegExp(`(${escapeRegex(keyword)})`, "gi"));
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === keyword.toLowerCase() ? (
+          <mark key={`${part}-${i}`} className={styles.kwHighlight}>
+            {part}
+          </mark>
+        ) : (
+          <span key={`${part}-${i}`}>{part}</span>
+        ),
+      )}
+    </>
+  );
+}
+
 export function ViewReviews({ stats }: { stats: ReviewAnalyticsSlice }) {
   const [kw, setKw] = useState<string | null>(null);
   const reviews = stats.reviewCount;
@@ -68,21 +90,62 @@ export function ViewReviews({ stats }: { stats: ReviewAnalyticsSlice }) {
 
       <h3 className={styles.sectionTitle}>Trending keywords</h3>
       <p className={styles.sectionSub}>
-        Extracted from review text · click a keyword to highlight
+        Click a keyword to see matching reviews with the term highlighted
       </p>
       <div className={styles.keywordCloud}>
-        {stats.keywords.map((word, i) => (
+        {(stats.keywordHits?.length
+          ? stats.keywordHits
+          : stats.keywords.map((word) => ({ keyword: word, count: 0, reviews: [] }))
+        ).map((hit, i) => (
           <button
-            key={word}
+            key={hit.keyword}
             type="button"
-            className={`${styles.keyword} ${kw === word ? styles.keywordSel : ""}`}
+            className={`${styles.keyword} ${kw === hit.keyword ? styles.keywordSel : ""}`}
             style={{ fontSize: 12 + (i % 3) }}
-            onClick={() => setKw(kw === word ? null : word)}
+            onClick={() => setKw(kw === hit.keyword ? null : hit.keyword)}
+            title={`${hit.count} reviews mention “${hit.keyword}”`}
           >
-            {word}
+            {hit.keyword}
+            {hit.count > 0 ? (
+              <span className={styles.keywordCount}>{hit.count}</span>
+            ) : null}
           </button>
         ))}
       </div>
+
+      {kw ? (
+        <div className={styles.keywordReviewPanel}>
+          <h4 className={styles.keywordPanelTitle}>
+            Reviews mentioning &ldquo;{kw}&rdquo;
+            <span className={styles.keywordPanelMeta}>
+              {stats.keywordHits?.find((h) => h.keyword === kw)?.count ?? 0} in
+              window · showing up to 5
+            </span>
+          </h4>
+          <div className={styles.keywordReviewList}>
+            {(stats.keywordHits?.find((h) => h.keyword === kw)?.reviews ?? []).length >
+            0 ? (
+              stats.keywordHits
+                ?.find((h) => h.keyword === kw)
+                ?.reviews.map((v) => (
+                  <div key={v.quote.slice(0, 40)} className={styles.keywordReviewCard}>
+                    <p className={styles.keywordReviewQuote}>
+                      &ldquo;
+                      <HighlightedQuote text={v.quote} keyword={kw} />
+                      &rdquo;
+                    </p>
+                    <div className={styles.voiceMeta}>
+                      <span>{v.source}</span>
+                      <span className={styles.stars}>{"★".repeat(v.stars)}</span>
+                    </div>
+                  </div>
+                ))
+            ) : (
+              <p className={styles.sectionSub}>No sample reviews for this keyword.</p>
+            )}
+          </div>
+        </div>
+      ) : null}
 
       <h3 className={styles.sectionTitle}>PM Priority Radar</h3>
       <p className={styles.sectionSub}>

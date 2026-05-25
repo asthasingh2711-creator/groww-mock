@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-25T20:33:39",
+  "syncedAt": "2026-05-25T20:38:19",
   "all": {
     "_anchor": "2026-05-14",
     "today": {
@@ -48,6 +48,330 @@
         "excellent",
         "platform",
         "trade"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "nice",
+          "count": 17,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good experience",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "plz add crypto trading \ud83d\ude42",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "best trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "easy",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Groww is very easy to work",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "charge",
+          "count": 6,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "charges",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Good trading app but charges very high\ud83d\ude22",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "it's great",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great work thanks \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "service",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good service",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "quantity",
+          "count": 2,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trade",
+          "count": 2,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -288,6 +612,380 @@
         "interface",
         "super",
         "platform"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "easy",
+          "count": 63,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 54,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 30,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "In the need of high trading positions and high people on app, the app gets crash and not let you buy or sell at a particular time.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "plz add crypto trading \ud83d\ude42",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 30,
+          "reviews": [
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "friendly using",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 29,
+          "reviews": [
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "it's great",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great work thanks \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 22,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "good experience",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 25,
+          "reviews": [
+            {
+              "quote": "Please don\u2019t use grow as investment broker . If your money blocked they won\u2019t support you . My hard earned money blocked from grow . Save your money and invest in other bank based brokers .",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best app for mutual fund and stock investments. You can track the performance of your mutual funds and stocks on a daily basis.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good and trusted app.safely investments stocks and mutual funds.thank you groww app.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 20,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "interface",
+          "count": 19,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "super",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Always buy on higher price due to app fluctuation never buy on exact price",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice and fast",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Overall, using grow is an superb experience, specially in terms of easy to understand and every information on finger trip",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 17,
+          "reviews": [
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "A fantastic trading platform  for traders",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -604,6 +1302,380 @@
         "investment",
         "platform",
         "investing"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "easy",
+          "count": 100,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 80,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 52,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the last few months this is coming up frequently. Certainly it\u2019s a bad user experienc",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 48,
+          "reviews": [
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "it's great",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great work thanks \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 41,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "In the need of high trading positions and high people on app, the app gets crash and not let you buy or sell at a particular time.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "The worst trading app I have ever seen. It is completely unreliable and not fit for trading, so please stay away and do not waste your time or money on this disaster.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert sand. Market price will be always the highest Price available on the candle. While",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 41,
+          "reviews": [
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "friendly using",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Worst app ever. Orders don\u2019t get cancelled, F&O sell orders fail constantly, and the app is painfully slow. Error messages are useless and confusing. Support is a joke\u2014the bot only talks about mutual funds and doesn\u2019t help at all. Extremely",
+              "source": "App Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "interface",
+          "count": 31,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 35,
+          "reviews": [
+            {
+              "quote": "Please don\u2019t use grow as investment broker . If your money blocked they won\u2019t support you . My hard earned money blocked from grow . Save your money and invest in other bank based brokers .",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best app for mutual fund and stock investments. You can track the performance of your mutual funds and stocks on a daily basis.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good and trusted app.safely investments stocks and mutual funds.thank you groww app.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 26,
+          "reviews": [
+            {
+              "quote": "Switched to Sahi because of charges only using groww to track stock \ud83d\ude05",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investing",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good app for investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -982,6 +2054,380 @@
         "platform",
         "investing"
       ],
+      "keywordHits": [
+        {
+          "keyword": "easy",
+          "count": 100,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 80,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 52,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the last few months this is coming up frequently. Certainly it\u2019s a bad user experienc",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 48,
+          "reviews": [
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "it's great",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great work thanks \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 41,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "In the need of high trading positions and high people on app, the app gets crash and not let you buy or sell at a particular time.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "The worst trading app I have ever seen. It is completely unreliable and not fit for trading, so please stay away and do not waste your time or money on this disaster.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert sand. Market price will be always the highest Price available on the candle. While",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 41,
+          "reviews": [
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "friendly using",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Worst app ever. Orders don\u2019t get cancelled, F&O sell orders fail constantly, and the app is painfully slow. Error messages are useless and confusing. Support is a joke\u2014the bot only talks about mutual funds and doesn\u2019t help at all. Extremely",
+              "source": "App Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "interface",
+          "count": 31,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 35,
+          "reviews": [
+            {
+              "quote": "Please don\u2019t use grow as investment broker . If your money blocked they won\u2019t support you . My hard earned money blocked from grow . Save your money and invest in other bank based brokers .",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best app for mutual fund and stock investments. You can track the performance of your mutual funds and stocks on a daily basis.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good and trusted app.safely investments stocks and mutual funds.thank you groww app.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 26,
+          "reviews": [
+            {
+              "quote": "Switched to Sahi because of charges only using groww to track stock \ud83d\ude05",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investing",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good app for investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
+      ],
       "themeCards": [
         {
           "id": "orders",
@@ -1278,6 +2724,310 @@
         "investment",
         "excellent"
       ],
+      "keywordHits": [
+        {
+          "keyword": "great",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Simple to use for the stock markets",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "easy",
+          "count": 9,
+          "reviews": [
+            {
+              "quote": "Easy to use",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "I am just a beginner and I am  enjoying its application and learning progressively.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very easy access",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "A fantastic trading platform  for traders",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best trading app for those who really wants to invest their money in markets, you would see simple UI to interact with each trade and then invest into it.",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Amazing simply and satisfying app. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "love",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Gets the job done. No stupid cross sell. Love the simplicity and the UI",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "I loved its simplicity.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Amazing simply and satisfying app. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investing",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "US stocks buying option is missing",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Best performance",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good and useful",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "invest",
+          "count": 10,
+          "reviews": [
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Kindly learn & invest wisely. You\u2019ll enjoy using this App also earn.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best in Indian investment app",
+              "source": "App Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "stock",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "Easy to use",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good  information",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Simple to use for the stock markets",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "US stocks buying option is missing",
+              "source": "App Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "super",
+          "count": 3,
+          "reviews": [
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "stocks",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Good  information",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "US stocks buying option is missing",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best in Indian investment app",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Amazing simply and satisfying app. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 3,
+          "reviews": [
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
+      ],
       "themeCards": [
         {
           "id": "orders",
@@ -1517,6 +3267,380 @@
         "experience",
         "super",
         "well"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "easy",
+          "count": 58,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Easy to use",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "I am just a beginner and I am  enjoying its application and learning progressively.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very easy access",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 43,
+          "reviews": [
+            {
+              "quote": "US stocks buying option is missing",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Best performance",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good and useful",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Working nicely",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Nice experience",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its a user friendly trading /investment application ... since i am the old user am enjoying every new update \ud83d\udc93\ud83d\udc93",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its the easiest, more user friendly option",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 30,
+          "reviews": [
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its a user friendly trading /investment application ... since i am the old user am enjoying every new update \ud83d\udc93\ud83d\udc93",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its the easiest, more user friendly option",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "User friendly",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best ever app no lags no confusion user friendly app use it and grow with it",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 26,
+          "reviews": [
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Simple to use for the stock markets",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 24,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "In the need of high trading positions and high people on app, the app gets crash and not let you buy or sell at a particular time.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "A fantastic trading platform  for traders",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best trading app for those who really wants to invest their money in markets, you would see simple UI to interact with each trade and then invest into it.",
+              "source": "App Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 23,
+          "reviews": [
+            {
+              "quote": "Please don\u2019t use grow as investment broker . If your money blocked they won\u2019t support you . My hard earned money blocked from grow . Save your money and invest in other bank based brokers .",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best in Indian investment app",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Amazing simply and satisfying app. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 18,
+          "reviews": [
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app and wonderful experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app to grow",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "No glitch at all, very smoothly designed",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "EXCELLENT EXPERIENCE",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "interface",
+          "count": 19,
+          "reviews": [
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very Nice so simple and easy to use",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 15,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very good experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app and wonderful experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Overall, using grow is an superb experience, specially in terms of easy to understand and every information on finger trip",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "super",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Always buy on higher price due to app fluctuation never buy on exact price",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice and fast",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Overall, using grow is an superb experience, specially in terms of easy to understand and every information on finger trip",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "well",
+          "count": 15,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very good app where we can easily navigate and the job done very well .  Need some more trading tips",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Everything goes well with it\u2019s technology",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Thank you. But I\u2019ve observed this, the values of the investment, sometimes weird and gets fixed on its own the next day when trading starts. Hope that\u2019s fixed in this update as well.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -1833,6 +3957,380 @@
         "interface",
         "platform",
         "investing"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "easy",
+          "count": 93,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Easy to use",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "I am just a beginner and I am  enjoying its application and learning progressively.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very easy access",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 59,
+          "reviews": [
+            {
+              "quote": "US stocks buying option is missing",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Best performance",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good and useful",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Working nicely",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Nice experience",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 47,
+          "reviews": [
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the last few months this is coming up frequently. Certainly it\u2019s a bad user experienc",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its a user friendly trading /investment application ... since i am the old user am enjoying every new update \ud83d\udc93\ud83d\udc93",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 44,
+          "reviews": [
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Simple to use for the stock markets",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "In the need of high trading positions and high people on app, the app gets crash and not let you buy or sell at a particular time.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "The worst trading app I have ever seen. It is completely unreliable and not fit for trading, so please stay away and do not waste your time or money on this disaster.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert sand. Market price will be always the highest Price available on the candle. While",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 37,
+          "reviews": [
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its a user friendly trading /investment application ... since i am the old user am enjoying every new update \ud83d\udc93\ud83d\udc93",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its the easiest, more user friendly option",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "User friendly",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best ever app no lags no confusion user friendly app use it and grow with it",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 25,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Worst app ever. Orders don\u2019t get cancelled, F&O sell orders fail constantly, and the app is painfully slow. Error messages are useless and confusing. Support is a joke\u2014the bot only talks about mutual funds and doesn\u2019t help at all. Extremely",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the last few months this is coming up frequently. Certainly it\u2019s a bad user experienc",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Very good experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice experience",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 29,
+          "reviews": [
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app and wonderful experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app to grow",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "No glitch at all, very smoothly designed",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "EXCELLENT EXPERIENCE",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 32,
+          "reviews": [
+            {
+              "quote": "Please don\u2019t use grow as investment broker . If your money blocked they won\u2019t support you . My hard earned money blocked from grow . Save your money and invest in other bank based brokers .",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best in Indian investment app",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Amazing simply and satisfying app. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "interface",
+          "count": 28,
+          "reviews": [
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very Nice so simple and easy to use",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Switched to Sahi because of charges only using groww to track stock \ud83d\ude05",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "A fantastic trading platform  for traders",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Thanks\nFor a growing platform",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice platform",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best platform to trade",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investing",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good app for investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -2211,6 +4709,380 @@
         "platform",
         "investing"
       ],
+      "keywordHits": [
+        {
+          "keyword": "easy",
+          "count": 93,
+          "reviews": [
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Easy to use",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "I am just a beginner and I am  enjoying its application and learning progressively.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very easy access",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "nice",
+          "count": 59,
+          "reviews": [
+            {
+              "quote": "US stocks buying option is missing",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Best performance",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good and useful",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Working nicely",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Nice experience",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 47,
+          "reviews": [
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the last few months this is coming up frequently. Certainly it\u2019s a bad user experienc",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its a user friendly trading /investment application ... since i am the old user am enjoying every new update \ud83d\udc93\ud83d\udc93",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 44,
+          "reviews": [
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Simple to use for the stock markets",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great product with super smooth and convenient features.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 34,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "In the need of high trading positions and high people on app, the app gets crash and not let you buy or sell at a particular time.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "The worst trading app I have ever seen. It is completely unreliable and not fit for trading, so please stay away and do not waste your time or money on this disaster.",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "They grow we are crow. Time is money in stock market. They hold unnecessarily.no proper accounts for charges, the statements are like finding salt in desert sand. Market price will be always the highest Price available on the candle. While",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Easy to use.. Accurate",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 37,
+          "reviews": [
+            {
+              "quote": "The app is very easy for new people as well, The filters & exploring new stocks is easy.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its a user friendly trading /investment application ... since i am the old user am enjoying every new update \ud83d\udc93\ud83d\udc93",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its the easiest, more user friendly option",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "User friendly",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best ever app no lags no confusion user friendly app use it and grow with it",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 25,
+          "reviews": [
+            {
+              "quote": "1 star for the lack of proper iPad optimization. The app still does not support true fullscreen on iPad and runs like a stretched mobile app. Trading and chart analysis on a larger screen should feel professional, but the experience is disa",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Worst app ever. Orders don\u2019t get cancelled, F&O sell orders fail constantly, and the app is painfully slow. Error messages are useless and confusing. Support is a joke\u2014the bot only talks about mutual funds and doesn\u2019t help at all. Extremely",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "The app session expires within a few days and I have to sign in again, not sure if this is intentional (or) a bug. This was never the case before, but for the last few months this is coming up frequently. Certainly it\u2019s a bad user experienc",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Very good experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice experience",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 29,
+          "reviews": [
+            {
+              "quote": "Excellent app , target price should be updated",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app and wonderful experience",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Great app to grow",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "No glitch at all, very smoothly designed",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "EXCELLENT EXPERIENCE",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investment",
+          "count": 32,
+          "reviews": [
+            {
+              "quote": "Please don\u2019t use grow as investment broker . If your money blocked they won\u2019t support you . My hard earned money blocked from grow . Save your money and invest in other bank based brokers .",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "Best App for investments",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best in Indian investment app",
+              "source": "App Store",
+              "stars": 4
+            },
+            {
+              "quote": "Super app for investment",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Amazing simply and satisfying app. Love it.",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "interface",
+          "count": 28,
+          "reviews": [
+            {
+              "quote": "I raised complaint for amount updating since last 5 days no responding on customer service \nCustomer support is not responding properly don\u2019t invest on grow\nBrokerage charges also high but user interface is good",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "This app user interface is one the best in the market and easy to use, but its functionality and usability is not that useful. It takes time to execute orders in f&o as well as intraday! Moreover it may have certain times that the stoploss",
+              "source": "App Store",
+              "stars": 2
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Have to wait for 1-2 days just to get a stupid reply. No toll free number or chat option. Nobody wants to waste their time for 2 days to receive a single reply.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very Nice so simple and easy to use",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Switched to Sahi because of charges only using groww to track stock \ud83d\ude05",
+              "source": "App Store",
+              "stars": 1
+            },
+            {
+              "quote": "A fantastic trading platform  for traders",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Thanks\nFor a growing platform",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice platform",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Best platform to trade",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "investing",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "Just go for it",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "One app for all types of investing plus the charges are low and non existent in mutual funds. Love it.",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Interface is good and Groww makes investing easy",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Love the ease of doing transactions. Love that they make sure to educate customers with each and every aspect of investing",
+              "source": "App Store",
+              "stars": 5
+            },
+            {
+              "quote": "Good app for investing",
+              "source": "App Store",
+              "stars": 5
+            }
+          ]
+        }
+      ],
       "themeCards": [
         {
           "id": "orders",
@@ -2502,6 +5374,330 @@
         "platform",
         "trade"
       ],
+      "keywordHits": [
+        {
+          "keyword": "nice",
+          "count": 17,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good experience",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "plz add crypto trading \ud83d\ude42",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "best trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "easy",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Groww is very easy to work",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "charge",
+          "count": 6,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "charges",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Good trading app but charges very high\ud83d\ude22",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "great",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "it's great",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "great work thanks \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "service",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good service",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "quantity",
+          "count": 2,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trade",
+          "count": 2,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        }
+      ],
       "themeCards": [
         {
           "id": "brokerage",
@@ -2741,6 +5937,370 @@
         "platform",
         "time",
         "friendly"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "nice",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 9,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good experience",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "easy",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Groww is very easy to work",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "plz add crypto trading \ud83d\ude42",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "best trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "charge",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "charges",
+          "count": 6,
+          "reviews": [
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Good trading app but charges very high\ud83d\ude22",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "service",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good service",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "very good service",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "time",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "very good, but sometimes hangs",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "all ok but, withdrawal was not coming in time",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy to use and given time to time notification",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "friendly using",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -3057,6 +6617,370 @@
         "platform",
         "time",
         "friendly"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "nice",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 9,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good experience",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "easy",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Groww is very easy to work",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "plz add crypto trading \ud83d\ude42",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "best trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "charge",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "charges",
+          "count": 6,
+          "reviews": [
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Good trading app but charges very high\ud83d\ude22",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "service",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good service",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "very good service",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "time",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "very good, but sometimes hangs",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "all ok but, withdrawal was not coming in time",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy to use and given time to time notification",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "friendly using",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {
@@ -3430,6 +7354,370 @@
         "platform",
         "time",
         "friendly"
+      ],
+      "keywordHits": [
+        {
+          "keyword": "nice",
+          "count": 21,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "nice aap thanks groww aap",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "experience",
+          "count": 9,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good experience",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "easy",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy operating",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very nice application Fast and easy to use",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Groww is very easy to work",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "trading",
+          "count": 7,
+          "reviews": [
+            {
+              "quote": "nice. thanks. best for intraday trading .",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "plz add crypto trading \ud83d\ude42",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "best trading app",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "charge",
+          "count": 8,
+          "reviews": [
+            {
+              "quote": "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne q",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            }
+          ]
+        },
+        {
+          "keyword": "charges",
+          "count": 6,
+          "reviews": [
+            {
+              "quote": "glitch problem & commit big loss, charges Anyone can go into depression.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "good aap but brokarage charges is so high",
+              "source": "Play Store",
+              "stars": 2
+            },
+            {
+              "quote": "very High and exorbitant charges",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "Good trading app but charges very high\ud83d\ude22",
+              "source": "Play Store",
+              "stars": 4
+            }
+          ]
+        },
+        {
+          "keyword": "user",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Bad user interface.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "service",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Very bad experience with Groww. The customer service is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "great service providers.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy interface app and good and easy to use. nice service help too",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "good service",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "very good service",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "excellent",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "excellent application \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "excellent \ud83d\udc4d",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Excellent app using wonderful",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "platform",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Nice Platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "very good experience to trade from this platform.",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Easy investment for this platform",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Trading keliye best platform hai but brokareg jayada jata hai vo ak nagetive point hai",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "time",
+          "count": 5,
+          "reviews": [
+            {
+              "quote": "Limit order execution is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+              "source": "Play Store",
+              "stars": 1
+            },
+            {
+              "quote": "very good, but sometimes hangs",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "all ok but, withdrawal was not coming in time",
+              "source": "Play Store",
+              "stars": 4
+            },
+            {
+              "quote": "Its streamlined onboarding process, advanced portfolio analytics, and real-time market insights significantly enhance the overall user experience for both novice and seasoned investors. Furthermore, the platform\u2019s robust security architectu",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "easy to use and given time to time notification",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        },
+        {
+          "keyword": "friendly",
+          "count": 4,
+          "reviews": [
+            {
+              "quote": "user friendly",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "Very nice.... User friendly.....",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "friendly using",
+              "source": "Play Store",
+              "stars": 5
+            },
+            {
+              "quote": "One of the most user-friendly app interface.",
+              "source": "Play Store",
+              "stars": 5
+            }
+          ]
+        }
       ],
       "themeCards": [
         {

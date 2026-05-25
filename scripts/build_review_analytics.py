@@ -133,6 +133,36 @@ def extract_keywords(rows: list[dict], limit: int = 12) -> list[str]:
     return [w for w, _ in words.most_common(limit)]
 
 
+def build_keyword_hits(
+    parsed: list[dict], keywords: list[str], per_keyword: int = 5
+) -> list[dict]:
+    """Sample reviews per trending keyword for in-app highlighting."""
+    hits: list[dict] = []
+    for kw in keywords:
+        count = sum(1 for row in parsed if kw in row["text"])
+        samples: list[dict] = []
+        # Prefer low-rated reviews first (more actionable), then recent
+        candidates = sorted(
+            [r for r in parsed if kw in r["text"]],
+            key=lambda r: (r["rating"] > 2, -r["date"].timestamp()),
+        )
+        for row in candidates:
+            if len(samples) >= per_keyword:
+                break
+            quote = row["content"][:240].strip()
+            if len(quote) < 10:
+                continue
+            samples.append(
+                {
+                    "quote": quote,
+                    "source": STORE_LABEL.get(row["store"], "Store"),
+                    "stars": row["rating"],
+                }
+            )
+        hits.append({"keyword": kw, "count": count, "reviews": samples})
+    return hits
+
+
 RANGE_CONFIG: list[tuple[str, int | None, str]] = [
     ("today", 1, "Today"),
     ("7d", 7, "7 Days"),
@@ -263,6 +293,7 @@ def build_from_parsed(
         )
 
     keywords = extract_keywords(parsed)
+    keyword_hits = build_keyword_hits(parsed, keywords)
     user_voices = pick_quotes(parsed)
     pm_radar = build_pm_radar(theme_stats)
     weekly_note = build_weekly_note(
@@ -312,6 +343,7 @@ def build_from_parsed(
         },
         "trendAlert": trend_alert,
         "keywords": keywords,
+        "keywordHits": keyword_hits,
         "themeCards": theme_cards,
         "pmRadar": pm_radar,
         "userVoices": user_voices,
@@ -478,6 +510,7 @@ def empty_payload() -> dict:
         "sentimentSplit": {"positive": 0, "negative": 0, "neutral": 0},
         "trendAlert": "No reviews in export",
         "keywords": [],
+        "keywordHits": [],
         "themeCards": [],
         "pmRadar": {"highImpact": [], "highFrequency": [], "monitor": []},
         "userVoices": [],

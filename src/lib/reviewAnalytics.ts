@@ -42,6 +42,7 @@ function enrichSlice(slice: ReviewAnalyticsSlice): ReviewAnalyticsSlice {
   const split = sentimentFromDistribution(slice.ratingDistribution);
   return {
     ...slice,
+    keywordHits: slice.keywordHits ?? [],
     sentimentSplit: split,
     sentimentScore: split.positive,
   };
