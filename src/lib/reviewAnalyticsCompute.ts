@@ -152,13 +152,26 @@ function buildVolumeSeries(
   if (rangeId === "30d") {
     const labels: string[] = [];
     const values: number[] = [];
-    for (let i = 29; i >= 0; i--) {
-      const d = addDays(a, -i);
-      const k = dateOnly(d);
-      labels.push(d.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
-      values.push(dayCounts.get(k) ?? 0);
+    const bucketDays = 5;
+    const rangeStart = addDays(a, -29);
+    const numBuckets = Math.ceil(30 / bucketDays);
+    for (let b = 0; b < numBuckets; b++) {
+      const bucketStart = addDays(rangeStart, b * bucketDays);
+      const bucketEnd = addDays(rangeStart, Math.min(b * bucketDays + bucketDays - 1, 29));
+      let sum = 0;
+      for (let d = new Date(bucketStart); d <= bucketEnd; d = addDays(d, 1)) {
+        sum += dayCounts.get(dateOnly(d)) ?? 0;
+      }
+      const fmt = (d: Date) =>
+        d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+      labels.push(
+        bucketStart.getTime() === bucketEnd.getTime()
+          ? fmt(bucketStart)
+          : `${fmt(bucketStart)} – ${fmt(bucketEnd)}`,
+      );
+      values.push(sum);
     }
-    return [labels, values, "daily", "Daily volume · last 30 calendar days"];
+    return [labels, values, "daily", "Volume in 5-day buckets · last 30 calendar days"];
   }
 
   const weekCounts = new Map<string, number>();

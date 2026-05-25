@@ -310,31 +310,42 @@ export function ViewAnalytics({
 export function ViewThemes({ stats }: { stats: ReviewAnalyticsSlice }) {
   return (
     <>
-      <p className={styles.leadText}>
-        Top themes from review text · keyword-clustered · ranked by volume
+      <p className={styles.sectionSub} style={{ marginBottom: 16 }}>
+        Top themes from CSV review text · keyword-clustered · click to expand
       </p>
       <div className={styles.themeGrid}>
         {stats.themeCards.map((t) => (
           <div key={t.id} className={styles.themeCard}>
             <div className={styles.themeCardHead}>
               <div>
-                <div className={styles.themeTitle}>{t.title}</div>
+                <div style={{ fontSize: 13, fontWeight: 800 }}>{t.title}</div>
                 <span className={styles.tagNeg}>Negative</span>
               </div>
               <span className={styles.themePct}>{t.pct}%</span>
             </div>
-            <p className={styles.themeDesc}>{t.description}</p>
-            <p className={styles.themeReviews}>{t.reviews} reviews</p>
-            <div className={styles.themeFooter}>
+            <p style={{ fontSize: 12, color: "#a1a1aa", lineHeight: 1.45, flex: 1 }}>
+              {t.description}
+            </p>
+            <p style={{ fontSize: 12, color: "#71717a", marginTop: 12 }}>
+              {t.reviews} reviews
+            </p>
+            <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
               <span
                 className={t.priority === "Critical" ? styles.tagCrit : styles.tagHigh}
               >
                 {t.priority}
               </span>
-              <span className={styles.deltaUp}>↑ {t.wowDelta}%</span>
             </div>
-            <div className={styles.themeSparkRow}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: 12,
+              }}
+            >
               <Sparkline values={t.sparkline} />
+              <span className={styles.deltaUp}>↑ {t.wowDelta}%</span>
             </div>
           </div>
         ))}

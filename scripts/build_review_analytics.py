@@ -79,10 +79,27 @@ def build_volume_series(
         return labels, values, "daily", "Daily volume · last 7 calendar days"
 
     if range_id == "30d":
-        days = [anchor - timedelta(days=i) for i in range(29, -1, -1)]
-        labels = [d.strftime("%b %d") for d in days]
-        values = [day_counts.get(d, 0) for d in days]
-        return labels, values, "daily", "Daily volume · last 30 calendar days"
+        bucket_days = 5
+        range_start = anchor - timedelta(days=29)
+        labels = []
+        values = []
+        for b in range(6):
+            bucket_start = range_start + timedelta(days=b * bucket_days)
+            bucket_end = range_start + timedelta(
+                days=min(b * bucket_days + bucket_days - 1, 29)
+            )
+            total = sum(
+                day_counts.get(range_start + timedelta(days=offset), 0)
+                for offset in range(b * bucket_days, min(b * bucket_days + bucket_days, 30))
+            )
+            if bucket_start == bucket_end:
+                labels.append(bucket_start.strftime("%b %d"))
+            else:
+                labels.append(
+                    f"{bucket_start.strftime('%b %d')} – {bucket_end.strftime('%b %d')}"
+                )
+            values.append(total)
+        return labels, values, "daily", "Volume in 5-day buckets · last 30 calendar days"
 
     # 8–12 weeks: weekly buckets (only weeks that overlap the window)
     week_counts: Counter[str] = Counter(r["week"] for r in parsed)
