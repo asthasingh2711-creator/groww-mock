@@ -43,6 +43,8 @@ export type ReviewAnalyticsSlice = {
   wowReviewDelta: number;
   volumeLabels: string[];
   weeklyVolume: number[];
+  volumeGranularity: "daily" | "weekly";
+  volumeSubtitle: string;
   ratingDistribution: number[];
   sentimentSplit: { positive: number; negative: number; neutral: number };
   trendAlert: string;

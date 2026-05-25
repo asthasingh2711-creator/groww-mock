@@ -47,17 +47,19 @@ export function VolumeChart({
   const counts = labels.map((_, i) => values[i] ?? 0);
   const max = Math.max(...counts, 1);
 
+  const dense = labels.length > 8;
+
   return (
     <div
-      className={styles.volumeChart}
+      className={`${styles.volumeChart} ${dense ? styles.volumeChartDense : ""}`}
       role="img"
-      aria-label={`Weekly review volume: ${labels.map((l, i) => `${l} ${counts[i]}`).join(", ")}`}
+      aria-label={`Review volume: ${labels.map((l, i) => `${l} ${counts[i]}`).join(", ")}`}
     >
       {labels.map((label, i) => {
         const v = counts[i];
         const pct = Math.max((v / max) * 100, v > 0 ? 6 : 0);
         return (
-          <div key={label} className={styles.volumeBarCol}>
+          <div key={`${label}-${i}`} className={styles.volumeBarCol}>
             <span className={styles.volumeBarValue}>{v > 0 ? v : ""}</span>
             <div className={styles.volumeBarTrack}>
               <div
@@ -65,7 +67,11 @@ export function VolumeChart({
                 style={{ height: `${pct}%` }}
               />
             </div>
-            <span className={styles.volumeBarLabel}>{label}</span>
+            <span
+              className={`${styles.volumeBarLabel} ${dense ? styles.volumeBarLabelDense : ""}`}
+            >
+              {label}
+            </span>
           </div>
         );
       })}

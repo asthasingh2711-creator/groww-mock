@@ -99,7 +99,7 @@ ${d.weeklyNote.actions.map((a, i) => `${i + 1}. ${a}`).join("\n")}
 ## Analytics
 - Rating distribution (1–5★): ${d.ratingDistribution.join(", ")}
 - Sentiment split: +${d.sentimentSplit.positive}% / -${d.sentimentSplit.negative}% / neutral ${d.sentimentSplit.neutral}%
-- Weekly volume: ${d.volumeLabels.map((l, i) => `${l}:${d.weeklyVolume[i]}`).join(", ")}
+- Volume (${d.volumeGranularity ?? "daily"}): ${d.volumeLabels.map((l, i) => `${l}:${d.weeklyVolume[i]}`).join(", ")}
 `;
 }
 

@@ -58,16 +58,34 @@ def parse_row(r: dict[str, str]) -> dict:
     }
 
 
-def last_n_week_keys(end_label: str, n: int = 5) -> tuple[list[str], list[str]]:
-    y, w = map(int, end_label.split("-W"))
-    d = date.fromisocalendar(y, w, 1)
-    iso_keys: list[str] = []
-    short: list[str] = []
-    for i in range(n - 1, -1, -1):
-        dd = d - timedelta(weeks=i)
-        iso_keys.append(dd.strftime("%G-W%V"))
-        short.append(f"W{dd.isocalendar().week}")
-    return iso_keys, short
+def build_volume_series(
+    parsed: list[dict], range_id: str
+) -> tuple[list[str], list[int], str, str]:
+    """Daily buckets that match the selected time window (no empty ISO weeks)."""
+    if not parsed:
+        return [], [], "daily", "No reviews in selected window"
+
+    day_counts: Counter[date] = Counter(r["date"].date() for r in parsed)
+    max_d = max(day_counts.keys())
+    min_d = min(day_counts.keys())
+
+    days = sorted(day_counts.keys())
+    if range_id == "today":
+        subtitle = f"Daily ingest · {len(days)} day(s) with activity"
+    elif range_id == "7d":
+        subtitle = f"Daily ingest · {len(days)} day(s) in 7-day window"
+    else:
+        subtitle = f"Daily ingest · {min_d.strftime('%b %d')} – {max_d.strftime('%b %d')}"
+
+    labels = [d.strftime("%b %d") for d in days]
+    values = [day_counts.get(d, 0) for d in days]
+    return labels, values, "daily", subtitle
+
+
+def ordered_days_for_range(parsed: list[dict], range_id: str) -> list[date]:
+    if not parsed:
+        return []
+    return sorted({r["date"].date() for r in parsed})
 
 
 def pct_change(curr: float, prev: float) -> float:
@@ -114,15 +132,19 @@ def filter_by_range(parsed: list[dict], range_id: str) -> list[dict]:
     return [r for r in parsed if r["date"] >= cut]
 
 
-def build_from_parsed(parsed: list[dict], range_label: str = "") -> dict:
+def build_from_parsed(
+    parsed: list[dict], range_label: str = "", range_id: str = "8-12w"
+) -> dict:
     if not parsed:
         return empty_payload()
 
     ratings: Counter[int] = Counter(r["rating"] for r in parsed)
     weeks: Counter[str] = Counter(r["week"] for r in parsed)
     latest_week = sorted(weeks.keys())[-1]
-    iso_keys, short_labels = last_n_week_keys(latest_week, 5)
-    weekly_vol = [weeks.get(k, 0) for k in iso_keys]
+    volume_labels, volume_values, volume_granularity, volume_subtitle = (
+        build_volume_series(parsed, range_id)
+    )
+    chart_days = ordered_days_for_range(parsed, range_id)
 
     total = len(parsed)
     pos = sum(ratings[k] for k in ratings if k >= 4)
@@ -130,9 +152,9 @@ def build_from_parsed(parsed: list[dict], range_label: str = "") -> dict:
     neu = ratings.get(3, 0)
     avg_rating = round(sum(k * ratings[k] for k in ratings) / total, 2)
 
-    # Week-over-week metrics
-    prev_week = iso_keys[-2] if len(iso_keys) >= 2 else iso_keys[-1]
-    last_week = iso_keys[-1]
+    # Period-over-period metrics (daily for short windows, weekly fallback)
+    prev_week = sorted(weeks.keys())[-2] if len(weeks) >= 2 else sorted(weeks.keys())[-1]
+    last_week = sorted(weeks.keys())[-1]
     last_rows = [r for r in parsed if r["week"] == last_week]
     prev_rows = [r for r in parsed if r["week"] == prev_week]
 
@@ -149,7 +171,10 @@ def build_from_parsed(parsed: list[dict], range_label: str = "") -> dict:
     sentiment_score = round(100 * pos / total)
     sentiment_delta = round(positive_pct(last_rows) - positive_pct(prev_rows), 1)
     avg_rating_delta = round(avg_for(last_rows) - avg_for(prev_rows), 2)
-    wow_review_delta = pct_change(weekly_vol[-1], weekly_vol[-2])
+    if len(volume_values) >= 2:
+        wow_review_delta = pct_change(volume_values[-1], volume_values[-2])
+    else:
+        wow_review_delta = pct_change(weeks.get(last_week, 0), weeks.get(prev_week, 0))
 
     # Theme aggregation
     theme_week_counts: dict[str, Counter[str]] = {
@@ -169,7 +194,10 @@ def build_from_parsed(parsed: list[dict], range_label: str = "") -> dict:
         if count == 0:
             continue
         low = sum(1 for r in matched if r["rating"] <= 2)
-        spark = [theme_week_counts[tid].get(k, 0) for k in iso_keys]
+        day_theme = Counter(
+            r["date"].date() for r in matched if r["date"].date() in set(chart_days)
+        )
+        spark = [day_theme.get(d, 0) for d in chart_days]
         last_c = theme_week_counts[tid].get(last_week, 0)
         prev_c = theme_week_counts[tid].get(prev_week, 0)
         theme_stats.append({
@@ -238,8 +266,10 @@ def build_from_parsed(parsed: list[dict], range_label: str = "") -> dict:
         "sentimentScore": sentiment_score,
         "sentimentDelta": sentiment_delta,
         "wowReviewDelta": wow_review_delta,
-        "weeklyVolume": weekly_vol,
-        "volumeLabels": short_labels,
+        "weeklyVolume": volume_values,
+        "volumeLabels": volume_labels,
+        "volumeGranularity": volume_granularity,
+        "volumeSubtitle": volume_subtitle,
         "ratingDistribution": [ratings.get(i, 0) for i in range(1, 6)],
         "sentimentSplit": {
             "positive": round(100 * pos / total),
@@ -407,6 +437,8 @@ def empty_payload() -> dict:
         "wowReviewDelta": 0,
         "weeklyVolume": [],
         "volumeLabels": [],
+        "volumeGranularity": "daily",
+        "volumeSubtitle": "No reviews in selected window",
         "ratingDistribution": [0, 0, 0, 0, 0],
         "sentimentSplit": {"positive": 0, "negative": 0, "neutral": 0},
         "trendAlert": "No reviews in export",
@@ -433,7 +465,7 @@ def main() -> None:
         payload[key] = {}
         for range_id, _, label in RANGE_CONFIG:
             subset = filter_by_range(parsed, range_id)
-            payload[key][range_id] = build_from_parsed(subset, label)
+            payload[key][range_id] = build_from_parsed(subset, label, range_id)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUT}")

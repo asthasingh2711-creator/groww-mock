@@ -183,8 +183,14 @@ export function ViewAnalytics({
       <div className={styles.chartGrid}>
         <div className={styles.chartCard}>
           <h3 className={styles.sectionTitle}>Review volume trend</h3>
-          <p className={styles.sectionSub}>Weekly ingest volume · last 5 weeks</p>
-          <VolumeChart values={vol} labels={stats.volumeLabels} />
+          <p className={styles.sectionSub}>
+            {stats.volumeSubtitle ?? "Review ingest volume"}
+          </p>
+          <VolumeChart
+            key={`vol-${platform}-${stats.reviewCount}-${stats.volumeLabels.join("-")}`}
+            values={vol}
+            labels={stats.volumeLabels}
+          />
         </div>
         <div className={styles.chartCard}>
           <h3 className={styles.sectionTitle}>Sentiment split</h3>
